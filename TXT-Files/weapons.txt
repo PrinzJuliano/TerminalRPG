@@ -1,0 +1,82 @@
+Classes:
+	Knight:
+		Base:
+		Tank:
+		DD:
+	Rogue:
+		Base:
+		Ninja:
+		Assassin:
+	Mage:
+		Base:
+		Healer:
+		DD:
+	Archer:
+		Base:
+		Sniper:
+		Swiftshooter:
+
+Weapons:
+	Base:
+		BaseDamage			(float)
+		MagicDamage			(float)
+		MeeleDamage 		(float)
+		RangedDamage		(float)
+		Crit-Chance			(float)
+		Shotspeed			(float)
+		AttackAmount		(int) #the AMount of enemies you can hit
+		Attackspeed			(float)
+		Prefix				(#PREFIX)
+		Suffix				(#SUFFIX)
+		BaseLegendaryLevel 	(#LEGENDARIES)
+		Level				(int)
+	Meele:
+		Dagger:
+		Iron-Fists:
+		Broadsword:
+		Sword:
+		Axe:
+		Club:
+		Mace:
+		Katana:
+		Broadaxe:
+		Spear:
+		Shield:
+	Ranged:
+		Bow:
+		Crossbow:
+		Boomerang:
+		Shuriken:
+		Throwingknives:
+	Magic:
+		Staff:
+		Wand:
+		Bracelet:
+
+LEGENDARIES:
+	Common
+	Uncommon
+	Rare
+	Epic
+	Legendary
+	Mythical
+PREFIX:
+	Healthy
+	Strong
+	Fast
+	Smart
+	Lucky
+	//Useless//
+SUFFIX:
+	of Life
+	of Power
+	of Speed
+	of Wisdom
+	o' Leprechaun
+	of Insanity
+	
+FORMAT: <Name> <PREFIX> <WeaponName> <Suffix> (<Legendry>) <Enchantment>
+--EXAMPLES--
+Gabriels Strong Katana of Speed (Epic) +200
+Lauras Useless Braclet (Common) +0
+Franks Sword

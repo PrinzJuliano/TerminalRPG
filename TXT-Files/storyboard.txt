@@ -1,0 +1,12 @@
+Storyboard:
+	Character creation:
+		Set Class -> #Class
+		Set Attributes -> #VIT|STR|AGI|INT|LCK
+		Set Name -> #NAME
+		Set Character Social Attributes:
+			Two Good
+			Two Bad
+		Set First Skills:
+			One Active
+			One Passive
+	Game:
