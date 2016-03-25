@@ -10,4 +10,5 @@ Key | Value
 | Language | Java |
 | IDE | Eclipse Mars.2 |
 | APIs | [Lanterna](https://github.com/mabe02/lanterna "Mabe02 Github Page")
+| Project Type | Java Maven
  

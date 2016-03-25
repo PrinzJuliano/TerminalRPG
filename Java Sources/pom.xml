@@ -6,4 +6,11 @@
   <name>Terminal RPG</name>
   <url>https://github.com/PrinzJuliano/TerminalRPG</url>
   <description>My implementation of a simple Pen and Paper RPG with Lanterna as GFX backend.</description>
+  <dependencies>
+  	<dependency>
+  		<groupId>com.googlecode.lanterna</groupId>
+  		<artifactId>lanterna</artifactId>
+  		<version>3.0.0-SNAPSHOT</version>
+  	</dependency>
+  </dependencies>
 </project>
