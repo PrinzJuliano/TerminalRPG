@@ -66,6 +66,7 @@ PREFIX:
 	Fast
 	Smart
 	Lucky
+	Silent
 	//Useless//
 SUFFIX:
 	of Life
@@ -73,6 +74,7 @@ SUFFIX:
 	of Speed
 	of Wisdom
 	o' Leprechaun
+	of Shadows
 	of Insanity
 	
 FORMAT: <Name> <PREFIX> <WeaponName> <Suffix> (<Legendry>) <Enchantment>
