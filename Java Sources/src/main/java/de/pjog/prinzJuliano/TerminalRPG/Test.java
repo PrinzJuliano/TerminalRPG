@@ -284,7 +284,7 @@ public class Test {
                     graphics.fill(' ');
                     
                     
-                    String[] text = {"This Program is about to close", "", "Thanks for using this digital software.", "Copyright (c) 2016 PrinzJuliano", "This software is licensed under the terms and conditions", "of the MIT Liscense.", "", "PRESS ANY KEY TO CONTINUE . . ."};
+                    String[] text = {"This Program is about to close", "", "Thanks for using this digital software.", "Copyright (c) 2016 PrinzJuliano", "This file (Test) is licensed under the terms and conditions", "of the MIT Liscense.", "", "PRESS ANY KEY TO CONTINUE . . ."};
                     
                     TextColor[] FG = {TextColor.ANSI.BLUE, TextColor.ANSI.WHITE, TextColor.ANSI.WHITE, TextColor.ANSI.WHITE, TextColor.ANSI.WHITE, TextColor.ANSI.WHITE, TextColor.ANSI.WHITE, TextColor.ANSI.GREEN};
                     TextColor[] BG = {TextColor.ANSI.WHITE, TextColor.ANSI.BLUE, TextColor.ANSI.BLUE, TextColor.ANSI.BLUE, TextColor.ANSI.BLUE, TextColor.ANSI.BLUE, TextColor.ANSI.BLUE, TextColor.ANSI.BLUE};
