@@ -6,12 +6,11 @@ import java.io.File;
 import java.io.FileInputStream;
 import java.io.IOException;
 import java.io.InputStreamReader;
-import java.util.Properties;
 
 import com.googlecode.lanterna.SGR;
 import com.googlecode.lanterna.TerminalSize;
 import com.googlecode.lanterna.TextColor;
-import com.googlecode.lanterna.graphics.PropertiesTheme;
+import com.googlecode.lanterna.bundle.LanternaThemes;
 import com.googlecode.lanterna.gui2.AbstractComponent;
 import com.googlecode.lanterna.gui2.BasicWindow;
 import com.googlecode.lanterna.gui2.Borders;
@@ -52,22 +51,15 @@ public class Test {
 		textGUI.setBlockingIO(false);
         textGUI.setEOFWhenNoWindows(true);
         
-        File theme = new File("src/main/resources/default-theme.properties");
-        if(!theme.exists()){
-	        Properties p = new Properties();
-	        p.load(Test.class.getResourceAsStream("/resources/default-theme.properties"));
-	        textGUI.setTheme(new PropertiesTheme(p));
-        }
+        //textGUI.setTheme(LanternaThemes.getRegisteredTheme("default"));
         
         try {
         	init(textGUI);
         	while(!textGUI.getWindows().isEmpty()) {
                 textGUI.processInput();
+                
                 if(textGUI.isPendingUpdate()) {
-                    textGUI.updateScreen();
-                }
-                else {
-                    Thread.sleep(1);
+                	textGUI.updateScreen();
                 }
             }
         	
@@ -85,7 +77,7 @@ public class Test {
 	private static void init(final WindowBasedTextGUI textGUI)
 	{
 		textGUI.getBackgroundPane().setComponent(new BackgroundComponent());
-		final BasicWindow window1 = new BasicWindow("Just a simple Test");
+		final BasicWindow window1 = new BasicWindow("Choose a file to be opened");
 		
 		
 		Panel mainPanel = new Panel();
@@ -101,20 +93,22 @@ public class Test {
         Panel left = new Panel();
         left.setLayoutManager(new LinearLayout(Direction.HORIZONTAL).setSpacing(1));
 		
-		left.addComponent(new Label("Hello"));
-		left.addComponent(new Label("this"));
-		left.addComponent(new Label("is"));
-		left.addComponent(new Label("a"));
-		left.addComponent(new Label("Test"));
+		left.addComponent(new Label("Any"));
+		left.addComponent(new Label("given"));
+		left.addComponent(new Label("file"));
+		left.addComponent(new Label("can"));
+		left.addComponent(new Label("be"));
+		left.addComponent(new Label("opened!"));
 		
 		Panel right = new Panel();
 		right.setLayoutManager(new LinearLayout(Direction.VERTICAL).setSpacing(1));
 		
-		right.addComponent(new Label("Hello"));
-		right.addComponent(new Label("this"));
-		right.addComponent(new Label("is"));
-		right.addComponent(new Label("a"));
-		right.addComponent(new Label("Test"));
+		right.addComponent(new Label("Keep"));
+		right.addComponent(new Label("that"));
+		right.addComponent(new Label("in"));
+		right.addComponent(new Label("mind"));
+		right.addComponent(new Label("bro"));
+		right.addComponent(new Label("!"));
 		
 		gridPanel.addComponent(left);
 		gridPanel.addComponent(right);
@@ -139,6 +133,7 @@ public class Test {
             	if(input != null && input.exists()){
             	
             		MyDialog dialog = new MyDialog(input);
+            		dialog.setTheme(LanternaThemes.getRegisteredTheme("bigsnake"));
             		textGUI.addWindow(dialog);
             	}
 			}

@@ -13,4 +13,8 @@
   		<version>3.0.0-SNAPSHOT</version>
   	</dependency>
   </dependencies>
+  <organization>
+  	<name>PJOG</name>
+  	<url>http://pjog.de/about.php</url>
+  </organization>
 </project>
