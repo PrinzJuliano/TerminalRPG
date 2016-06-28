@@ -11,8 +11,11 @@ import com.googlecode.lanterna.gui2.TextGUI;
 import com.googlecode.lanterna.gui2.Window;
 import com.googlecode.lanterna.screen.Screen;
 
+import de.pjog.prinzJuliano.TerminalRPG.models.Character;
+import de.pjog.prinzJuliano.TerminalRPG.views.CrashDialog;
 import de.pjog.prinzJuliano.TerminalRPG.views.EndCardView;
 import de.pjog.prinzJuliano.TerminalRPG.views.MainMenuView;
+import de.pjog.prinzJuliano.TerminalRPG.views.NewGameView;
 import de.pjog.prinzJuliano.TerminalRPG.views.View;
 
 /**
@@ -25,6 +28,10 @@ public class Storyboard {
 	// CONSTANTS
 	public static final int MAINMENU = 0;
 	public static final int ENDCARD = 1;
+	public static final int NEWGAME = 2;
+	public static final int LOADGAME = 3;
+	public static final int SETTINGS = 4;
+	public static final int CRASHDIALOG = 5;
 
 	Screen screen;
 	MultiWindowTextGUI textGUI;
@@ -37,6 +44,8 @@ public class Storyboard {
 	private boolean running = true;
 	
 	private static TextGUI.Listener listener;
+	
+	private static Character loadedCharacter;
 
 	public Storyboard(Screen screen) {
 		// enable rendering
@@ -48,8 +57,10 @@ public class Storyboard {
 		
 		views = new HashMap<Integer, View>();
 		// add views
+		views.put(CRASHDIALOG, new CrashDialog());
 		views.put(MAINMENU, new MainMenuView());
 		views.put(ENDCARD, new EndCardView());
+		views.put(NEWGAME, new NewGameView());
 	}
 
 	public void start() {
@@ -60,7 +71,14 @@ public class Storyboard {
 		
 		while (running) {
 			try {
-				textGUI.processInput();
+				if(screen.doResizeIfNecessary() != null) {
+					views.get(currentViewID).onResize(screen.getTerminalSize());
+				}
+				else{
+					textGUI.processInput();
+				}
+				if(textGUI.isPendingUpdate())
+					textGUI.updateScreen();
 				
 			}catch(EOFException e)
 			{
@@ -76,6 +94,15 @@ public class Storyboard {
 		if (currentViewID == id) {
 			return;
 		}
+		
+		if(!views.containsKey(id)){
+			((CrashDialog)views.get(CRASHDIALOG)).setMessage("View ["+id+"] could not be loaded");
+			
+			switchToScreen(CRASHDIALOG);
+			
+			return;
+		}
+		
 		if(!textGUI.getWindows().isEmpty())
 			for(Window b : textGUI.getWindows())
 			{
@@ -85,7 +112,8 @@ public class Storyboard {
 		textGUI.removeListener(listener);
 		views.get(id).init(this, textGUI);
 		listener = views.get(id).getListener(this);
-		textGUI.addListener(listener);
+		if(views.get(id).overridesListener())
+			textGUI.addListener(listener);
 		
 		try {
 			textGUI.updateScreen();
@@ -101,6 +129,16 @@ public class Storyboard {
 
 	public boolean isRunning() {
 		return running;
+	}
+	
+	public Character getCharacter()
+	{
+		return loadedCharacter;
+	}
+	
+	public void setCharacter(Character c)
+	{
+		loadedCharacter = c.clone();
 	}
 
 }
