@@ -67,5 +67,15 @@ public class EndCardView extends AbstractComponent<EndCardView> implements View 
 			}
 		};
 	}
+	
+	@Override
+	public boolean overridesListener() {
+		return true;
+	}
+
+	@Override
+	public void onResize(TerminalSize newSize) {
+		//Background Components auto resize
+	}
 
 }
