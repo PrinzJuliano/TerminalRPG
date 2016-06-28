@@ -13,6 +13,8 @@ public class Main {
 	Terminal term;
 	Screen screen;
 	
+	public static final boolean DEBUG = true;
+	
 	public Main(){
 		//do init our terminal
 		try{
@@ -37,7 +39,7 @@ public class Main {
 	}
 	
 	public static void main(String[] args){
-		Main m = new Main();
+		new Main();
 	}
 	
 }
