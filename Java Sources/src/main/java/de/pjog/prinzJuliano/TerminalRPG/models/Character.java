@@ -4,6 +4,7 @@ public class Character implements Cloneable{
 	
 	private String name;
 	private FightingClasses fightingClass;
+	private Stats stats;
 	
 	private int level;
 	
@@ -11,6 +12,7 @@ public class Character implements Cloneable{
 		name = "Brian";
 		fightingClass = FightingClasses.WARRIOR;
 		level = 1;
+		stats = new Stats(5, 5, 5, 5, 5, 0, 0);
 	}
 
 	public String getName() {
@@ -41,6 +43,10 @@ public class Character implements Cloneable{
 	public String toString(){
 		return String.format("Character \"%s\"[%d] of class [%s]", name, level, fightingClass);
 		
+	}
+	
+	public Stats getStats(){
+		return stats;
 	}
 	
 	public Character clone(){
