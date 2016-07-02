@@ -1,13 +1,13 @@
 package de.pjog.prinzJuliano.TerminalRPG.models;
 
 public class Stats implements Cloneable{
-	private int vitality;
-	private int strength;
-	private int dexterity;
-	private int intelligence;
-	private int luck;
-	private int stealth;
-	private int defense;
+	private int vitality;     //How much life points we got
+	private int strength;     //How hard we hit
+	private int dexterity;    //How agile we are
+	private int intelligence; //How smart we are
+	private int luck;         //Superstition based stuff
+	private int stealth;      //Determine if we start a fight or not
+	private int defense;      //How much damage will be subtracted
 	
 	/**
 	 * Convenience COnstructor for creation from Files

@@ -9,6 +9,7 @@ import de.pjog.prinzJuliano.TerminalRPG.Storyboard;
 public interface View {
 	
 	public void init(final Storyboard story, WindowBasedTextGUI textGUI);
+	public void init(final Storyboard story, WindowBasedTextGUI textGUI, String communication);
 	
 	public TextGUI.Listener getListener(Storyboard story);
 	
