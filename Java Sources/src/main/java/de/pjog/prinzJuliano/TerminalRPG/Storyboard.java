@@ -17,8 +17,10 @@ import de.pjog.prinzJuliano.TerminalRPG.models.RPGCharacter;
 import de.pjog.prinzJuliano.TerminalRPG.views.CrashDialog;
 import de.pjog.prinzJuliano.TerminalRPG.views.Dialog;
 import de.pjog.prinzJuliano.TerminalRPG.views.EndCardView;
+import de.pjog.prinzJuliano.TerminalRPG.views.LoadGameView;
 import de.pjog.prinzJuliano.TerminalRPG.views.MainMenuView;
 import de.pjog.prinzJuliano.TerminalRPG.views.NewGameView;
+import de.pjog.prinzJuliano.TerminalRPG.views.SettingsView;
 import de.pjog.prinzJuliano.TerminalRPG.views.View;
 
 /**
