@@ -7,11 +7,35 @@
 	<name>Terminal RPG</name>
 	<url>https://github.com/PrinzJuliano/TerminalRPG</url>
 	<description>My implementation of a simple Pen and Paper RPG with Lanterna as GFX backend.</description>
+	<packaging>jar</packaging>
 	<properties>
 		<jdk.version>1.7</jdk.version>
 	</properties>
+	<dependencies>
+		<dependency>
+			<groupId>com.googlecode.lanterna</groupId>
+			<artifactId>lanterna</artifactId>
+			<version>3.0.0-beta3</version>
+		</dependency>
+		<dependency>
+			<groupId>org.json</groupId>
+			<artifactId>json</artifactId>
+			<version>20160212</version>
+		</dependency>
+		<dependency>
+			<groupId>com.jolira</groupId>
+			<artifactId>onejar-maven-plugin</artifactId>
+			<version>1.4.4</version>
+		</dependency>
+		<dependency>
+			<groupId>commons-collections</groupId>
+			<artifactId>commons-collections</artifactId>
+			<version>3.2.2</version>
+		</dependency>
+	</dependencies>
 	<build>
 		<plugins>
+
 
 			<!-- download source code in Eclipse, best practice -->
 			<plugin>
@@ -35,31 +59,27 @@
 				</configuration>
 			</plugin>
 
-			<!-- Maven Assembly Plugin -->
+			<!-- Make this jar executable -->
 			<plugin>
 				<groupId>org.apache.maven.plugins</groupId>
-				<artifactId>maven-assembly-plugin</artifactId>
-				<version>2.4.1</version>
+				<artifactId>maven-jar-plugin</artifactId>
 				<configuration>
-					<!-- get all project dependencies -->
-					<descriptorRefs>
-						<descriptorRef>jar-with-dependencies</descriptorRef>
-					</descriptorRefs>
-					<!-- MainClass in mainfest make a executable jar -->
 					<archive>
 						<manifest>
 							<mainClass>de.pjog.prinzJuliano.TerminalRPG.Main</mainClass>
 						</manifest>
 					</archive>
-
 				</configuration>
+			</plugin>
+			<!-- Includes the runtime dependencies -->
+			<plugin>
+				<groupId>com.jolira</groupId>
+				<artifactId>onejar-maven-plugin</artifactId>
+				<version>1.4.4</version>
 				<executions>
 					<execution>
-						<id>make-assembly</id>
-						<!-- bind to the packaging phase -->
-						<phase>package</phase>
 						<goals>
-							<goal>single</goal>
+							<goal>one-jar</goal>
 						</goals>
 					</execution>
 				</executions>
@@ -67,21 +87,8 @@
 
 		</plugins>
 	</build>
-	<dependencies>
-		<dependency>
-			<groupId>com.googlecode.lanterna</groupId>
-			<artifactId>lanterna</artifactId>
-			<version>3.0.0-beta3</version>
-		</dependency>
-		<dependency>
-			<groupId>org.json</groupId>
-			<artifactId>json</artifactId>
-			<version>20160212</version>
-		</dependency>
-	</dependencies>
 	<organization>
 		<name>PJOG</name>
 		<url>http://pjog.de/about.php</url>
 	</organization>
-
 </project>

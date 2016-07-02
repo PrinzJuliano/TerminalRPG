@@ -49,6 +49,11 @@ public class RPGCharacter implements Cloneable{
 		return stats;
 	}
 	
+	public void setStats(Stats stats)
+	{
+		this.stats = stats;
+	}
+	
 	public RPGCharacter clone(){
 		RPGCharacter c = new RPGCharacter();
 		c.setName(this.name);
