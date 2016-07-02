@@ -8,8 +8,16 @@ import com.googlecode.lanterna.gui2.TextGUI.Listener;
 
 import de.pjog.prinzJuliano.TerminalRPG.Storyboard;
 
+/**
+ * Base for any basic view in this game.
+ * @author PrinzJuliano
+ *
+ */
 public abstract class AbstractView implements View{
 	
+	/**
+	 * A simple window to be used.
+	 */
 	protected BasicWindow rootWindow;
 	
 	@Override
@@ -35,6 +43,10 @@ public abstract class AbstractView implements View{
 		return false;
 	}
 	
+	/**
+	 * Centers the rootWindow based on the Terminal's size
+	 * @param s the terminal size to calculate the center
+	 */
 	protected void center(TerminalSize s)
 	{
 		float cols = (float)s.getColumns()/2.0f-(float)rootWindow.getDecoratedSize().getColumns()/2.0f;

@@ -12,6 +12,11 @@ import com.googlecode.lanterna.gui2.WindowBasedTextGUI;
 
 import de.pjog.prinzJuliano.TerminalRPG.Storyboard;
 
+/**
+ * Displayes the Credits, Copyright Notification and General Thank you.
+ * @author PrinzJuliano
+ *
+ */
 public class EndCardView extends AbstractComponent<EndCardView> implements View {
 
 	@Override
@@ -20,6 +25,7 @@ public class EndCardView extends AbstractComponent<EndCardView> implements View 
 		
 	}
 
+	@Override
 	protected ComponentRenderer<EndCardView> createDefaultRenderer() {
 		return new ComponentRenderer<EndCardView>() {
 			

@@ -1,5 +1,10 @@
 package de.pjog.prinzJuliano.TerminalRPG.models;
 
+/**
+ * All the Stats any entity could have.
+ * @author PrinzJuliano
+ *
+ */
 public class Stats implements Cloneable{
 	private int vitality;     //How much life points we got
 	private int strength;     //How hard we hit
@@ -18,13 +23,13 @@ public class Stats implements Cloneable{
 	
 	/**
 	 * Simple Constructor
-	 * @param vitality
-	 * @param strength
-	 * @param dexterity
-	 * @param intelligence
-	 * @param luck
-	 * @param stealth
-	 * @param defense
+	 * @param vitality How much life points we got
+	 * @param strength How hard we hit
+	 * @param dexterity How agile we are
+	 * @param intelligence How smart we are
+	 * @param luck Superstition based stuff
+	 * @param stealth Determine if we start a fight or not
+	 * @param defense How much damage will be subtracted
 	 */
 	public Stats(int vitality, int strength, int dexterity, int intelligence, int luck, int stealth, int defense)
 	{
@@ -37,6 +42,10 @@ public class Stats implements Cloneable{
 		this.defense = defense;
 	}
 
+	/**
+	 * Generic Getter.
+	 * @return its value
+	 */
 	public int getVitality() {
 		return vitality;
 	}
@@ -45,6 +54,10 @@ public class Stats implements Cloneable{
 		this.vitality = vitality;
 	}
 
+	/**
+	 * Generic Getter.
+	 * @return its value
+	 */
 	public int getStrength() {
 		return strength;
 	}
@@ -53,46 +66,87 @@ public class Stats implements Cloneable{
 		this.strength = strength;
 	}
 
+	/**
+	 * Generic Getter.
+	 * @return its value
+	 */
 	public int getDexterity() {
 		return dexterity;
 	}
 
+	/**
+	 * Generic Setter.
+	 * @param dexterity value
+	 */
 	public void setDexterity(int dexterity) {
 		this.dexterity = dexterity;
 	}
 
+	/**
+	 * Generic Getter.
+	 * @return its value
+	 */
 	public int getIntelligence() {
 		return intelligence;
 	}
 
+	/**
+	 * Generic Setter.
+	 * @param intelligence the value
+	 */
 	public void setIntelligence(int intelligence) {
 		this.intelligence = intelligence;
 	}
 
+	/**
+	 * Generic Getter.
+	 * @return its value
+	 */
 	public int getLuck() {
 		return luck;
 	}
 
+	/**
+	 * Generic Setter.
+	 * @param luck the value
+	 */
 	public void setLuck(int luck) {
 		this.luck = luck;
 	}
 
+	/**
+	 * Generic Getter.
+	 * @return its value
+	 */
 	public int getStealth() {
 		return stealth;
 	}
 
+	/**
+	 * Generic Setter.
+	 * @param stealth the value
+	 */
 	public void setStealth(int stealth) {
 		this.stealth = stealth;
 	}
 
+	/**
+	 * Generic Getter.
+	 * @return its value
+	 */
 	public int getDefense() {
 		return defense;
 	}
 
+	/**
+	 * Generic Setter.
+	 * @param defense the value
+	 */
 	public void setDefense(int defense) {
 		this.defense = defense;
 	}
 	
+	@Override
 	public String toString(){
 		String head = "%-12s%-12s%-12s%-12s%s";
 		String body = "%-12d%-12d%-12d%-12d%d";
@@ -100,6 +154,9 @@ public class Stats implements Cloneable{
 		return String.format(head+"\n"+body, "VIT", "STR", "DEX", "INT", "LCK", vitality, strength, dexterity, intelligence, luck);
 	}
 	
+	/**
+	 * Creates a new independent object with the same values as the called one.
+	 */
 	public Stats clone(){
 		return new Stats(vitality, strength, dexterity, intelligence, luck, stealth, defense);
 	}

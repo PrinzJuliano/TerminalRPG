@@ -11,13 +11,21 @@ import com.googlecode.lanterna.gui2.WindowBasedTextGUI;
 
 import de.pjog.prinzJuliano.TerminalRPG.Storyboard;
 
+/**
+ * A basic Dialog.
+ * @author PrinzJuliano
+ *
+ */
 public class Dialog extends AbstractView {
 
-	private int previousView;
+	private int nextView;
 	private String message;
 	private String communication;
 	private String caption;
 	
+	/**
+	 * Convenience Constructor.
+	 */
 	public Dialog(){
 		
 	}
@@ -37,7 +45,7 @@ public class Dialog extends AbstractView {
 			
 			@Override
 			public void run() {
-				story.switchToView(previousView, communication);
+				story.switchToView(nextView, communication);
 				
 			}
 		});
@@ -58,14 +66,26 @@ public class Dialog extends AbstractView {
 		
 	}
 
-	public void setPreviousView(int previousView) {
-		this.previousView = previousView;
+	/**
+	 * Sets the view to change to.
+	 * @param nextView the view based on {@link Storyboard}'s views.
+	 */
+	public void setNextView(int nextView) {
+		this.nextView = nextView;
 	}
 
+	/**
+	 * Set the message that should be displayed.
+	 * @param message the message.
+	 */
 	public void setMessage(String message) {
 		this.message = message;
 	}
-
+	
+	/**
+	 * Set the Caption of this Dialog.
+	 * @param caption the caption.
+	 */
 	public void setCaption(String caption) {
 		this.caption = caption;
 	}
