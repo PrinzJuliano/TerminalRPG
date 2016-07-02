@@ -7,45 +7,38 @@ import com.googlecode.lanterna.screen.TerminalScreen;
 import com.googlecode.lanterna.terminal.DefaultTerminalFactory;
 import com.googlecode.lanterna.terminal.Terminal;
 
-import de.pjog.prinzJuliano.TerminalRPG.util.Resources;
-
 public class Main {
-	
-	public static Resources resources;
+
 	Storyboard story;
 	Terminal term;
 	Screen screen;
-	
+
 	public static final boolean DEBUG = true;
-	
-	public Main(){
-		//do init our terminal
-		resources = new Resources();
-		try{
+
+	public Main() {
+		// do init our terminal
+		try {
 			term = new DefaultTerminalFactory().createTerminal();
 			screen = new TerminalScreen(term);
-			
+
 			screen.startScreen();
 			screen.clear();
-			
+
 			story = new Storyboard(screen);
 			story.start();
-			
-			
-		}
-		catch (Exception e) {
+
+		} catch (Exception e) {
 			e.printStackTrace();
-		}
-		finally{
+		} finally {
 			try {
 				screen.stopScreen();
 			} catch (IOException e) {
 			}
 		}
 	}
-	
-	public static void main(String[] args){
+
+	public static void main(String[] args) {
 		new Main();
 	}
-	
+
 }

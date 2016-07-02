@@ -17,6 +17,7 @@ import com.googlecode.lanterna.gui2.WindowBasedTextGUI;
 import de.pjog.prinzJuliano.TerminalRPG.Main;
 import de.pjog.prinzJuliano.TerminalRPG.Storyboard;
 import de.pjog.prinzJuliano.TerminalRPG.models.RPGCharacter;
+import de.pjog.prinzJuliano.TerminalRPG.models.Stats;
 import de.pjog.prinzJuliano.TerminalRPG.models.FightingClasses;
 
 public class NewGameView extends AbstractView {
@@ -24,6 +25,7 @@ public class NewGameView extends AbstractView {
 	private ComboBox<String> classes;
 	private Label points, vitPoints, strPoints, dexPoints, INTPoints, LUCKPoints;
 	private TextBox name;
+	private boolean sure = false;
 
 	public NewGameView() {
 		points = new Label("25");
@@ -294,18 +296,33 @@ public class NewGameView extends AbstractView {
 				} 
 				
 				if(isValid){
+					if(!sure){
 					
-					Dialog dialog = (Dialog) story.getViewByID(Storyboard.DIALOG);
-					dialog.setCaption("Are you sure?");
-					dialog.setMessage(msg);
-					dialog.setPreviousView(Storyboard.NEWGAME);
-					story.switchToView(Storyboard.DIALOG, root.toString());
-					
-					ch.setName(name.getText());
-
-					ch.setFightingClass(FightingClasses.valueOf(classes.getSelectedItem().toUpperCase()));
-
-					story.setCharacter(ch);
+						Dialog dialog = (Dialog) story.getViewByID(Storyboard.DIALOG);
+						dialog.setCaption("Are you sure?");
+						dialog.setMessage("Are you sure about the class and stats?");
+						dialog.setPreviousView(Storyboard.NEWGAME);
+						story.switchToView(Storyboard.DIALOG, new JSONObject().append("sure", "true").toString());
+						
+					}
+					else
+					{
+						ch.setName(name.getText());
+						
+						ch.setFightingClass(FightingClasses.valueOf(classes.getSelectedItem().toUpperCase()));
+						
+						int nVIT = Integer.parseInt(vitPoints.getText());
+						int nSTR = Integer.parseInt(strPoints.getText());
+						int nDEX = Integer.parseInt(dexPoints.getText());
+						int nINT = Integer.parseInt(INTPoints.getText());
+						int nLCK = Integer.parseInt(LUCKPoints.getText());
+						
+						Stats stats = new Stats(nVIT, nSTR, nDEX, nINT, nLCK, 0, 0);
+						
+						ch.setStats(stats);
+	
+						story.setCharacter(ch);
+					}
 				}
 
 				if (!isValid) {
@@ -360,6 +377,10 @@ public class NewGameView extends AbstractView {
 			classes.setSelectedIndex(root.getInt("class"));
 			if (Main.DEBUG)
 				System.out.println("NewGameView: Found class: " + root.getInt("class"));
+		}
+		if(root.has("sure"))
+		{
+			this.sure = true;
 		}
 
 	}

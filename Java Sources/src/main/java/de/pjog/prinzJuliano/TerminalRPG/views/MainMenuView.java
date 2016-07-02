@@ -1,5 +1,12 @@
 package de.pjog.prinzJuliano.TerminalRPG.views;
 
+import java.io.File;
+import java.io.FileInputStream;
+import java.io.IOException;
+import java.util.List;
+
+import org.apache.commons.io.IOUtils;
+
 import com.googlecode.lanterna.gui2.BasicWindow;
 import com.googlecode.lanterna.gui2.Button;
 import com.googlecode.lanterna.gui2.Direction;
@@ -8,7 +15,6 @@ import com.googlecode.lanterna.gui2.LinearLayout;
 import com.googlecode.lanterna.gui2.Panel;
 import com.googlecode.lanterna.gui2.WindowBasedTextGUI;
 
-import de.pjog.prinzJuliano.TerminalRPG.Main;
 import de.pjog.prinzJuliano.TerminalRPG.Storyboard;
 import de.pjog.prinzJuliano.TerminalRPG.util.Resources;
 
@@ -58,20 +64,12 @@ public class MainMenuView extends AbstractView{
 			}
 
 		});
-
+		
 		mainPanel.addComponent(bNewGame);
 		mainPanel.addComponent(loadGame);
 		mainPanel.addComponent(settings);
 		mainPanel.addComponent(exit);
 		
-		String s = Main.resources.getFile("Names.txt");
-		
-		String[] str = s.split("\n");
-		for(String sr : str)
-		{
-			mainPanel.addComponent(new Label(sr));
-		}
-
 		rootWindow.setComponent(mainPanel);
 
 		textGUI.addWindow(rootWindow);
