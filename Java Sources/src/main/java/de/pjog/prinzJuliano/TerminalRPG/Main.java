@@ -7,8 +7,11 @@ import com.googlecode.lanterna.screen.TerminalScreen;
 import com.googlecode.lanterna.terminal.DefaultTerminalFactory;
 import com.googlecode.lanterna.terminal.Terminal;
 
+import de.pjog.prinzJuliano.TerminalRPG.util.Resources;
+
 public class Main {
 	
+	public static Resources resources;
 	Storyboard story;
 	Terminal term;
 	Screen screen;
@@ -17,6 +20,7 @@ public class Main {
 	
 	public Main(){
 		//do init our terminal
+		resources = new Resources();
 		try{
 			term = new DefaultTerminalFactory().createTerminal();
 			screen = new TerminalScreen(term);
@@ -26,6 +30,8 @@ public class Main {
 			
 			story = new Storyboard(screen);
 			story.start();
+			
+			
 		}
 		catch (Exception e) {
 			e.printStackTrace();

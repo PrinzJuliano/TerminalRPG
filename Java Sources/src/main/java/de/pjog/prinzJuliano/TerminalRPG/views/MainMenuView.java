@@ -8,7 +8,9 @@ import com.googlecode.lanterna.gui2.LinearLayout;
 import com.googlecode.lanterna.gui2.Panel;
 import com.googlecode.lanterna.gui2.WindowBasedTextGUI;
 
+import de.pjog.prinzJuliano.TerminalRPG.Main;
 import de.pjog.prinzJuliano.TerminalRPG.Storyboard;
+import de.pjog.prinzJuliano.TerminalRPG.util.Resources;
 
 public class MainMenuView extends AbstractView{
 	
@@ -61,6 +63,14 @@ public class MainMenuView extends AbstractView{
 		mainPanel.addComponent(loadGame);
 		mainPanel.addComponent(settings);
 		mainPanel.addComponent(exit);
+		
+		String s = Main.resources.getFile("Names.txt");
+		
+		String[] str = s.split("\n");
+		for(String sr : str)
+		{
+			mainPanel.addComponent(new Label(sr));
+		}
 
 		rootWindow.setComponent(mainPanel);
 

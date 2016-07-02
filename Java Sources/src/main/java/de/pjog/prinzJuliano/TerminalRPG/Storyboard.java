@@ -11,7 +11,7 @@ import com.googlecode.lanterna.gui2.TextGUI;
 import com.googlecode.lanterna.gui2.Window;
 import com.googlecode.lanterna.screen.Screen;
 
-import de.pjog.prinzJuliano.TerminalRPG.models.Character;
+import de.pjog.prinzJuliano.TerminalRPG.models.RPGCharacter;
 import de.pjog.prinzJuliano.TerminalRPG.views.CrashDialog;
 import de.pjog.prinzJuliano.TerminalRPG.views.Dialog;
 import de.pjog.prinzJuliano.TerminalRPG.views.EndCardView;
@@ -47,7 +47,7 @@ public class Storyboard {
 	
 	private static TextGUI.Listener listener;
 	
-	private static Character loadedCharacter;
+	private static RPGCharacter loadedCharacter;
 
 	public Storyboard(Screen screen) {
 		// enable rendering
@@ -152,12 +152,12 @@ public class Storyboard {
 		return views.get(id);
 	}
 	
-	public Character getCharacter()
+	public RPGCharacter getCharacter()
 	{
 		return loadedCharacter;
 	}
 	
-	public void setCharacter(Character c)
+	public void setCharacter(RPGCharacter c)
 	{
 		loadedCharacter = c.clone();
 	}

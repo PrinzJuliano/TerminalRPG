@@ -1,6 +1,6 @@
 package de.pjog.prinzJuliano.TerminalRPG.models;
 
-public class Character implements Cloneable{
+public class RPGCharacter implements Cloneable{
 	
 	private String name;
 	private FightingClasses fightingClass;
@@ -8,7 +8,7 @@ public class Character implements Cloneable{
 	
 	private int level;
 	
-	public Character(){
+	public RPGCharacter(){
 		name = "Brian";
 		fightingClass = FightingClasses.WARRIOR;
 		level = 1;
@@ -49,8 +49,8 @@ public class Character implements Cloneable{
 		return stats;
 	}
 	
-	public Character clone(){
-		Character c = new Character();
+	public RPGCharacter clone(){
+		RPGCharacter c = new RPGCharacter();
 		c.setName(this.name);
 		c.setLevel(this.level);
 		c.setFightingClass(this.fightingClass);
