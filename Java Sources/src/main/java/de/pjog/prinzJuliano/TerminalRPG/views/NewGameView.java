@@ -16,7 +16,7 @@ import com.googlecode.lanterna.gui2.WindowBasedTextGUI;
 
 import de.pjog.prinzJuliano.TerminalRPG.Main;
 import de.pjog.prinzJuliano.TerminalRPG.Storyboard;
-import de.pjog.prinzJuliano.TerminalRPG.models.Character;
+import de.pjog.prinzJuliano.TerminalRPG.models.RPGCharacter;
 import de.pjog.prinzJuliano.TerminalRPG.models.FightingClasses;
 
 public class NewGameView extends AbstractView {
@@ -256,7 +256,7 @@ public class NewGameView extends AbstractView {
 		buttons.addComponent(new Button("Start", new Runnable() {
 
 			public void run() {
-				Character ch = new Character();
+				RPGCharacter ch = new RPGCharacter();
 				String msg = "";
 				JSONObject root = new JSONObject();
 				boolean isValid = true;

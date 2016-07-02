@@ -1,9 +1,9 @@
 package de.pjog.prinzJuliano.TerminalRPG.models;
 
-import static org.junit.Assert.*;
-import org.junit.Test;
+import static org.junit.Assert.assertArrayEquals;
+import static org.junit.Assert.assertNotEquals;
 
-import de.pjog.prinzJuliano.TerminalRPG.Main;
+import org.junit.Test;
 
 public class StatsTest {
 
