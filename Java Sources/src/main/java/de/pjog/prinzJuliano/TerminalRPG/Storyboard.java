@@ -13,6 +13,7 @@ import com.googlecode.lanterna.screen.Screen;
 
 import de.pjog.prinzJuliano.TerminalRPG.models.Character;
 import de.pjog.prinzJuliano.TerminalRPG.views.CrashDialog;
+import de.pjog.prinzJuliano.TerminalRPG.views.Dialog;
 import de.pjog.prinzJuliano.TerminalRPG.views.EndCardView;
 import de.pjog.prinzJuliano.TerminalRPG.views.MainMenuView;
 import de.pjog.prinzJuliano.TerminalRPG.views.NewGameView;
@@ -26,12 +27,13 @@ import de.pjog.prinzJuliano.TerminalRPG.views.View;
 public class Storyboard {
 
 	// CONSTANTS
-	public static final int MAINMENU = 0;
-	public static final int ENDCARD = 1;
-	public static final int NEWGAME = 2;
-	public static final int LOADGAME = 3;
-	public static final int SETTINGS = 4;
+	public static final int MAINMENU	= 0;
+	public static final int ENDCARD		= 1;
+	public static final int NEWGAME		= 2;
+	public static final int LOADGAME	= 3;
+	public static final int SETTINGS	= 4;
 	public static final int CRASHDIALOG = 5;
+	public static final int DIALOG 		= 6;
 
 	Screen screen;
 	MultiWindowTextGUI textGUI;
@@ -61,10 +63,11 @@ public class Storyboard {
 		views.put(MAINMENU, new MainMenuView());
 		views.put(ENDCARD, new EndCardView());
 		views.put(NEWGAME, new NewGameView());
+		views.put(DIALOG, new Dialog());
 	}
 
 	public void start() {
-		switchToScreen(MAINMENU);
+		switchToView(MAINMENU);
 		
 		guiThread = (AsynchronousTextGUIThread)textGUI.getGUIThread();
         guiThread.start();
@@ -90,7 +93,16 @@ public class Storyboard {
 		}
 	}
 
-	public void switchToScreen(int id) {
+	public void switchToView(int id) {
+		switchToView(id, null);
+	}
+	
+	public void switchToView(int id, String com)
+	{
+		if(Main.DEBUG)
+		{
+			System.out.println("Storyboard: Try to load view " + id + " with Data: " + com);
+		}
 		if (currentViewID == id) {
 			return;
 		}
@@ -98,7 +110,7 @@ public class Storyboard {
 		if(!views.containsKey(id)){
 			((CrashDialog)views.get(CRASHDIALOG)).setMessage("View ["+id+"] could not be loaded");
 			
-			switchToScreen(CRASHDIALOG);
+			switchToView(CRASHDIALOG);
 			
 			return;
 		}
@@ -110,7 +122,13 @@ public class Storyboard {
 			}
 		currentViewID = id;
 		textGUI.removeListener(listener);
-		views.get(id).init(this, textGUI);
+		if(com == null || com.isEmpty())
+		{
+			views.get(id).init(this, textGUI);
+		}
+		else{
+			views.get(id).init(this, textGUI, com);
+		}
 		listener = views.get(id).getListener(this);
 		if(views.get(id).overridesListener())
 			textGUI.addListener(listener);
@@ -119,7 +137,6 @@ public class Storyboard {
 			textGUI.updateScreen();
 		} catch (Exception e) {
 		}
-			
 	}
 	
 	public void requestClose(){
@@ -129,6 +146,10 @@ public class Storyboard {
 
 	public boolean isRunning() {
 		return running;
+	}
+	
+	public View getViewByID(int id){
+		return views.get(id);
 	}
 	
 	public Character getCharacter()

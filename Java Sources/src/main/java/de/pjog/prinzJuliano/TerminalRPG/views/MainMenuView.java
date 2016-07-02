@@ -28,7 +28,7 @@ public class MainMenuView extends AbstractView{
 		bNewGame = new Button("New Game", new Runnable() {
 
 			public void run() {
-				story.switchToScreen(Storyboard.NEWGAME);
+				story.switchToView(Storyboard.NEWGAME);
 			}
 
 		});
@@ -36,7 +36,7 @@ public class MainMenuView extends AbstractView{
 		loadGame = new Button("Load a Save", new Runnable() {
 
 			public void run() {
-				story.switchToScreen(Storyboard.LOADGAME);
+				story.switchToView(Storyboard.LOADGAME);
 			}
 
 		});
@@ -44,7 +44,7 @@ public class MainMenuView extends AbstractView{
 		settings = new Button("Settings", new Runnable() {
 
 			public void run() {
-				story.switchToScreen(Storyboard.SETTINGS);
+				story.switchToView(Storyboard.SETTINGS);
 			}
 
 		});
@@ -52,7 +52,7 @@ public class MainMenuView extends AbstractView{
 		exit = new Button("Exit Game", new Runnable() {
 
 			public void run() {
-				story.switchToScreen(Storyboard.ENDCARD);
+				story.switchToView(Storyboard.ENDCARD);
 			}
 
 		});

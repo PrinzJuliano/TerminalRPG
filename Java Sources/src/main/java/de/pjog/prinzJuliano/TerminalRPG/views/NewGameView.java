@@ -1,5 +1,7 @@
 package de.pjog.prinzJuliano.TerminalRPG.views;
 
+import org.json.JSONObject;
+
 import com.googlecode.lanterna.TerminalSize;
 import com.googlecode.lanterna.gui2.BasicWindow;
 import com.googlecode.lanterna.gui2.Button;
@@ -11,14 +13,28 @@ import com.googlecode.lanterna.gui2.Panel;
 import com.googlecode.lanterna.gui2.Separator;
 import com.googlecode.lanterna.gui2.TextBox;
 import com.googlecode.lanterna.gui2.WindowBasedTextGUI;
-import com.googlecode.lanterna.gui2.dialogs.MessageDialog;
-import com.googlecode.lanterna.gui2.dialogs.MessageDialogButton;
 
+import de.pjog.prinzJuliano.TerminalRPG.Main;
 import de.pjog.prinzJuliano.TerminalRPG.Storyboard;
 import de.pjog.prinzJuliano.TerminalRPG.models.Character;
 import de.pjog.prinzJuliano.TerminalRPG.models.FightingClasses;
 
 public class NewGameView extends AbstractView {
+
+	private ComboBox<String> classes;
+	private Label points, vitPoints, strPoints, dexPoints, INTPoints, LUCKPoints;
+	private TextBox name;
+
+	public NewGameView() {
+		points = new Label("25");
+		vitPoints = new Label("0");
+		strPoints = new Label("0");
+		dexPoints = new Label("0");
+		INTPoints = new Label("0");
+		LUCKPoints = new Label("0");
+		classes = new ComboBox<String>();
+		name = new TextBox();
+	}
 
 	@Override
 	public void init(final Storyboard story, final WindowBasedTextGUI textGUI) {
@@ -34,16 +50,17 @@ public class NewGameView extends AbstractView {
 		Panel fields = new Panel();
 
 		labels.addComponent(new Label("Name:"));
-		final TextBox name = new TextBox();
 		name.setPreferredSize(new TerminalSize(20, 1));
 		fields.addComponent(name);
 
 		labels.addComponent(new Label("Class:"));
-		final ComboBox<String> classes = new ComboBox<String>();
-		classes.addItem("Warrior");
-		classes.addItem("Archer");
-		classes.addItem("Rogue");
-		classes.addItem("Mage");
+
+		if (classes.getItemCount() == 0) {
+			classes.addItem("Warrior");
+			classes.addItem("Archer");
+			classes.addItem("Rogue");
+			classes.addItem("Mage");
+		}
 		fields.addComponent(classes);
 
 		// Stats
@@ -54,13 +71,12 @@ public class NewGameView extends AbstractView {
 		labels.addComponent(new Label("INT: "));
 		labels.addComponent(new Label("LCK: "));
 
-		final Label points = new Label("25");
 		fields.addComponent(points);
 
 		/// VITALITY
 		Panel vit = new Panel();
 		vit.setLayoutManager(new LinearLayout(Direction.HORIZONTAL));
-		final Label vitPoints = new Label("0");
+
 		vit.addComponent(vitPoints);
 		vit.addComponent(new Button("<", new Runnable() {
 			public void run() {
@@ -93,7 +109,7 @@ public class NewGameView extends AbstractView {
 		/// STRENGTH
 		Panel str = new Panel();
 		str.setLayoutManager(new LinearLayout(Direction.HORIZONTAL));
-		final Label strPoints = new Label("0");
+
 		str.addComponent(strPoints);
 		str.addComponent(new Button("<", new Runnable() {
 			public void run() {
@@ -126,7 +142,7 @@ public class NewGameView extends AbstractView {
 		/// DEXTERITY
 		Panel dex = new Panel();
 		dex.setLayoutManager(new LinearLayout(Direction.HORIZONTAL));
-		final Label dexPoints = new Label("0");
+
 		dex.addComponent(dexPoints);
 		dex.addComponent(new Button("<", new Runnable() {
 			public void run() {
@@ -159,7 +175,7 @@ public class NewGameView extends AbstractView {
 		/// INTELLIGENCE
 		Panel INT = new Panel();
 		INT.setLayoutManager(new LinearLayout(Direction.HORIZONTAL));
-		final Label INTPoints = new Label("0");
+
 		INT.addComponent(INTPoints);
 		INT.addComponent(new Button("<", new Runnable() {
 			public void run() {
@@ -192,7 +208,7 @@ public class NewGameView extends AbstractView {
 		/// LUCK
 		Panel LUCK = new Panel();
 		LUCK.setLayoutManager(new LinearLayout(Direction.HORIZONTAL));
-		final Label LUCKPoints = new Label("0");
+
 		LUCK.addComponent(LUCKPoints);
 		LUCK.addComponent(new Button("<", new Runnable() {
 			public void run() {
@@ -231,7 +247,7 @@ public class NewGameView extends AbstractView {
 		buttons.addComponent(new Button("Back to main menu", new Runnable() {
 
 			public void run() {
-				story.switchToScreen(Storyboard.MAINMENU);
+				story.switchToView(Storyboard.MAINMENU);
 			}
 
 		}));
@@ -241,16 +257,63 @@ public class NewGameView extends AbstractView {
 
 			public void run() {
 				Character ch = new Character();
-				if(name.getText().isEmpty())
-				{
-					MessageDialog.showMessageDialog(textGUI, "", "", MessageDialogButton.OK);
+				String msg = "";
+				JSONObject root = new JSONObject();
+				boolean isValid = true;
+				if (name.getText().isEmpty()) {
+					// Pack some data
+					msg += "You forgot to enter your name!\n";
+
+					root.append("class", classes.getSelectedIndex());
+					root.append("VIT", vitPoints.getText());
+					root.append("STR", strPoints.getText());
+					root.append("DEX", dexPoints.getText());
+					root.append("INT", INTPoints.getText());
+					root.append("LCK", LUCKPoints.getText());
+					root.append("points", points.getText());
+					
+					isValid = false;
+					
 				}
-				else{
+				if (!points.getText().equalsIgnoreCase("0")) {
+					msg += "You forgot to spend all of your points!\n";
+
+					
+					root.append("name", name.getText());
+					if(isValid){
+						root.append("class", classes.getSelectedIndex());
+						root.append("VIT", vitPoints.getText());
+						root.append("STR", strPoints.getText());
+						root.append("DEX", dexPoints.getText());
+						root.append("INT", INTPoints.getText());
+						root.append("LCK", LUCKPoints.getText());
+						root.append("points", points.getText());
+					}
+					
+					isValid = false;
+				} 
+				
+				if(isValid){
+					
+					Dialog dialog = (Dialog) story.getViewByID(Storyboard.DIALOG);
+					dialog.setCaption("Are you sure?");
+					dialog.setMessage(msg);
+					dialog.setPreviousView(Storyboard.NEWGAME);
+					story.switchToView(Storyboard.DIALOG, root.toString());
+					
 					ch.setName(name.getText());
-	
+
 					ch.setFightingClass(FightingClasses.valueOf(classes.getSelectedItem().toUpperCase()));
-	
+
 					story.setCharacter(ch);
+				}
+
+				if (!isValid) {
+					Dialog dialog = (Dialog) story.getViewByID(Storyboard.DIALOG);
+					dialog.setCaption("Missing Data!");
+					dialog.setMessage(msg);
+					dialog.setPreviousView(Storyboard.NEWGAME);
+					story.switchToView(Storyboard.DIALOG, root.toString());
 				}
 			}
 		}));
@@ -265,6 +328,40 @@ public class NewGameView extends AbstractView {
 
 		// position in the center
 		onResize(textGUI.getScreen().getTerminalSize());
+	}
+
+	@Override
+	public void init(Storyboard story, WindowBasedTextGUI textGUI, String communication) {
+		this.init(story, textGUI);
+		if (Main.DEBUG)
+			System.out.println("NewGameView: Got Data: " + communication);
+
+		// Handle communication properly
+
+		JSONObject root = new JSONObject(communication);
+
+		if (root.has("name")) {
+			name.setText(root.getString("name"));
+			if (Main.DEBUG)
+				System.out.println("NewGameView: Found Name: " + root.getString("name"));
+		}
+		if (root.has("points") && root.has("VIT") && root.has("STR") && root.has("LCK") && root.has("DEX")
+				&& root.has("INT")) {
+			points.setText(root.getString("points"));
+			vitPoints.setText(root.getString("VIT"));
+			strPoints.setText(root.getString("STR"));
+			dexPoints.setText(root.getString("DEX"));
+			INTPoints.setText(root.getString("INT"));
+			LUCKPoints.setText(root.getString("LCK"));
+			if (Main.DEBUG)
+				System.out.println("NewGameView: Found Attributes");
+		}
+		if (root.has("class")) {
+			classes.setSelectedIndex(root.getInt("class"));
+			if (Main.DEBUG)
+				System.out.println("NewGameView: Found class: " + root.getInt("class"));
+		}
+
 	}
 
 }

@@ -78,4 +78,10 @@ public class EndCardView extends AbstractComponent<EndCardView> implements View 
 		//Background Components auto resize
 	}
 
+	@Override
+	public void init(Storyboard story, WindowBasedTextGUI textGUI, String communication) {
+		init(story, textGUI);
+		
+	}
+
 }

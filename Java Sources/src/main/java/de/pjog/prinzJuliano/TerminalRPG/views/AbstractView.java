@@ -16,6 +16,11 @@ public abstract class AbstractView implements View{
 	public abstract void init(Storyboard story, WindowBasedTextGUI textGUI);
 	
 	@Override
+	public void init(final Storyboard story, WindowBasedTextGUI textGUI, String communication){
+		init(story, textGUI);
+	}
+	
+	@Override
 	public Listener getListener(Storyboard story) {
 		return null;
 	}
