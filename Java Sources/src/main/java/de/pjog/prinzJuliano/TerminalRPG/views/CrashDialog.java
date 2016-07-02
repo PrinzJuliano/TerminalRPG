@@ -12,14 +12,26 @@ import com.googlecode.lanterna.gui2.WindowBasedTextGUI;
 
 import de.pjog.prinzJuliano.TerminalRPG.Storyboard;
 
+/**
+ * A Dialog that exists the Game on pressing the ok button.
+ * @author PrinzJuliano
+ *
+ */
 public class CrashDialog extends AbstractView{
 
 	String message;
 	
-	public CrashDialog(String string) {
-		message = string;
+	/**
+	 * Constructor
+	 * @param message what message should be displayed
+	 */
+	public CrashDialog(String message) {
+		this.message = message;
 	}
 	
+	/**
+	 * Convenience Constructor
+	 */
 	public CrashDialog() {
 		//Convenience
 	}
@@ -61,10 +73,18 @@ public class CrashDialog extends AbstractView{
 		onResize(textGUI.getScreen().getTerminalSize());
 	}
 
+	/**
+	 * Generic Getter.
+	 * @return the Message to be displayed.
+	 */
 	public String getMessage() {
 		return message;
 	}
 
+	/**
+	 * Generic Setter.
+	 * @param message the message to be displayed
+	 */
 	public void setMessage(String message) {
 		this.message = message;
 	}

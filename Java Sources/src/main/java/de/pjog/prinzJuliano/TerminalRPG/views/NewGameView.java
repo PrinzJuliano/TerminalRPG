@@ -20,6 +20,12 @@ import de.pjog.prinzJuliano.TerminalRPG.models.RPGCharacter;
 import de.pjog.prinzJuliano.TerminalRPG.models.Stats;
 import de.pjog.prinzJuliano.TerminalRPG.models.FightingClasses;
 
+/**
+ * a View for Character creation.
+ * See {@link RPGCharacter}.
+ * @author PrinzJuliano
+ *
+ */
 public class NewGameView extends AbstractView {
 
 	private ComboBox<String> classes;
@@ -27,6 +33,9 @@ public class NewGameView extends AbstractView {
 	private TextBox name;
 	private boolean sure = false;
 
+	/**
+	 * Initialize everything with default values. Used for cross view communication
+	 */
 	public NewGameView() {
 		points = new Label("25");
 		vitPoints = new Label("0");
@@ -258,7 +267,6 @@ public class NewGameView extends AbstractView {
 		buttons.addComponent(new Button("Start", new Runnable() {
 
 			public void run() {
-				RPGCharacter ch = new RPGCharacter();
 				String msg = "";
 				JSONObject root = new JSONObject();
 				boolean isValid = true;
@@ -273,16 +281,15 @@ public class NewGameView extends AbstractView {
 					root.append("INT", INTPoints.getText());
 					root.append("LCK", LUCKPoints.getText());
 					root.append("points", points.getText());
-					
+
 					isValid = false;
-					
+
 				}
 				if (!points.getText().equalsIgnoreCase("0")) {
 					msg += "You forgot to spend all of your points!\n";
 
-					
 					root.append("name", name.getText());
-					if(isValid){
+					if (isValid) {
 						root.append("class", classes.getSelectedIndex());
 						root.append("VIT", vitPoints.getText());
 						root.append("STR", strPoints.getText());
@@ -291,36 +298,32 @@ public class NewGameView extends AbstractView {
 						root.append("LCK", LUCKPoints.getText());
 						root.append("points", points.getText());
 					}
-					
+
 					isValid = false;
-				} 
-				
-				if(isValid){
-					if(!sure){
-					
+				}
+
+				if (isValid) {
+					if (!sure) {
+
 						Dialog dialog = (Dialog) story.getViewByID(Storyboard.DIALOG);
 						dialog.setCaption("Are you sure?");
 						dialog.setMessage("Are you sure about the class and stats?");
-						dialog.setPreviousView(Storyboard.NEWGAME);
+						dialog.setNextView(Storyboard.NEWGAME);
 						story.switchToView(Storyboard.DIALOG, new JSONObject().append("sure", "true").toString());
-						
-					}
-					else
-					{
-						ch.setName(name.getText());
-						
-						ch.setFightingClass(FightingClasses.valueOf(classes.getSelectedItem().toUpperCase()));
-						
+
+					} else {
+
 						int nVIT = Integer.parseInt(vitPoints.getText());
 						int nSTR = Integer.parseInt(strPoints.getText());
 						int nDEX = Integer.parseInt(dexPoints.getText());
 						int nINT = Integer.parseInt(INTPoints.getText());
 						int nLCK = Integer.parseInt(LUCKPoints.getText());
-						
+
 						Stats stats = new Stats(nVIT, nSTR, nDEX, nINT, nLCK, 0, 0);
-						
-						ch.setStats(stats);
-	
+
+						RPGCharacter ch = new RPGCharacter(name.getText(),
+								FightingClasses.valueOf(classes.getSelectedItem().toUpperCase()), 1, stats);
+
 						story.setCharacter(ch);
 					}
 				}
@@ -329,7 +332,7 @@ public class NewGameView extends AbstractView {
 					Dialog dialog = (Dialog) story.getViewByID(Storyboard.DIALOG);
 					dialog.setCaption("Missing Data!");
 					dialog.setMessage(msg);
-					dialog.setPreviousView(Storyboard.NEWGAME);
+					dialog.setNextView(Storyboard.NEWGAME);
 					story.switchToView(Storyboard.DIALOG, root.toString());
 				}
 			}
@@ -347,7 +350,12 @@ public class NewGameView extends AbstractView {
 		onResize(textGUI.getScreen().getTerminalSize());
 	}
 
-	@Override
+	/**
+	 * Takes a {@link JSONObject} with name, points &amp; VIT &amp; STR &amp; DEX &amp; INT &amp; LCK and a class.<br>
+	 * Class {@link NewGameView#init(Storyboard, WindowBasedTextGUI)}
+	 * @param story the storyboard
+	 * @param textGUI the gui to draw to
+	 */
 	public void init(Storyboard story, WindowBasedTextGUI textGUI, String communication) {
 		this.init(story, textGUI);
 		if (Main.DEBUG)
@@ -378,8 +386,7 @@ public class NewGameView extends AbstractView {
 			if (Main.DEBUG)
 				System.out.println("NewGameView: Found class: " + root.getInt("class"));
 		}
-		if(root.has("sure"))
-		{
+		if (root.has("sure")) {
 			this.sure = true;
 		}
 

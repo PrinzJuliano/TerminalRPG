@@ -7,23 +7,34 @@ import com.googlecode.lanterna.screen.TerminalScreen;
 import com.googlecode.lanterna.terminal.DefaultTerminalFactory;
 import com.googlecode.lanterna.terminal.Terminal;
 
+/**
+ * Entry Point for the Game.
+ * @author PrinzJuliano
+ *
+ */
 public class Main {
 
-	Storyboard story;
-	Terminal term;
-	Screen screen;
+	Storyboard story; //The Storyboard
+	Terminal term; //The outer terminal
+	Screen screen; //The inner rendering component
 
+	//Do debugging or not
 	public static final boolean DEBUG = true;
 
+	/**
+	 * Create a Terminal, Screen and start the Storyboard
+	 */
 	public Main() {
-		// do init our terminal
 		try {
+			//Create a Terminal and Screen
 			term = new DefaultTerminalFactory().createTerminal();
 			screen = new TerminalScreen(term);
 
+			//Initialize the Screen and clear it from text, etc.
 			screen.startScreen();
 			screen.clear();
 
+			//Start our Tale
 			story = new Storyboard(screen);
 			story.start();
 
@@ -37,6 +48,10 @@ public class Main {
 		}
 	}
 
+	/**
+	 * Initialize the class for non static processing
+	 * @param args Cheat Codes
+	 */
 	public static void main(String[] args) {
 		new Main();
 	}

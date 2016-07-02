@@ -9,21 +9,39 @@ import com.googlecode.lanterna.gui2.TextGUIGraphics;
 
 import de.pjog.prinzJuliano.TerminalRPG.Main;
 
-
+/**
+ * Basic Background Component
+ * @author PrinzJuliano
+ *
+ */
 public class Background extends AbstractComponent<Background> {
 
 	private TextColor color;
 	
+	/**
+	 * Initialize the @link {@link Background#Background(int, int, int)} with 42, 42, 42
+	 */
 	public Background()
 	{
 		this(42, 42, 42);
 	}
 	
+	/**
+	 * Initialize the Background with a color.<br>
+	 * Calls {@link Background#Background(TextColor)}.
+	 * @param r red color channel
+	 * @param g green color channel
+	 * @param b blue color channel
+	 */
 	public Background(int r, int g, int b)
 	{
 		this(new TextColor.RGB(r, g, b));
 	}
 	
+	/**
+	 * Initialize the Background with any color the Terminal accepts
+	 * @param color the color to draw
+	 */
 	public Background(TextColor color)
 	{
 		this.color = color;
