@@ -32,5 +32,10 @@
 			<attribute name="maven.pomderived" value="true"/>
 		</attributes>
 	</classpathentry>
+	<classpathentry kind="lib" path="lib/bcpg-jdk15on-154.jar"/>
+	<classpathentry kind="lib" path="lib/bcpkix-jdk15on-154.jar"/>
+	<classpathentry kind="lib" path="lib/bcprov-ext-jdk15on-154.jar"/>
+	<classpathentry kind="lib" path="lib/not-yet-commons-ssl-0.3.17.jar"/>
+	<classpathentry kind="lib" path="lib/Sign-api.jar"/>
 	<classpathentry kind="output" path="target/classes"/>
 </classpath>
