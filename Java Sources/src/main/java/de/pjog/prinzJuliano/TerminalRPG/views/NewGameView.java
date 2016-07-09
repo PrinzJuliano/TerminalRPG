@@ -3,9 +3,9 @@ package de.pjog.prinzJuliano.TerminalRPG.views;
 import org.json.JSONObject;
 
 import com.googlecode.lanterna.TerminalSize;
-import com.googlecode.lanterna.gui2.BasicWindow;
 import com.googlecode.lanterna.gui2.Button;
 import com.googlecode.lanterna.gui2.ComboBox;
+import com.googlecode.lanterna.gui2.ComboBox.Listener;
 import com.googlecode.lanterna.gui2.Direction;
 import com.googlecode.lanterna.gui2.Label;
 import com.googlecode.lanterna.gui2.LinearLayout;
@@ -16,13 +16,14 @@ import com.googlecode.lanterna.gui2.WindowBasedTextGUI;
 
 import de.pjog.prinzJuliano.TerminalRPG.Main;
 import de.pjog.prinzJuliano.TerminalRPG.Storyboard;
+import de.pjog.prinzJuliano.TerminalRPG.gfx.BasicImageRenderer;
+import de.pjog.prinzJuliano.TerminalRPG.models.FightingClasses;
 import de.pjog.prinzJuliano.TerminalRPG.models.RPGCharacter;
 import de.pjog.prinzJuliano.TerminalRPG.models.Stats;
-import de.pjog.prinzJuliano.TerminalRPG.models.FightingClasses;
 
 /**
- * a View for Character creation.
- * See {@link RPGCharacter}.
+ * a View for Character creation. See {@link RPGCharacter}.
+ * 
  * @author PrinzJuliano
  *
  */
@@ -32,9 +33,11 @@ public class NewGameView extends AbstractView {
 	private Label points, vitPoints, strPoints, dexPoints, INTPoints, LUCKPoints;
 	private TextBox name;
 	private boolean sure = false;
+	private BasicImageRenderer classPreview;
 
 	/**
-	 * Initialize everything with default values. Used for cross view communication
+	 * Initialize everything with default values. Used for cross view
+	 * communication
 	 */
 	public NewGameView() {
 		points = new Label("25");
@@ -45,12 +48,13 @@ public class NewGameView extends AbstractView {
 		LUCKPoints = new Label("0");
 		classes = new ComboBox<String>();
 		name = new TextBox();
+		classPreview = Storyboard.Commons.getImage("Warrior", 8, 8);
 	}
 
 	@Override
 	public void init(final Storyboard story, final WindowBasedTextGUI textGUI) {
 		textGUI.getBackgroundPane().setComponent(new Background(42, 128, 255));
-		rootWindow = new BasicWindow("Start a new game!");
+		rootWindow.setTitle("Start a new game!");
 
 		Panel rootP = new Panel();
 
@@ -71,6 +75,25 @@ public class NewGameView extends AbstractView {
 			classes.addItem("Archer");
 			classes.addItem("Rogue");
 			classes.addItem("Mage");
+			classes.addListener(new Listener() {
+
+				public void onSelectionChanged(int newOne, int old) {
+					System.out.print("Switched from " + old);
+					System.out.println(" to " + newOne);
+
+					switch (newOne) {
+					case 0:
+						classPreview = Storyboard.Commons.getImage("Warrior", 8, 8);
+					case 1:
+						classPreview = Storyboard.Commons.getImage("Archer", 8, 8);
+					case 2:
+						classPreview = Storyboard.Commons.getImage("Rogue", 8, 8);
+					case 3:
+						classPreview = Storyboard.Commons.getImage("Mage", 8, 8);
+					}
+				}
+
+			});
 		}
 		fields.addComponent(classes);
 
@@ -342,7 +365,12 @@ public class NewGameView extends AbstractView {
 
 		rootP.addComponent(buttons);
 
-		rootWindow.setComponent(rootP);
+		Panel realRoot = new Panel();
+		realRoot.setLayoutManager(new LinearLayout(Direction.HORIZONTAL));
+		realRoot.addComponent(rootP);
+		realRoot.addComponent(classPreview);
+
+		rootWindow.setComponent(realRoot);
 
 		textGUI.addWindow(rootWindow);
 
@@ -351,10 +379,14 @@ public class NewGameView extends AbstractView {
 	}
 
 	/**
-	 * Takes a {@link JSONObject} with name, points &amp; VIT &amp; STR &amp; DEX &amp; INT &amp; LCK and a class.<br>
+	 * Takes a {@link JSONObject} with name, points &amp; VIT &amp; STR &amp;
+	 * DEX &amp; INT &amp; LCK and a class.<br>
 	 * Class {@link NewGameView#init(Storyboard, WindowBasedTextGUI)}
-	 * @param story the storyboard
-	 * @param textGUI the gui to draw to
+	 * 
+	 * @param story
+	 *            the storyboard
+	 * @param textGUI
+	 *            the gui to draw to
 	 */
 	public void init(Storyboard story, WindowBasedTextGUI textGUI, String communication) {
 		this.init(story, textGUI);

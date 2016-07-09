@@ -20,7 +20,7 @@ public class Resources {
 	 * @return the content
 	 * @throws IOException if anything goes wrong
 	 */
-	public String getFileContent(String filename) throws IOException{
+	public static String getFileContent(String filename) throws IOException{
 		ClassLoader classloader = Thread.currentThread().getContextClassLoader();
 		Scanner scanner = new Scanner(classloader.getResourceAsStream(filename));
 		StringBuilder sb = new StringBuilder();
@@ -40,7 +40,7 @@ public class Resources {
 	 * @return the content of the file as {@code byte[]} array.
 	 * @throws IOException if reading was unsuccessful.
 	 */
-	public byte[] getFileContentAsBytes(String filename) throws IOException
+	public static byte[] getFileContentAsBytes(String filename) throws IOException
 	{
 		ClassLoader classloader = Thread.currentThread().getContextClassLoader();
 		return IOUtils.toByteArray(classloader.getResourceAsStream(filename));
@@ -54,7 +54,7 @@ public class Resources {
 	 * @return the new file handle.
 	 * @throws IOException if something goes wrong!
 	 */
-	public File extractFile(String filename) throws IOException
+	public static File extractFile(String filename) throws IOException
 	{
 		return extractFile(filename, ".");
 	}
@@ -67,7 +67,7 @@ public class Resources {
 	 * @return The newly created file handle
 	 * @throws IOException any errors during reading and writing the file
 	 */
-	public File extractFile(String filename, String destination) throws IOException
+	public static File extractFile(String filename, String destination) throws IOException
 	{
 		File dest = new File(destination);
 		String[] parts = filename.split("^[/\\\\]$"); //Split for / or \

@@ -13,6 +13,7 @@ import com.googlecode.lanterna.gui2.TextGUI;
 import com.googlecode.lanterna.gui2.Window;
 import com.googlecode.lanterna.screen.Screen;
 
+import de.pjog.prinzJuliano.TerminalRPG.gfx.CommonSprites;
 import de.pjog.prinzJuliano.TerminalRPG.models.RPGCharacter;
 import de.pjog.prinzJuliano.TerminalRPG.views.CrashDialog;
 import de.pjog.prinzJuliano.TerminalRPG.views.Dialog;
@@ -67,6 +68,8 @@ public class Storyboard {
 	 */
 	public static final int DIALOG = 6;
 
+	public static CommonSprites Commons;
+
 	Screen screen; // The screen from Main
 	MultiWindowTextGUI textGUI; // Manager for all Windows
 	AsynchronousTextGUIThread guiThread; // Keeps the GUI running
@@ -87,11 +90,15 @@ public class Storyboard {
 	/**
 	 * Initialize the screen, text based GUI and Views
 	 * 
-	 * @param screen the screen from {@link Main}'s {@link Main#screen}.
+	 * @param screen
+	 *            the screen from {@link Main}'s {@link Main#screen}.
 	 */
 	public Storyboard(Screen screen) {
 		// Enable rendering, setup GUI
 		this.screen = screen;
+
+		Commons = new CommonSprites();
+
 		textGUI = new MultiWindowTextGUI(new SeparateTextGUIThread.Factory(), screen); // Initialize
 																						// textGUI
 																						// with
@@ -114,6 +121,7 @@ public class Storyboard {
 		views.put(ENDCARD, new EndCardView());
 		views.put(NEWGAME, new NewGameView());
 		views.put(DIALOG, new Dialog());
+
 	}
 
 	/**

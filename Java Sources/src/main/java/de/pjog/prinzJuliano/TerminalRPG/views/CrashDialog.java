@@ -26,6 +26,7 @@ public class CrashDialog extends AbstractView{
 	 * @param message what message should be displayed
 	 */
 	public CrashDialog(String message) {
+		super();
 		this.message = message;
 	}
 	
@@ -33,13 +34,13 @@ public class CrashDialog extends AbstractView{
 	 * Convenience Constructor
 	 */
 	public CrashDialog() {
-		//Convenience
+		super();
 	}
 
 	@Override
 	public void init(final Storyboard story, WindowBasedTextGUI textGUI) {
 		textGUI.getBackgroundPane().setComponent(new Background());
-		rootWindow = new BasicWindow("Error");
+		rootWindow.setTitle("Error");
 		
 		Panel p = new Panel();
 		p.setLayoutManager(new LinearLayout(Direction.VERTICAL));
