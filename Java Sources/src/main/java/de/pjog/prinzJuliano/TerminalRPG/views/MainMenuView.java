@@ -21,7 +21,7 @@ public class MainMenuView extends AbstractView{
 	public void init(final Storyboard story, WindowBasedTextGUI textGUI) {
 		textGUI.getBackgroundPane().setComponent(new Background());
 
-		rootWindow = new BasicWindow("MainMenu.exe");
+		rootWindow.setTitle("MainMenu.exe");
 
 		Panel mainPanel = new Panel();
 		mainPanel.setLayoutManager(new LinearLayout(Direction.VERTICAL).setSpacing(1));

@@ -27,13 +27,13 @@ public class Dialog extends AbstractView {
 	 * Convenience Constructor.
 	 */
 	public Dialog(){
-		
+		super();
 	}
 	
 	@Override
 	public void init(final Storyboard story, WindowBasedTextGUI textGUI) {
 		textGUI.getBackgroundPane().setComponent(new Background());
-		rootWindow = new BasicWindow(caption);
+		rootWindow.setTitle(caption);
 		
 		Panel p = new Panel();
 		p.setLayoutManager(new LinearLayout(Direction.VERTICAL));
