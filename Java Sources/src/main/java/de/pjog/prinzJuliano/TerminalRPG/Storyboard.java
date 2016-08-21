@@ -1,6 +1,7 @@
 package de.pjog.prinzJuliano.TerminalRPG;
 
 import java.io.EOFException;
+import java.io.IOException;
 import java.util.HashMap;
 
 import org.json.JSONObject;
@@ -19,6 +20,7 @@ import de.pjog.prinzJuliano.TerminalRPG.views.CrashDialog;
 import de.pjog.prinzJuliano.TerminalRPG.views.Dialog;
 import de.pjog.prinzJuliano.TerminalRPG.views.EndCardView;
 import de.pjog.prinzJuliano.TerminalRPG.views.LoadGameView;
+import de.pjog.prinzJuliano.TerminalRPG.views.LoadingDialog;
 import de.pjog.prinzJuliano.TerminalRPG.views.MainMenuView;
 import de.pjog.prinzJuliano.TerminalRPG.views.NewGameView;
 import de.pjog.prinzJuliano.TerminalRPG.views.SettingsView;
@@ -67,6 +69,11 @@ public class Storyboard {
 	 * Links to {@link Dialog}.
 	 */
 	public static final int DIALOG = 6;
+	
+	/**
+	 * Links to {@link LoadingDialog}.
+	 */
+	public static final int LOADINGDIALOG = 7;
 
 	public static CommonSprites Commons;
 
@@ -76,7 +83,7 @@ public class Storyboard {
 
 	HashMap<Integer, View> views; // All the Views
 
-	int currentViewID = -1; // What view are we in?
+	private int currentViewID = -1; // What view are we in?
 
 	private boolean running = true; // Are we running (needed for closing the
 									// game)
@@ -86,6 +93,7 @@ public class Storyboard {
 												// view)
 
 	private static RPGCharacter loadedCharacter; // The Main Character sheet
+	
 
 	/**
 	 * Initialize the screen, text based GUI and Views
@@ -121,6 +129,7 @@ public class Storyboard {
 		views.put(ENDCARD, new EndCardView());
 		views.put(NEWGAME, new NewGameView());
 		views.put(DIALOG, new Dialog());
+		views.put(LOADINGDIALOG, new LoadingDialog());
 
 	}
 
@@ -142,8 +151,9 @@ public class Storyboard {
 				} else {
 					textGUI.processInput();
 				}
-				if (textGUI.isPendingUpdate())
-					textGUI.updateScreen();
+				if (textGUI.isPendingUpdate()){
+					update();
+				}
 
 			} catch (EOFException e) {
 				System.out.println("Storyboard: Closing though outer EOF!");
@@ -284,6 +294,17 @@ public class Storyboard {
 	 */
 	public void setCharacter(RPGCharacter c) {
 		loadedCharacter = c.clone();
+	}
+	
+	/**
+	 * Update the screen
+	 */
+	public void update()
+	{
+		try {
+			textGUI.updateScreen();
+		} catch (IOException e) {
+		}
 	}
 
 }
