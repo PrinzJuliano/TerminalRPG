@@ -7,7 +7,6 @@ import org.json.JSONObject;
 
 import com.googlecode.lanterna.TextCharacter;
 import com.googlecode.lanterna.TextColor;
-import com.googlecode.lanterna.graphics.BasicTextImage;
 
 import de.pjog.prinzJuliano.TerminalRPG.Main;
 import de.pjog.prinzJuliano.TerminalRPG.util.Resources;
@@ -39,7 +38,7 @@ public class SpriteLoader {
 	 * 
 	 * @param path
 	 *            the path in resources
-	 * @return the image
+	 * @return the image in [y][x] form
 	 * @throws FileNotFoundException,
 	 *             IOException file operations guys. O_o
 	 */
@@ -50,7 +49,6 @@ public class SpriteLoader {
 			}
 			JSONObject json = new JSONObject(Resources.getFileContent(path));
 
-			System.out.println(json);
 
 			int columns = 0;
 			int rows = 0;
@@ -60,7 +58,7 @@ public class SpriteLoader {
 			if (json.has("rows"))
 				rows = json.getInt("rows");
 
-			BasicTextImage img = new BasicTextImage(columns, rows);
+			TextCharacter[][] img = new TextCharacter[rows][columns];
 
 			if (json.has("data")) {
 				JSONArray data = json.getJSONArray("data");
@@ -79,22 +77,25 @@ public class SpriteLoader {
 					}
 
 					TextColor back;
-					if (json.has("background")) {
+					if (info.has("background")) {
 
 						JSONObject background = info.getJSONObject("background");
 						back = new TextColor.RGB(background.getInt("r"), background.getInt("g"),
 								background.getInt("b"));
 					} else {
-						back = new TextColor.RGB(0, 0, 0);
+						back = new TextColor.RGB(255,255,0);
 					}
 					TextCharacter ch = new TextCharacter(c, fore, back);
-					img.setCharacterAt(i % columns, (i % rows) - 1, ch);
+					img[i / columns ][i % columns ] = ch;
 				}
 				return new BasicImageRenderer(img);
 			} else {
+				System.out.println("Failed to load x1");
 				return new BasicImageRenderer(new MissingNO().getImage(expectedCols, expectedRows));
 			}
 		} catch (Exception e) {
+			System.out.println("Failed to load x2");
+			e.printStackTrace();
 			return new BasicImageRenderer(new MissingNO().getImage(expectedCols, expectedRows));
 		}
 	}
