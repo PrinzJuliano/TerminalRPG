@@ -9,7 +9,7 @@ public class CommonSprites {
 	public CommonSprites(){
 		images = new HashMap<String, BasicImageRenderer>();
 		
-		images.put("Warrior", SpriteLoader.loadSprite("Warrior.json", 8, 8));
+		images.put("Warrior", SpriteLoader.loadSprite("Warrior.png", 8, 8));
 	}
 	
 	public BasicImageRenderer getImage(String s, int expC, int expR)

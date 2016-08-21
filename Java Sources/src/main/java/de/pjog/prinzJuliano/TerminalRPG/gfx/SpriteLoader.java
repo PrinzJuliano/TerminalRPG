@@ -1,8 +1,11 @@
 package de.pjog.prinzJuliano.TerminalRPG.gfx;
 
+import java.awt.Color;
+import java.awt.image.BufferedImage;
 import java.io.FileNotFoundException;
 
-import org.json.JSONArray;
+import javax.imageio.ImageIO;
+
 import org.json.JSONObject;
 
 import com.googlecode.lanterna.TextCharacter;
@@ -27,13 +30,6 @@ public class SpriteLoader {
 	/**
 	 * <p>
 	 * Load a Sprite from a file.<br>
-	 * JSON Structure:<br>
-	 * {<br>
-	 * ['columns'] = 8, ['rows'] = 8, ['data'] = { [0] = { ['char'] = ' ',
-	 * ['foreground'] = { ['r'] = 255, ['g'] = 255, ['b'] = 255, },
-	 * ['background'] = { ['r'] = 0, ['g'] = 0, ['b'] = 0, }, }, [1] ... [2] ...
-	 * [3] ... [4] ... [5] ... [6] ... [7] ... [8] ... [9] ... [10] ... . . .
-	 * [63] ... } }
 	 * </p>
 	 * 
 	 * @param path
@@ -47,52 +43,24 @@ public class SpriteLoader {
 			if(Main.DEBUG){
 				System.out.println("Loading " + path);
 			}
-			JSONObject json = new JSONObject(Resources.getFileContent(path));
+			
+			BufferedImage bi = ImageIO.read(Resources.extractFile(path));
 
-
-			int columns = 0;
-			int rows = 0;
-
-			if (json.has("columns"))
-				columns = json.getInt("columns");
-			if (json.has("rows"))
-				rows = json.getInt("rows");
+			int columns = bi.getWidth();
+			int rows = bi.getHeight();
 
 			TextCharacter[][] img = new TextCharacter[rows][columns];
-
-			if (json.has("data")) {
-				JSONArray data = json.getJSONArray("data");
-				for (int i = 0; i < columns * rows; i++) {
-					JSONObject info = data.getJSONObject(i);
-					char c = (json.has("char")) ? info.getString("char").charAt(0) : ' ';
-					TextColor fore;
-
-					if (info.has("foreground")) {
-
-						JSONObject foreground = info.getJSONObject("foreground");
-						fore = new TextColor.RGB(foreground.getInt("r"), foreground.getInt("g"),
-								foreground.getInt("b"));
-					} else {
-						fore = new TextColor.RGB(255, 255, 255);
-					}
-
-					TextColor back;
-					if (info.has("background")) {
-
-						JSONObject background = info.getJSONObject("background");
-						back = new TextColor.RGB(background.getInt("r"), background.getInt("g"),
-								background.getInt("b"));
-					} else {
-						back = new TextColor.RGB(255,255,0);
-					}
-					TextCharacter ch = new TextCharacter(c, fore, back);
-					img[i / columns ][i % columns ] = ch;
+			
+			for(int y = 0; y < rows; y++)
+			{
+				for(int x = 0; x < columns; x++)
+				{
+					Color c = new Color(bi.getRGB(x, y));
+					img[y][x] = new TextCharacter(' ', TextColor.ANSI.BLACK, new TextColor.RGB(c.getRed(), c.getGreen(), c.getBlue()));
 				}
-				return new BasicImageRenderer(img);
-			} else {
-				System.out.println("Failed to load x1");
-				return new BasicImageRenderer(new MissingNO().getImage(expectedCols, expectedRows));
 			}
+			return new BasicImageRenderer(img);
+
 		} catch (Exception e) {
 			System.out.println("Failed to load x2");
 			e.printStackTrace();
