@@ -34,12 +34,15 @@ public class NewGameView extends AbstractView {
 	private TextBox name;
 	private boolean sure = false;
 	private BasicImageRenderer classPreview;
+	private NewGameView instance;
+	private boolean classesUpdated = false;
 
 	/**
 	 * Initialize everything with default values. Used for cross view
 	 * communication
 	 */
 	public NewGameView() {
+		instance = this;
 		points = new Label("25");
 		vitPoints = new Label("0");
 		strPoints = new Label("0");
@@ -84,13 +87,24 @@ public class NewGameView extends AbstractView {
 					switch (newOne) {
 					case 0:
 						classPreview = Storyboard.Commons.getImage("Warrior", 8, 8);
+						break;
 					case 1:
 						classPreview = Storyboard.Commons.getImage("Archer", 8, 8);
+						break;
 					case 2:
 						classPreview = Storyboard.Commons.getImage("Rogue", 8, 8);
+						break;
 					case 3:
 						classPreview = Storyboard.Commons.getImage("Mage", 8, 8);
+						break;
 					}
+					if(!classesUpdated){
+						LoadingDialog d = (LoadingDialog) story.getViewByID(Storyboard.LOADINGDIALOG);
+						d.setNextView(Storyboard.NEWGAME);
+						story.switchToView(Storyboard.LOADINGDIALOG, instance.toString());
+					}
+					else
+						classesUpdated = false;
 				}
 
 			});
@@ -397,8 +411,7 @@ public class NewGameView extends AbstractView {
 
 		JSONObject root = new JSONObject(communication);
 
-		if (root.has("name")) {
-			name.setText(root.getString("name"));
+		if (root.has("name") && root.getString("name") != null) {
 			if (Main.DEBUG)
 				System.out.println("NewGameView: Found Name: " + root.getString("name"));
 		}
@@ -414,7 +427,23 @@ public class NewGameView extends AbstractView {
 				System.out.println("NewGameView: Found Attributes");
 		}
 		if (root.has("class")) {
+			classesUpdated  = true;
 			classes.setSelectedIndex(root.getInt("class"));
+			switch (root.getInt("class")) {
+			case 0:
+				classPreview = Storyboard.Commons.getImage("Warrior", 8, 8);
+				break;
+			case 1:
+				classPreview = Storyboard.Commons.getImage("Archer", 8, 8);
+				break;
+			case 2:
+				classPreview = Storyboard.Commons.getImage("Rogue", 8, 8);
+				break;
+			case 3:
+				classPreview = Storyboard.Commons.getImage("Mage", 8, 8);
+				break;
+			}
+			
 			if (Main.DEBUG)
 				System.out.println("NewGameView: Found class: " + root.getInt("class"));
 		}
@@ -422,6 +451,20 @@ public class NewGameView extends AbstractView {
 			this.sure = true;
 		}
 
+	}
+	
+	@Override
+	public String toString() {
+		JSONObject root = new JSONObject();
+		if(!name.getText().isEmpty())root.put("name", name.getText());
+		root.put("class", classes.getSelectedIndex());
+		root.put("VIT", vitPoints.getText());
+		root.put("STR", strPoints.getText());
+		root.put("DEX", dexPoints.getText());
+		root.put("INT", INTPoints.getText());
+		root.put("LCK", LUCKPoints.getText());
+		root.put("points", points.getText());
+		return root.toString();
 	}
 
 }
