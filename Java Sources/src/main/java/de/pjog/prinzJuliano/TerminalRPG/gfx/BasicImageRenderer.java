@@ -2,7 +2,6 @@ package de.pjog.prinzJuliano.TerminalRPG.gfx;
 
 import com.googlecode.lanterna.TerminalSize;
 import com.googlecode.lanterna.TextCharacter;
-import com.googlecode.lanterna.graphics.TextImage;
 import com.googlecode.lanterna.gui2.AbstractComponent;
 import com.googlecode.lanterna.gui2.ComponentRenderer;
 import com.googlecode.lanterna.gui2.TextGUIGraphics;
@@ -13,6 +12,16 @@ public class BasicImageRenderer extends AbstractComponent<BasicImageRenderer>{
 	
 	public BasicImageRenderer(TextCharacter[][] img){
 		this.img = img;
+	}
+	
+	@Override
+	public TerminalSize getSize() {
+		return new TerminalSize(img[0].length, img.length);
+	}
+	
+	@Override
+	public synchronized BasicImageRenderer setSize(TerminalSize size) {
+		return this;
 	}
 	
 	@Override

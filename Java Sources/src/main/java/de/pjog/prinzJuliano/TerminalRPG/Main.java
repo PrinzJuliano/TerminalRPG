@@ -27,7 +27,8 @@ public class Main {
 	public Main() {
 		try {
 			//Create a Terminal and Screen
-			term = new DefaultTerminalFactory().createTerminal();
+			term = new DefaultTerminalFactory().createTerminalEmulator();
+			term.enterPrivateMode();
 			screen = new TerminalScreen(term);
 
 			//Initialize the Screen and clear it from text, etc.

@@ -1,6 +1,5 @@
 package de.pjog.prinzJuliano.TerminalRPG.views;
 
-import com.googlecode.lanterna.gui2.BasicWindow;
 import com.googlecode.lanterna.gui2.Button;
 import com.googlecode.lanterna.gui2.Direction;
 import com.googlecode.lanterna.gui2.Label;
