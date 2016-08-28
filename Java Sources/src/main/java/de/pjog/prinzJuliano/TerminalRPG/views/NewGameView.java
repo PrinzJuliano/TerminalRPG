@@ -43,12 +43,12 @@ public class NewGameView extends AbstractView {
 	 */
 	public NewGameView() {
 		instance = this;
-		points = new Label("25");
-		vitPoints = new Label("0");
-		strPoints = new Label("0");
-		dexPoints = new Label("0");
-		INTPoints = new Label("0");
-		LUCKPoints = new Label("0");
+		points = new Label("20");
+		vitPoints = new Label("1");
+		strPoints = new Label("1");
+		dexPoints = new Label("1");
+		INTPoints = new Label("1");
+		LUCKPoints = new Label("1");
 		classes = new ComboBox<String>();
 		name = new TextBox();
 		classPreview = Storyboard.Commons.getImage("Warrior", 8, 8);
@@ -130,7 +130,7 @@ public class NewGameView extends AbstractView {
 			public void run() {
 				int totalPoints = Integer.parseInt(points.getText());
 				int nVitPoints = Integer.parseInt(vitPoints.getText());
-				if (nVitPoints > 0) {
+				if (nVitPoints > 1) {
 					nVitPoints--;
 					totalPoints++;
 					points.setText("" + totalPoints);
@@ -163,7 +163,7 @@ public class NewGameView extends AbstractView {
 			public void run() {
 				int totalPoints = Integer.parseInt(points.getText());
 				int nStrPoints = Integer.parseInt(strPoints.getText());
-				if (nStrPoints > 0) {
+				if (nStrPoints > 1) {
 					nStrPoints--;
 					totalPoints++;
 					points.setText("" + totalPoints);
@@ -196,7 +196,7 @@ public class NewGameView extends AbstractView {
 			public void run() {
 				int totalPoints = Integer.parseInt(points.getText());
 				int nDexPoints = Integer.parseInt(dexPoints.getText());
-				if (nDexPoints > 0) {
+				if (nDexPoints > 1) {
 					nDexPoints--;
 					totalPoints++;
 					points.setText("" + totalPoints);
@@ -229,7 +229,7 @@ public class NewGameView extends AbstractView {
 			public void run() {
 				int totalPoints = Integer.parseInt(points.getText());
 				int nINTPoints = Integer.parseInt(INTPoints.getText());
-				if (nINTPoints > 0) {
+				if (nINTPoints > 1) {
 					nINTPoints--;
 					totalPoints++;
 					points.setText("" + totalPoints);
@@ -262,7 +262,7 @@ public class NewGameView extends AbstractView {
 			public void run() {
 				int totalPoints = Integer.parseInt(points.getText());
 				int nLUCKPoints = Integer.parseInt(LUCKPoints.getText());
-				if (nLUCKPoints > 0) {
+				if (nLUCKPoints > 1) {
 					nLUCKPoints--;
 					totalPoints++;
 					points.setText("" + totalPoints);
@@ -362,6 +362,7 @@ public class NewGameView extends AbstractView {
 								FightingClasses.valueOf(classes.getSelectedItem().toUpperCase()), 1, stats);
 
 						story.setCharacter(ch);
+						story.switchToView(Storyboard.HOME);
 					}
 				}
 

@@ -19,6 +19,7 @@ import de.pjog.prinzJuliano.TerminalRPG.models.RPGCharacter;
 import de.pjog.prinzJuliano.TerminalRPG.views.CrashDialog;
 import de.pjog.prinzJuliano.TerminalRPG.views.Dialog;
 import de.pjog.prinzJuliano.TerminalRPG.views.EndCardView;
+import de.pjog.prinzJuliano.TerminalRPG.views.HomeView;
 import de.pjog.prinzJuliano.TerminalRPG.views.LoadGameView;
 import de.pjog.prinzJuliano.TerminalRPG.views.LoadingDialog;
 import de.pjog.prinzJuliano.TerminalRPG.views.MainMenuView;
@@ -74,6 +75,11 @@ public class Storyboard {
 	 * Links to {@link LoadingDialog}.
 	 */
 	public static final int LOADINGDIALOG = 7;
+	
+	/**
+	 * Links to {@link HomeView}
+	 */
+	public static final int HOME = 8;
 
 	public static CommonSprites Commons;
 
@@ -130,7 +136,7 @@ public class Storyboard {
 		views.put(NEWGAME, new NewGameView());
 		views.put(DIALOG, new Dialog());
 		views.put(LOADINGDIALOG, new LoadingDialog());
-
+		views.put(HOME, new HomeView());
 	}
 
 	/**
