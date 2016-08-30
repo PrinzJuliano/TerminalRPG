@@ -36,26 +36,36 @@ public class NewGameView extends AbstractView {
 	private BasicImageRenderer classPreview;
 	private NewGameView instance;
 	private boolean classesUpdated = false;
+    private boolean reset = false;
 
 	/**
 	 * Initialize everything with default values. Used for cross view
 	 * communication
 	 */
 	public NewGameView() {
-		instance = this;
-		points = new Label("20");
-		vitPoints = new Label("1");
-		strPoints = new Label("1");
-		dexPoints = new Label("1");
-		INTPoints = new Label("1");
-		LUCKPoints = new Label("1");
-		classes = new ComboBox<>();
-		name = new TextBox();
-		classPreview = Storyboard.Commons.getImage(FightingClasses.WARRIOR.name(), 8, 8);
+		resetAll();
 	}
+
+	private void resetAll(){
+        instance = this;
+        points = new Label("20");
+        vitPoints = new Label("1");
+        strPoints = new Label("1");
+        dexPoints = new Label("1");
+        INTPoints = new Label("1");
+        LUCKPoints = new Label("1");
+        classes = new ComboBox<>();
+        name = new TextBox();
+        classPreview = Storyboard.Commons.getImage(FightingClasses.WARRIOR.name(), 8, 8);
+    }
 
 	@Override
 	public void init(final Storyboard story, final WindowBasedTextGUI textGUI) {
+	    if(reset)
+	        resetAll();
+        else
+            reset = true;
+
 		textGUI.getBackgroundPane().setComponent(new Background(42, 128, 255));
 		rootWindow.setTitle("Start a new game!");
 
@@ -347,7 +357,7 @@ public class NewGameView extends AbstractView {
 						Stats localstats = new Stats(nVIT, nSTR, nDEX, nINT, nLCK, 0, 0);
 
 						RPGCharacter ch = new RPGCharacter(name.getText(),
-								FightingClasses.valueOf(classes.getSelectedItem().toUpperCase()), 1, localstats);
+								FightingClasses.valueOf(classes.getSelectedItem().toUpperCase()), 1, 0, localstats);
 
 						story.setCharacter(ch);
 						story.switchToView(Storyboard.HOME);
@@ -391,7 +401,8 @@ public class NewGameView extends AbstractView {
 	 * @param textGUI
 	 *            the gui to draw to
 	 */
-	public void init(Storyboard story, WindowBasedTextGUI textGUI, String communication) {
+	public void init(Storyboard story, WindowBasedTextGUI textGUI, String communication){
+	    reset = false;
 		this.init(story, textGUI);
 		if (Main.DEBUG)
 			System.out.println("NewGameView: Got Data: " + communication);

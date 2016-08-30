@@ -128,7 +128,7 @@ public class Storyboard {
 																		// applied
 
 		// Initialize View Map
-		views = new HashMap<Integer, View>();
+		views = new HashMap<>();
 		// add views
 		views.put(CRASHDIALOG, new CrashDialog());
 		views.put(MAINMENU, new MainMenuView());
@@ -137,6 +137,7 @@ public class Storyboard {
 		views.put(DIALOG, new Dialog());
 		views.put(LOADINGDIALOG, new LoadingDialog());
 		views.put(HOME, new HomeView());
+		views.put(LOADGAME, new LoadGameView());
 	}
 
 	/**
@@ -247,6 +248,7 @@ public class Storyboard {
 			// Update the screen so no weird flickering or ghost windows appear.
 			textGUI.updateScreen();
 		} catch (Exception e) {
+		    e.printStackTrace();
 		}
 	}
 
@@ -310,6 +312,7 @@ public class Storyboard {
 		try {
 			textGUI.updateScreen();
 		} catch (IOException e) {
+		    e.printStackTrace();
 		}
 	}
 

@@ -12,6 +12,41 @@
 		<jdk.version>1.7</jdk.version>
 	</properties>
 	<dependencies>
+        <dependency>
+            <groupId>bcpg</groupId>
+            <artifactId>org.bouncycastle</artifactId>
+            <version>1.0</version>
+            <scope>system</scope>
+            <systemPath>${project.basedir}/lib/bcpg-jdk15on-154.jar</systemPath>
+        </dependency>
+        <dependency>
+            <groupId>bcpkix</groupId>
+            <artifactId>org.bouncycastle</artifactId>
+            <version>1.0</version>
+            <scope>system</scope>
+            <systemPath>${project.basedir}/lib/bcpkix-jdk15on-154.jar</systemPath>
+        </dependency>
+        <dependency>
+            <groupId>bcprov</groupId>
+            <artifactId>org.bouncycastle</artifactId>
+            <version>1.0</version>
+            <scope>system</scope>
+            <systemPath>${project.basedir}/lib/bcprov-ext-jdk15on-154.jar</systemPath>
+        </dependency>
+        <dependency>
+            <groupId>not-yet-commons</groupId>
+            <artifactId>org.apache.commons</artifactId>
+            <version>1.0</version>
+            <scope>system</scope>
+            <systemPath>${project.basedir}/lib/not-yet-commons-ssl-0.3.17.jar</systemPath>
+        </dependency>
+        <dependency>
+            <groupId>Sign-api</groupId>
+            <artifactId>de.pjog.prinzJuliano.security</artifactId>
+            <version>1.0</version>
+            <scope>system</scope>
+            <systemPath>${project.basedir}/lib/Sign-api.jar</systemPath>
+        </dependency>
 		<dependency>
 			<groupId>com.googlecode.lanterna</groupId>
 			<artifactId>lanterna</artifactId>
@@ -21,6 +56,11 @@
 			<groupId>org.json</groupId>
 			<artifactId>json</artifactId>
 			<version>20160212</version>
+		</dependency>
+		<dependency>
+			<groupId>org.skyscreamer</groupId>
+			<artifactId>jsonassert</artifactId>
+			<version>1.3.0</version>
 		</dependency>
 		<dependency>
 			<groupId>com.jolira</groupId>
