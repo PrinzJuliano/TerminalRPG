@@ -14,6 +14,7 @@ import com.googlecode.lanterna.terminal.Terminal;
  */
 public class Main {
 
+	private static boolean inTerminalable = false;
 	Storyboard story; //The Storyboard
 	Terminal term; //The outer terminal
 	Screen screen; //The inner rendering component
@@ -27,7 +28,10 @@ public class Main {
 	public Main() {
 		try {
 			//Create a Terminal and Screen
-			term = new DefaultTerminalFactory().createTerminalEmulator();
+			if(inTerminalable)
+				term = new DefaultTerminalFactory().createTerminal();
+			else
+				term = new DefaultTerminalFactory().createTerminalEmulator();
 			term.enterPrivateMode();
 			screen = new TerminalScreen(term);
 
@@ -54,6 +58,14 @@ public class Main {
 	 * @param args Cheat Codes
 	 */
 	public static void main(String[] args) {
+		if (args.length >= 1)
+		{
+			if(args[0].equalsIgnoreCase("-nogui"))
+			{
+				inTerminalable = true;
+			}
+		}
+
 		new Main();
 	}
 

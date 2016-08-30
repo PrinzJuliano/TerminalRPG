@@ -3,8 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="e71901bb-dde6-4078-913e-632ecffa372f" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Java Sources/TerminalRPG.iml" afterPath="$PROJECT_DIR$/Java Sources/TerminalRPG.iml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Java Sources/src/test/java/de/pjog/prinzJuliano/TerminalRPG/models/StatsTest.java" afterPath="$PROJECT_DIR$/Java Sources/src/test/java/de/pjog/prinzJuliano/TerminalRPG/models/StatsTest.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Java Sources/src/main/java/de/pjog/prinzJuliano/TerminalRPG/Main.java" afterPath="$PROJECT_DIR$/Java Sources/src/main/java/de/pjog/prinzJuliano/TerminalRPG/Main.java" />
     </list>
     <ignored path="TerminalRPG.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -128,11 +127,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Stats.java" pinned="false" current-in-tab="true">
+      <file leaf-file-name="Stats.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Java Sources/src/main/java/de/pjog/prinzJuliano/TerminalRPG/models/Stats.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="170">
-              <caret line="40" column="25" selection-start-line="40" selection-start-column="25" selection-end-line="40" selection-end-column="25" />
+            <state relative-caret-position="204">
+              <caret line="17" column="7" selection-start-line="17" selection-start-column="7" selection-end-line="17" selection-end-column="7" />
               <folding>
                 <element signature="e#2295#2296#0" expanded="false" />
                 <element signature="e#2336#2337#0" expanded="false" />
@@ -169,6 +168,16 @@
           </provider>
         </entry>
       </file>
+      <file leaf-file-name="Main.java" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/Java Sources/src/main/java/de/pjog/prinzJuliano/TerminalRPG/Main.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="155">
+              <caret line="53" column="5" selection-start-line="53" selection-start-column="5" selection-end-line="53" selection-end-column="5" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
     </leaf>
   </component>
   <component name="Git.Settings">
@@ -196,6 +205,7 @@
         <option value="$PROJECT_DIR$/Java Sources/src/main/java/de/pjog/prinzJuliano/TerminalRPG/models/Stats.java" />
         <option value="$PROJECT_DIR$/Java Sources/src/test/java/de/pjog/prinzJuliano/TerminalRPG/models/StatsTest.java" />
         <option value="$PROJECT_DIR$/Java Sources/pom.xml" />
+        <option value="$PROJECT_DIR$/Java Sources/src/main/java/de/pjog/prinzJuliano/TerminalRPG/Main.java" />
       </list>
     </option>
   </component>
@@ -346,6 +356,32 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="main" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="TerminalRPG" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Java Sources" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="main" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="java" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="TerminalRPG" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -669,7 +705,14 @@
       <option name="project" value="LOCAL" />
       <updated>1472572676609</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="Recreated a test">
+      <created>1472573851517</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1472573851517</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="ToolWindowManager">
@@ -715,7 +758,8 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Small Fixes and Additions&#10;&#10;- Changed CommonSprites Names for easier FightingClasses to Sprite Conversion&#10;- Minor bug fixes in RPGCharacter (not cloning stats)&#10;- Added HP and MaxHP stat&#10;- Added a nice character summary screen.&#10;- Minimised / Simplified the sprite loading in character creation." />
-    <option name="LAST_COMMIT_MESSAGE" value="Small Fixes and Additions&#10;&#10;- Changed CommonSprites Names for easier FightingClasses to Sprite Conversion&#10;- Minor bug fixes in RPGCharacter (not cloning stats)&#10;- Added HP and MaxHP stat&#10;- Added a nice character summary screen.&#10;- Minimised / Simplified the sprite loading in character creation." />
+    <MESSAGE value="Recreated a test" />
+    <option name="LAST_COMMIT_MESSAGE" value="Recreated a test" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager />
@@ -770,14 +814,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-338">
           <caret line="21" column="13" selection-start-line="21" selection-start-column="13" selection-end-line="21" selection-end-column="13" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Java Sources/src/main/java/de/pjog/prinzJuliano/TerminalRPG/Main.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="238">
-          <caret line="19" column="0" selection-start-line="19" selection-start-column="0" selection-end-line="19" selection-end-column="0" />
           <folding />
         </state>
       </provider>
@@ -913,8 +949,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/Java Sources/src/main/java/de/pjog/prinzJuliano/TerminalRPG/models/Stats.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="170">
-          <caret line="40" column="25" selection-start-line="40" selection-start-column="25" selection-end-line="40" selection-end-column="25" />
+        <state relative-caret-position="204">
+          <caret line="17" column="7" selection-start-line="17" selection-start-column="7" selection-end-line="17" selection-end-column="7" />
           <folding>
             <element signature="e#2295#2296#0" expanded="false" />
             <element signature="e#2336#2337#0" expanded="false" />
@@ -947,6 +983,14 @@
             <element signature="e#3969#3970#0" expanded="false" />
             <element signature="e#3998#3999#0" expanded="false" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Java Sources/src/main/java/de/pjog/prinzJuliano/TerminalRPG/Main.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="155">
+          <caret line="53" column="5" selection-start-line="53" selection-start-column="5" selection-end-line="53" selection-end-column="5" />
+          <folding />
         </state>
       </provider>
     </entry>
