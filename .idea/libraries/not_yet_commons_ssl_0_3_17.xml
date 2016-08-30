@@ -1,0 +1,9 @@
+<component name="libraryTable">
+  <library name="not-yet-commons-ssl-0.3.17">
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/Java Sources/lib/not-yet-commons-ssl-0.3.17.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>
