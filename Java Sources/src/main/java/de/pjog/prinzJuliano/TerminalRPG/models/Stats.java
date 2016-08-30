@@ -7,6 +7,7 @@ package de.pjog.prinzJuliano.TerminalRPG.models;
  */
 public class Stats implements Cloneable{
 	private int vitality;     //How much life points we got
+	private int hp;
 	private int strength;     //How hard we hit
 	private int dexterity;    //How agile we are
 	private int intelligence; //How smart we are
@@ -40,6 +41,56 @@ public class Stats implements Cloneable{
 		this.luck = luck;
 		this.stealth = stealth;
 		this.defense = defense;
+
+		this.hp = getMaxHp();
+	}
+
+	/**
+	 Simple Constructor
+	 * @param hp How much actual life points some one has
+	 * @param vitality How much life points we got
+	 * @param strength How hard we hit
+	 * @param dexterity How agile we are
+	 * @param intelligence How smart we are
+	 * @param luck Superstition based stuff
+	 * @param stealth Determine if we start a fight or not
+	 * @param defense How much damage will be subtracted
+	 */
+	public Stats(int hp, int vitality, int strength, int dexterity, int intelligence, int luck, int stealth, int defense)
+	{
+		this.vitality = vitality;
+		this.strength = strength;
+		this.dexterity = dexterity;
+		this.intelligence = intelligence;
+		this.luck = luck;
+		this.stealth = stealth;
+		this.defense = defense;
+
+		this.hp = Math.min(hp, getMaxHp());
+	}
+
+	/**
+	 * Generic Getter
+	 * @return its value
+	 */
+	public int getHp() {
+		return hp;
+	}
+
+	/**
+	 * Generic Setter
+	 * @param hp the actual life some one has
+	 */
+	public void setHp(int hp) {
+		this.hp = Math.min(hp, getMaxHp());
+	}
+
+	/**
+	 * Get the Max HP based on vitality
+	 * @return Calculated Max HP
+	 */
+	public int getMaxHp() {
+		return 100 + 10 * this.vitality;
 	}
 
 	/**
@@ -148,17 +199,17 @@ public class Stats implements Cloneable{
 	
 	@Override
 	public String toString(){
-		String head = "%-12s%-12s%-12s%-12s%s";
-		String body = "%-12d%-12d%-12d%-12d%d";
+		String head = "%-12s%-12s%-12s%-12s%-12s%-12s%s";
+		String body = "%-12d%-12d%-12d%-12d%-12d%-12d%d";
 		
-		return String.format(head+"\n"+body, "VIT", "STR", "DEX", "INT", "LCK", vitality, strength, dexterity, intelligence, luck);
+		return String.format(head+"\n"+body, "HP", "Max HP", "VIT", "STR", "DEX", "INT", "LCK", hp, getMaxHp(), vitality, strength, dexterity, intelligence, luck);
 	}
 	
 	/**
 	 * Creates a new independent object with the same values as the called one.
 	 */
 	public Stats clone(){
-		return new Stats(vitality, strength, dexterity, intelligence, luck, stealth, defense);
+		return new Stats(hp, vitality, strength, dexterity, intelligence, luck, stealth, defense);
 	}
 	
 }

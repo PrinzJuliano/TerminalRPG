@@ -49,9 +49,9 @@ public class NewGameView extends AbstractView {
 		dexPoints = new Label("1");
 		INTPoints = new Label("1");
 		LUCKPoints = new Label("1");
-		classes = new ComboBox<String>();
+		classes = new ComboBox<>();
 		name = new TextBox();
-		classPreview = Storyboard.Commons.getImage("Warrior", 8, 8);
+		classPreview = Storyboard.Commons.getImage(FightingClasses.WARRIOR.name(), 8, 8);
 	}
 
 	@Override
@@ -84,20 +84,8 @@ public class NewGameView extends AbstractView {
 					System.out.print("Switched from " + old);
 					System.out.println(" to " + newOne);
 
-					switch (newOne) {
-					case 0:
-						classPreview = Storyboard.Commons.getImage("Warrior", 8, 8);
-						break;
-					case 1:
-						classPreview = Storyboard.Commons.getImage("Archer", 8, 8);
-						break;
-					case 2:
-						classPreview = Storyboard.Commons.getImage("Rogue", 8, 8);
-						break;
-					case 3:
-						classPreview = Storyboard.Commons.getImage("Mage", 8, 8);
-						break;
-					}
+					classPreview = Storyboard.Commons.getImage(FightingClasses.valueOf(classes.getText().toUpperCase()).name(), 8, 8);
+
 					if(!classesUpdated){
 						LoadingDialog d = (LoadingDialog) story.getViewByID(Storyboard.LOADINGDIALOG);
 						d.setNextView(Storyboard.NEWGAME);
@@ -351,15 +339,15 @@ public class NewGameView extends AbstractView {
 					} else {
 
 						int nVIT = Integer.parseInt(vitPoints.getText());
-						int nSTR = Integer.parseInt(strPoints.getText());
+                        int nSTR = Integer.parseInt(strPoints.getText());
 						int nDEX = Integer.parseInt(dexPoints.getText());
 						int nINT = Integer.parseInt(INTPoints.getText());
 						int nLCK = Integer.parseInt(LUCKPoints.getText());
 
-						Stats stats = new Stats(nVIT, nSTR, nDEX, nINT, nLCK, 0, 0);
+						Stats localstats = new Stats(nVIT, nSTR, nDEX, nINT, nLCK, 0, 0);
 
 						RPGCharacter ch = new RPGCharacter(name.getText(),
-								FightingClasses.valueOf(classes.getSelectedItem().toUpperCase()), 1, stats);
+								FightingClasses.valueOf(classes.getSelectedItem().toUpperCase()), 1, localstats);
 
 						story.setCharacter(ch);
 						story.switchToView(Storyboard.HOME);
@@ -430,20 +418,7 @@ public class NewGameView extends AbstractView {
 		if (root.has("class")) {
 			classesUpdated  = true;
 			classes.setSelectedIndex(root.getInt("class"));
-			switch (root.getInt("class")) {
-			case 0:
-				classPreview = Storyboard.Commons.getImage("Warrior", 8, 8);
-				break;
-			case 1:
-				classPreview = Storyboard.Commons.getImage("Archer", 8, 8);
-				break;
-			case 2:
-				classPreview = Storyboard.Commons.getImage("Rogue", 8, 8);
-				break;
-			case 3:
-				classPreview = Storyboard.Commons.getImage("Mage", 8, 8);
-				break;
-			}
+            classPreview = Storyboard.Commons.getImage(FightingClasses.valueOf(classes.getText().toUpperCase()).name(), 8, 8);
 			
 			if (Main.DEBUG)
 				System.out.println("NewGameView: Found class: " + root.getInt("class"));

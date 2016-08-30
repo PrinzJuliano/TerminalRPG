@@ -7,12 +7,12 @@ public class CommonSprites {
 	private HashMap<String, BasicImageRenderer> images;
 	
 	public CommonSprites(){
-		images = new HashMap<String, BasicImageRenderer>();
-		
-		images.put("Warrior", SpriteLoader.loadSprite("Warrior.png", 8, 8));
-		images.put("Archer", SpriteLoader.loadSprite("Archer.png", 8, 8));
-		images.put("Mage", SpriteLoader.loadSprite("Mage.png", 8, 8));
-		images.put("Rogue", SpriteLoader.loadSprite("Rogue.png", 8, 8));
+		images = new HashMap<>();
+
+		images.put("WARRIOR", SpriteLoader.loadSprite("Warrior.png", 8, 8));
+		images.put("ARCHER", SpriteLoader.loadSprite("Archer.png", 8, 8));
+		images.put("MAGE", SpriteLoader.loadSprite("Mage.png", 8, 8));
+		images.put("ROGUE", SpriteLoader.loadSprite("Rogue.png", 8, 8));
 	}
 	
 	public BasicImageRenderer getImage(String s, int expC, int expR)

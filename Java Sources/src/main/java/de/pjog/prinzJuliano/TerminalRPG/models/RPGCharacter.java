@@ -33,7 +33,7 @@ public class RPGCharacter implements Cloneable{
 	}
 
 	/**
-	 * COnstructor for {@link RPGCharacter}
+	 * Constructor for {@link RPGCharacter}
 	 * @param name Her / His name
 	 * @param fightingClass Her / His class to play with
 	 * @param level Her / His Level
@@ -126,6 +126,7 @@ public class RPGCharacter implements Cloneable{
 		RPGCharacter c = new RPGCharacter();
 		c.setName(this.name);
 		c.setLevel(this.level);
+		c.setStats(this.stats.clone());
 		c.setFightingClass(this.fightingClass);
 		
 		return c;
