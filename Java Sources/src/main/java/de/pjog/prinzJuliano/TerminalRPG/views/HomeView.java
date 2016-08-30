@@ -1,10 +1,12 @@
 package de.pjog.prinzJuliano.TerminalRPG.views;
 
+import com.googlecode.lanterna.TerminalSize;
 import com.googlecode.lanterna.gui2.*;
 
 import de.pjog.prinzJuliano.TerminalRPG.Storyboard;
 import de.pjog.prinzJuliano.TerminalRPG.gfx.BasicImageRenderer;
 import de.pjog.prinzJuliano.TerminalRPG.models.RPGCharacter;
+import de.pjog.prinzJuliano.TerminalRPG.util.Saves;
 
 /**
  * Main Game view. All the interaction starts here!
@@ -15,7 +17,7 @@ public class HomeView extends AbstractView {
 	private String communication;
 	
 	@Override
-	public void init(Storyboard story, WindowBasedTextGUI textGUI) {
+	public void init(final Storyboard story, WindowBasedTextGUI textGUI) {
 		rootWindow.setTitle("-[Hub]-");
 
 		// Main panel
@@ -97,8 +99,19 @@ public class HomeView extends AbstractView {
 		showCase.addComponent(defenceLabel);
 		showCase.addComponent(defencePoints);
 
+		// Menu
+		Panel menu = new Panel();
+
+		menu.addComponent(new Button("Save and back to main menu", new Runnable() {
+			@Override
+			public void run() {
+				Saves.SaveCharacter(story.getCharacter());
+				story.switchToView(Storyboard.MAINMENU);
+			}
+		}));
 
 		root.addComponent(showCase.withBorder(Borders.doubleLine("Character")));
+		root.addComponent(menu);
 
 		rootWindow.setComponent(root);
 		

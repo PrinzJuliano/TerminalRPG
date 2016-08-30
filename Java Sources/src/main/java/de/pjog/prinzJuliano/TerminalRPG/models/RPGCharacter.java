@@ -1,5 +1,7 @@
 package de.pjog.prinzJuliano.TerminalRPG.models;
 
+import org.json.JSONObject;
+
 /**
  * The Character Sheet. All handling of typical RPG Elements will be done in here.
  * @author PrinzJuliano
@@ -12,6 +14,7 @@ public class RPGCharacter implements Cloneable{
 	private Stats stats; // Her / His Stats
 	
 	private int level; //Her / His Level
+    private int xp;
 	
 	/**
 	 * <p>
@@ -29,6 +32,7 @@ public class RPGCharacter implements Cloneable{
 		name = "Brian";
 		fightingClass = FightingClasses.WARRIOR;
 		level = 1;
+        xp = 0;
 		stats = new Stats(5, 5, 5, 5, 5, 0, 0);
 	}
 
@@ -39,12 +43,13 @@ public class RPGCharacter implements Cloneable{
 	 * @param level Her / His Level
 	 * @param stats Her / His fighting Stats.
 	 */
-	public RPGCharacter(String name, FightingClasses fightingClass, int level, Stats stats)
+	public RPGCharacter(String name, FightingClasses fightingClass, int level, int xp, Stats stats)
 	{
 		this.name = name;
 		this.fightingClass = fightingClass;
 		this.level = level;
 		this.stats = stats;
+        this.xp = xp;
 	}
 	
 	/**
@@ -94,12 +99,54 @@ public class RPGCharacter implements Cloneable{
 	public void setLevel(int level) {
 		this.level = level;
 	}
-	
-	@Override
+
+    /**
+     * Generic getter
+     * @return the value
+     */
+    public int getXp() {
+        return xp;
+    }
+
+    /**
+     * Generic Setter
+     * @param xp the xp
+     */
+    public void setXp(int xp) {
+        this.xp = xp;
+        while(true) {
+            int nextUp = (int) (getLevel() * Math.log10(getLevel()) * 100 + 50);
+            if (this.xp >= nextUp) {
+                setLevel(getLevel() + 1);
+                this.xp -= nextUp;
+            }
+            else
+                break;
+        }
+
+    }
+
+    @Override
 	public String toString(){
-		return String.format("Character \"%s\"[%d] of class [%s]", name, level, fightingClass);
-		
+		return String.format("Character \"%s\"[LVL %d] of class [%s]", name, level, fightingClass);
 	}
+
+    /**
+     * Create a JSONObject that contains everything!
+     * @return the object
+     */
+	public JSONObject toJSONObject(){
+        JSONObject root = new JSONObject();
+
+        root.put("name", name);
+        root.put("level", level);
+        root.put("xp", xp);
+        root.put("class", fightingClass.name());
+
+        root.put("stats", this.stats.toJSONObject());
+
+        return root;
+    }
 	
 	/**
 	 * Generic Getter
@@ -126,10 +173,48 @@ public class RPGCharacter implements Cloneable{
 		RPGCharacter c = new RPGCharacter();
 		c.setName(this.name);
 		c.setLevel(this.level);
+        c.setXp(this.xp);
 		c.setStats(this.stats.clone());
 		c.setFightingClass(this.fightingClass);
 		
 		return c;
 	}
 
+    public static RPGCharacter createNewFromJSONObject(JSONObject o) {
+        RPGCharacter c = new RPGCharacter();
+        if(c.fromJSONObject(o))
+            return c;
+        else
+            return null;
+    }
+
+    public boolean fromJSONObject(JSONObject o)
+    {
+        if(o.has("name"))
+            this.name = o.getString("name");
+        else
+            return false;
+
+        if(o.has("level"))
+            this.level = o.getInt("level");
+        else
+            return false;
+
+        if(o.has("class"))
+            this.fightingClass = FightingClasses.valueOf(o.getString("class"));
+        else
+            return false;
+
+        if(o.has("xp"))
+            this.xp = o.getInt("xp");
+        else
+            return false;
+
+        if(o.has("stats"))
+            this.stats = Stats.createNewFromJSONObject(o.getJSONObject("stats"));
+        else
+            return false;
+
+        return true;
+    }
 }

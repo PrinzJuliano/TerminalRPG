@@ -1,5 +1,7 @@
 package de.pjog.prinzJuliano.TerminalRPG.models;
 
+import org.json.JSONObject;
+
 /**
  * All the Stats any entity could have.
  * @author PrinzJuliano
@@ -16,7 +18,7 @@ public class Stats implements Cloneable{
 	private int defense;      //How much damage will be subtracted
 	
 	/**
-	 * Convenience COnstructor for creation from Files
+	 * Convenience Constructor for creation from Files
 	 */
 	public Stats(){
 		//Convenience
@@ -211,5 +213,73 @@ public class Stats implements Cloneable{
 	public Stats clone(){
 		return new Stats(hp, vitality, strength, dexterity, intelligence, luck, stealth, defense);
 	}
-	
+
+	public JSONObject toJSONObject(){
+        JSONObject root = new JSONObject();
+        root.put("vit", vitality);
+        root.put("hp", hp);
+        root.put("str", strength);
+        root.put("dex", dexterity);
+        root.put("int", intelligence);
+        root.put("lck", luck);
+
+        //TODO calculate defense and stealth from items
+        root.put("stealth", stealth);
+        root.put("defense", defense);
+
+        return root;
+    }
+
+    public static Stats createNewFromJSONObject(JSONObject stats) {
+        Stats s = new Stats();
+        if (s.fromJSONObject(stats))
+            return s;
+        else
+            return null;
+    }
+
+    public boolean fromJSONObject(JSONObject o)
+    {
+        if(o.has("vit"))
+            setVitality(o.getInt("vit"));
+        else
+            return false;
+
+        if(o.has("hp"))
+            setHp(o.getInt("hp"));
+        else
+            return false;
+
+        if(o.has("str"))
+            setStrength(o.getInt("str"));
+        else
+            return false;
+
+        if(o.has("dex"))
+            setDexterity(o.getInt("dex"));
+        else
+            return false;
+
+        if(o.has("int"))
+            setIntelligence(o.getInt("int"));
+        else
+            return false;
+
+        if(o.has("lck"))
+            setLuck(o.getInt("lck"));
+        else
+            return false;
+
+        if(o.has("stealth"))
+            setStealth(o.getInt("stealth"));
+        else
+            return false;
+
+        if(o.has("defense"))
+            setDefense(o.getInt("defense"));
+        else
+            return false;
+
+        return true;
+    }
 }

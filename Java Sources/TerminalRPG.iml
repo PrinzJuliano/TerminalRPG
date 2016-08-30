@@ -17,10 +17,56 @@
     <orderEntry type="library" name="bcprov-ext-jdk15on-154" level="project" />
     <orderEntry type="library" name="not-yet-commons-ssl-0.3.17" level="project" />
     <orderEntry type="library" name="Sign-api" level="project" />
+    <orderEntry type="module-library">
+      <library name="Maven: bcpg:org.bouncycastle:1.0">
+        <CLASSES>
+          <root url="jar://$MODULE_DIR$/lib/bcpg-jdk15on-154.jar!/" />
+        </CLASSES>
+        <JAVADOC />
+        <SOURCES />
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library">
+      <library name="Maven: bcpkix:org.bouncycastle:1.0">
+        <CLASSES>
+          <root url="jar://$MODULE_DIR$/lib/bcpkix-jdk15on-154.jar!/" />
+        </CLASSES>
+        <JAVADOC />
+        <SOURCES />
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library">
+      <library name="Maven: bcprov:org.bouncycastle:1.0">
+        <CLASSES>
+          <root url="jar://$MODULE_DIR$/lib/bcprov-ext-jdk15on-154.jar!/" />
+        </CLASSES>
+        <JAVADOC />
+        <SOURCES />
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library">
+      <library name="Maven: not-yet-commons:org.apache.commons:1.0">
+        <CLASSES>
+          <root url="jar://$MODULE_DIR$/lib/not-yet-commons-ssl-0.3.17.jar!/" />
+        </CLASSES>
+        <JAVADOC />
+        <SOURCES />
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library">
+      <library name="Maven: Sign-api:de.pjog.prinzJuliano.security:1.0">
+        <CLASSES>
+          <root url="jar://$MODULE_DIR$/lib/Sign-api.jar!/" />
+        </CLASSES>
+        <JAVADOC />
+        <SOURCES />
+      </library>
+    </orderEntry>
     <orderEntry type="library" name="Maven: com.googlecode.lanterna:lanterna:3.0.0-beta3" level="project" />
     <orderEntry type="library" name="Maven: junit:junit:4.12" level="project" />
     <orderEntry type="library" name="Maven: org.hamcrest:hamcrest-core:1.3" level="project" />
     <orderEntry type="library" name="Maven: org.json:json:20160212" level="project" />
+    <orderEntry type="library" name="Maven: org.skyscreamer:jsonassert:1.3.0" level="project" />
     <orderEntry type="library" name="Maven: com.jolira:onejar-maven-plugin:1.4.4" level="project" />
     <orderEntry type="library" name="Maven: commons-io:commons-io:1.3.1" level="project" />
     <orderEntry type="library" name="Maven: org.apache.maven:maven-model:2.0.9" level="project" />
