@@ -40,13 +40,6 @@
             <scope>system</scope>
             <systemPath>${project.basedir}/lib/not-yet-commons-ssl-0.3.17.jar</systemPath>
         </dependency>
-        <dependency>
-            <groupId>Sign-api</groupId>
-            <artifactId>de.pjog.prinzJuliano.security</artifactId>
-            <version>1.0</version>
-            <scope>system</scope>
-            <systemPath>${project.basedir}/lib/Sign-api.jar</systemPath>
-        </dependency>
 		<dependency>
 			<groupId>com.googlecode.lanterna</groupId>
 			<artifactId>lanterna</artifactId>

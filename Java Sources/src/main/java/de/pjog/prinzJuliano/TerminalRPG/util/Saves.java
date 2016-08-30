@@ -1,9 +1,10 @@
 package de.pjog.prinzJuliano.TerminalRPG.util;
 
+import de.pjog.prinzJuliano.TerminalRPG.Main;
 import de.pjog.prinzJuliano.TerminalRPG.models.RPGCharacter;
-import de.pjog.prinzJuliano.security.GenSig;
-import de.pjog.prinzJuliano.security.RSAEncrypt;
-import de.pjog.prinzJuliano.security.VerifySig;
+import de.pjog.prinzJuliano.TerminalRPG.security.GenSig;
+import de.pjog.prinzJuliano.TerminalRPG.security.RSAEncrypt;
+import de.pjog.prinzJuliano.TerminalRPG.security.VerifySig;
 import org.json.JSONObject;
 
 import java.io.File;
@@ -24,10 +25,17 @@ public class Saves {
 
         try{
             String path = "Saves/" + character.getName();
+
+            if(Main.DEBUG)
+            {
+                System.out.println("Saving \""+toWrite+"\" to '"+path+"'");
+            }
+
             File folder = new File(path);
             if(!folder.exists())
             {
-                folder.mkdirs();
+                while(!folder.exists())
+                    folder.mkdirs();
 
             }else if(!folder.isDirectory())
             {
@@ -42,6 +50,7 @@ public class Saves {
         {
             System.err.println("Could not save the files!");
             e.printStackTrace();
+            return;
         }
 
         System.out.println("Saved character [" + character.getName() + "]!");

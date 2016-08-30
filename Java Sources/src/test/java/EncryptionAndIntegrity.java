@@ -6,9 +6,9 @@ import static org.junit.Assert.assertArrayEquals;
 
 import org.junit.Test;
 
-import de.pjog.prinzJuliano.security.GenSig;
-import de.pjog.prinzJuliano.security.RSAEncrypt;
-import de.pjog.prinzJuliano.security.VerifySig;
+import de.pjog.prinzJuliano.TerminalRPG.security.GenSig;
+import de.pjog.prinzJuliano.TerminalRPG.security.RSAEncrypt;
+import de.pjog.prinzJuliano.TerminalRPG.security.VerifySig;
 
 public class EncryptionAndIntegrity {
 
