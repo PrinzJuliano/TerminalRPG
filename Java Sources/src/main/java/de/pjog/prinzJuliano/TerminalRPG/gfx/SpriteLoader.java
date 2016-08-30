@@ -6,8 +6,6 @@ import java.io.FileNotFoundException;
 
 import javax.imageio.ImageIO;
 
-import org.json.JSONObject;
-
 import com.googlecode.lanterna.TextCharacter;
 import com.googlecode.lanterna.TextColor;
 
