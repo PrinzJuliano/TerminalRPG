@@ -45,6 +45,7 @@ public class NewGameView extends AbstractView {
         LUCKPoints = new Label("1");
         classes = new ComboBox<>();
         name = new TextBox();
+        sure = false;
         classPreview = Storyboard.Commons.getImage(FightingClasses.WARRIOR.name(), 8, 8);
     }
 

@@ -2,12 +2,11 @@ package de.pjog.prinzJuliano.TerminalRPG.util;
 
 import de.pjog.prinzJuliano.TerminalRPG.Main;
 import de.pjog.prinzJuliano.TerminalRPG.models.RPGCharacter;
+import flexjson.JSONDeserializer;
+import flexjson.JSONSerializer;
 import org.json.JSONObject;
 
-import java.io.File;
-import java.io.FileInputStream;
-import java.io.FileNotFoundException;
-import java.io.FileOutputStream;
+import java.io.*;
 import java.nio.file.FileAlreadyExistsException;
 
 /**
@@ -17,7 +16,10 @@ public class Saves {
 
     @SuppressWarnings("ResultOfMethodCallIgnored")
     public static void SaveCharacter(RPGCharacter character) {
-        String toWrite = character.toJSONObject().toString();
+
+        JSONSerializer ser = new JSONSerializer();
+
+        String toWrite = ser.prettyPrint(true).serialize(character);
 
         try {
             String path = "Saves/" + character.getName();
@@ -35,9 +37,10 @@ public class Saves {
                 throw new FileAlreadyExistsException("The path " + folder.getAbsolutePath() + " is a file!");
             }
 
-            FileOutputStream characterfos = new FileOutputStream(path + "/character.json");
-            characterfos.write(toWrite.getBytes("UTF-8"));
-            characterfos.close();
+            PrintWriter pw = new PrintWriter(new FileWriter(path + "/character.json"));
+            pw.println(toWrite);
+            pw.close();
+
         } catch (Exception e) {
             System.err.println("Could not save the files!");
             e.printStackTrace();
@@ -61,8 +64,7 @@ public class Saves {
             characterfis.read(input);
             characterfis.close();
 
-            JSONObject o = new JSONObject(new String(input, "UTF-8"));
-            return RPGCharacter.createNewFromJSONObject(o);
+            return new JSONDeserializer<RPGCharacter>().deserialize(new String(input, "UTF-8"));
         } catch (Exception e) {
             System.err.println("Could not load the files!");
             e.printStackTrace();
