@@ -101,6 +101,13 @@ public class HomeView extends AbstractView {
         // Menu
         Panel menu = new Panel();
 
+        menu.addComponent(new Button("View Inventory", new Runnable() {
+            @Override
+            public void run() {
+
+            }
+        }));
+
         menu.addComponent(new Button("Save and back to main menu", new Runnable() {
             @Override
             public void run() {
