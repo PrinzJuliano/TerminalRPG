@@ -1,18 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="e71901bb-dde6-4078-913e-632ecffa372f" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__net_sf_flexjson_flexjson_3_3.xml" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Java Sources/src/test/java/de/pjog/prinzJuliano/TerminalRPG/models/RPGTests.java" afterPath="" />
+    <list default="true" id="e71901bb-dde6-4078-913e-632ecffa372f" name="Default" comment="Removed manual JSON creation&#10;&#10;Stats and RPGCharacter get automatically serialized!&#10;Tests were modified to suit this!">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Java Sources/TerminalRPG.iml" afterPath="$PROJECT_DIR$/Java Sources/TerminalRPG.iml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Java Sources/pom.xml" afterPath="$PROJECT_DIR$/Java Sources/pom.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Java Sources/src/main/java/de/pjog/prinzJuliano/TerminalRPG/models/RPGCharacter.java" afterPath="$PROJECT_DIR$/Java Sources/src/main/java/de/pjog/prinzJuliano/TerminalRPG/models/RPGCharacter.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Java Sources/src/main/java/de/pjog/prinzJuliano/TerminalRPG/models/Stats.java" afterPath="$PROJECT_DIR$/Java Sources/src/main/java/de/pjog/prinzJuliano/TerminalRPG/models/Stats.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Java Sources/src/main/java/de/pjog/prinzJuliano/TerminalRPG/util/Saves.java" afterPath="$PROJECT_DIR$/Java Sources/src/main/java/de/pjog/prinzJuliano/TerminalRPG/util/Saves.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Java Sources/src/main/java/de/pjog/prinzJuliano/TerminalRPG/views/LoadGameView.java" afterPath="$PROJECT_DIR$/Java Sources/src/main/java/de/pjog/prinzJuliano/TerminalRPG/views/LoadGameView.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Java Sources/src/main/java/de/pjog/prinzJuliano/TerminalRPG/views/NewGameView.java" afterPath="$PROJECT_DIR$/Java Sources/src/main/java/de/pjog/prinzJuliano/TerminalRPG/views/NewGameView.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Java Sources/src/test/java/de/pjog/prinzJuliano/TerminalRPG/models/StatsTest.java" afterPath="$PROJECT_DIR$/Java Sources/src/test/java/de/pjog/prinzJuliano/TerminalRPG/models/StatsTest.java" />
     </list>
     <ignored path="TerminalRPG.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -33,18 +25,6 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="StatsTest.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Java Sources/src/test/java/de/pjog/prinzJuliano/TerminalRPG/models/StatsTest.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="204">
-              <caret line="12" column="28" selection-start-line="12" selection-start-column="28" selection-end-line="12" selection-end-column="28" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file leaf-file-name="pom.xml" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Java Sources/pom.xml">
           <provider selected="true" editor-type-id="text-editor">
@@ -55,11 +35,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Saves.java" pinned="false" current-in-tab="false">
+      <file leaf-file-name="Saves.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/Java Sources/src/main/java/de/pjog/prinzJuliano/TerminalRPG/util/Saves.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="91">
-              <caret line="23" column="13" selection-start-line="23" selection-start-column="13" selection-end-line="23" selection-end-column="13" />
+            <state relative-caret-position="360">
+              <caret line="68" column="68" selection-start-line="68" selection-start-column="68" selection-end-line="68" selection-end-column="68" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -67,14 +47,14 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Stats.java" pinned="false" current-in-tab="true">
+      <file leaf-file-name="Stats.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Java Sources/src/main/java/de/pjog/prinzJuliano/TerminalRPG/models/Stats.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="193">
-              <caret line="70" column="43" selection-start-line="70" selection-start-column="43" selection-end-line="70" selection-end-column="43" />
+            <state relative-caret-position="289">
+              <caret line="67" column="31" selection-start-line="67" selection-start-column="31" selection-end-line="67" selection-end-column="31" />
               <folding>
-                <element signature="e#3076#3077#0" expanded="true" />
-                <element signature="e#3116#3117#0" expanded="true" />
+                <element signature="e#3048#3049#0" expanded="true" />
+                <element signature="e#3088#3089#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -191,10 +171,10 @@
         <option value="$PROJECT_DIR$/Java Sources/src/main/java/de/pjog/prinzJuliano/TerminalRPG/views/LoadGameView.java" />
         <option value="$PROJECT_DIR$/Java Sources/src/main/java/de/pjog/prinzJuliano/TerminalRPG/views/NewGameView.java" />
         <option value="$PROJECT_DIR$/Java Sources/pom.xml" />
-        <option value="$PROJECT_DIR$/Java Sources/src/main/java/de/pjog/prinzJuliano/TerminalRPG/util/Saves.java" />
         <option value="$PROJECT_DIR$/Java Sources/src/main/java/de/pjog/prinzJuliano/TerminalRPG/models/RPGCharacter.java" />
         <option value="$PROJECT_DIR$/Java Sources/src/test/java/de/pjog/prinzJuliano/TerminalRPG/models/StatsTest.java" />
         <option value="$PROJECT_DIR$/Java Sources/src/main/java/de/pjog/prinzJuliano/TerminalRPG/models/Stats.java" />
+        <option value="$PROJECT_DIR$/Java Sources/src/main/java/de/pjog/prinzJuliano/TerminalRPG/util/Saves.java" />
       </list>
     </option>
   </component>
@@ -908,7 +888,14 @@
       <option name="project" value="LOCAL" />
       <updated>1472729614502</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL-00007" summary="Removed manual JSON creation&#10;&#10;Stats and RPGCharacter get automatically serialized!&#10;Tests were modified to suit this!">
+      <created>1472738695866</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1472738695866</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="ToolWindowManager">
@@ -961,7 +948,8 @@
     <MESSAGE value="Moved Signition API&#10;&#10;API works in IntelliJ but not as standalone!" />
     <MESSAGE value="Removed Documentation + Removed RSA Encryption&#10;&#10;The Files are now plain!" />
     <MESSAGE value="Removed Documentation + Removed RSA Encryption&#10;&#10;The save files are now plain!&#10;Redundant warnings fixed!" />
-    <option name="LAST_COMMIT_MESSAGE" value="Removed Documentation + Removed RSA Encryption&#10;&#10;The save files are now plain!&#10;Redundant warnings fixed!" />
+    <MESSAGE value="Removed manual JSON creation&#10;&#10;Stats and RPGCharacter get automatically serialized!&#10;Tests were modified to suit this!" />
+    <option name="LAST_COMMIT_MESSAGE" value="Removed manual JSON creation&#10;&#10;Stats and RPGCharacter get automatically serialized!&#10;Tests were modified to suit this!" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager />
@@ -1009,9 +997,9 @@
         <state relative-caret-position="3757">
           <caret line="257" column="24" selection-start-line="257" selection-start-column="24" selection-end-line="257" selection-end-column="24" />
           <folding>
-            <element signature="e#2468#2469#0" expanded="false" />
-            <element signature="e#3438#3439#0" expanded="false" />
-            <element signature="e#3899#3900#0" expanded="false" />
+            <element signature="e#2440#2441#0" expanded="false" />
+            <element signature="e#3410#3411#0" expanded="false" />
+            <element signature="e#3871#3872#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -1104,9 +1092,9 @@
         <state relative-caret-position="3757">
           <caret line="257" column="24" selection-start-line="257" selection-start-column="24" selection-end-line="257" selection-end-column="24" />
           <folding>
-            <element signature="e#2468#2469#0" expanded="false" />
-            <element signature="e#3438#3439#0" expanded="false" />
-            <element signature="e#3899#3900#0" expanded="false" />
+            <element signature="e#2440#2441#0" expanded="false" />
+            <element signature="e#3410#3411#0" expanded="false" />
+            <element signature="e#3871#3872#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -1307,16 +1295,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Java Sources/src/main/java/de/pjog/prinzJuliano/TerminalRPG/util/Saves.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="91">
-          <caret line="23" column="13" selection-start-line="23" selection-start-column="13" selection-end-line="23" selection-end-column="13" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/Java Sources/src/test/java/de/pjog/prinzJuliano/TerminalRPG/models/RPGTests.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="221">
@@ -1348,11 +1326,21 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/Java Sources/src/main/java/de/pjog/prinzJuliano/TerminalRPG/models/Stats.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="193">
-          <caret line="70" column="43" selection-start-line="70" selection-start-column="43" selection-end-line="70" selection-end-column="43" />
+        <state relative-caret-position="289">
+          <caret line="67" column="31" selection-start-line="67" selection-start-column="31" selection-end-line="67" selection-end-column="31" />
           <folding>
-            <element signature="e#3076#3077#0" expanded="true" />
-            <element signature="e#3116#3117#0" expanded="true" />
+            <element signature="e#3048#3049#0" expanded="true" />
+            <element signature="e#3088#3089#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Java Sources/src/main/java/de/pjog/prinzJuliano/TerminalRPG/util/Saves.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="360">
+          <caret line="68" column="68" selection-start-line="68" selection-start-column="68" selection-end-line="68" selection-end-column="68" />
+          <folding>
+            <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>
