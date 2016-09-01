@@ -138,23 +138,7 @@ public class RPGCharacter implements Cloneable {
         return String.format("Character \"%s\"[LVL %d] of class [%s]", name, level, fightingClass);
     }
 
-    /**
-     * Create a JSONObject that contains everything!
-     *
-     * @return the object
-     */
-    public JSONObject toJSONObject() {
-        JSONObject root = new JSONObject();
 
-        root.put("name", name);
-        root.put("level", level);
-        root.put("xp", xp);
-        root.put("class", fightingClass.name());
-
-        root.put("stats", this.stats.toJSONObject());
-
-        return root;
-    }
 
     /**
      * Generic Getter
@@ -188,42 +172,5 @@ public class RPGCharacter implements Cloneable {
         c.setFightingClass(this.fightingClass);
 
         return c;
-    }
-
-    public static RPGCharacter createNewFromJSONObject(JSONObject o) {
-        RPGCharacter c = new RPGCharacter();
-        if (c.fromJSONObject(o))
-            return c;
-        else
-            return null;
-    }
-
-    public boolean fromJSONObject(JSONObject o) {
-        if (o.has("name"))
-            this.name = o.getString("name");
-        else
-            return false;
-
-        if (o.has("level"))
-            this.level = o.getInt("level");
-        else
-            return false;
-
-        if (o.has("class"))
-            this.fightingClass = FightingClasses.valueOf(o.getString("class"));
-        else
-            return false;
-
-        if (o.has("xp"))
-            this.xp = o.getInt("xp");
-        else
-            return false;
-
-        if (o.has("stats"))
-            this.stats = Stats.createNewFromJSONObject(o.getJSONObject("stats"));
-        else
-            return false;
-
-        return true;
     }
 }

@@ -1,6 +1,7 @@
 package de.pjog.prinzJuliano.TerminalRPG.views;
 
 import com.googlecode.lanterna.gui2.*;
+import de.pjog.prinzJuliano.TerminalRPG.Main;
 import de.pjog.prinzJuliano.TerminalRPG.Storyboard;
 import de.pjog.prinzJuliano.TerminalRPG.models.RPGCharacter;
 import de.pjog.prinzJuliano.TerminalRPG.util.Saves;
@@ -41,10 +42,16 @@ public class LoadGameView extends AbstractView {
                 }
             });
 
-            if (directories != null) {
+            if (directories != null || directories.length >= 1) {
+                boolean ranOnce = false;
                 for (String s : directories) {
+
                     final RPGCharacter r = Saves.loadCharacter(s);
                     if (r != null) {
+
+                        if(Main.DEBUG)
+                            System.out.println("Available Save: " + s);
+                        ranOnce = true;
                         Panel cha = new Panel();
                         cha.setLayoutManager(new GridLayout(2));
                         cha.addComponent(new Label("Class:"));
@@ -77,6 +84,9 @@ public class LoadGameView extends AbstractView {
                         loader.addComponent(cha.withBorder(Borders.singleLine(r.getName())));
                     }
                 }
+
+                if(!ranOnce)
+                    loader.addComponent(new Label("Sorry but there are no Save files!"));
             } else {
                 loader.addComponent(new Label("Sorry but there are no Save files!"));
             }
