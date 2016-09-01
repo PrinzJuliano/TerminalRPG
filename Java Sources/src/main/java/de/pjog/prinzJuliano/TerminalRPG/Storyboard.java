@@ -1,319 +1,296 @@
 package de.pjog.prinzJuliano.TerminalRPG;
 
+import com.googlecode.lanterna.bundle.LanternaThemes;
+import com.googlecode.lanterna.gui2.*;
+import com.googlecode.lanterna.screen.Screen;
+import de.pjog.prinzJuliano.TerminalRPG.gfx.CommonSprites;
+import de.pjog.prinzJuliano.TerminalRPG.models.RPGCharacter;
+import de.pjog.prinzJuliano.TerminalRPG.views.*;
+import org.json.JSONObject;
+
 import java.io.EOFException;
 import java.io.IOException;
 import java.util.HashMap;
 
-import org.json.JSONObject;
-
-import com.googlecode.lanterna.bundle.LanternaThemes;
-import com.googlecode.lanterna.gui2.AsynchronousTextGUIThread;
-import com.googlecode.lanterna.gui2.MultiWindowTextGUI;
-import com.googlecode.lanterna.gui2.SeparateTextGUIThread;
-import com.googlecode.lanterna.gui2.TextGUI;
-import com.googlecode.lanterna.gui2.Window;
-import com.googlecode.lanterna.screen.Screen;
-
-import de.pjog.prinzJuliano.TerminalRPG.gfx.CommonSprites;
-import de.pjog.prinzJuliano.TerminalRPG.models.RPGCharacter;
-import de.pjog.prinzJuliano.TerminalRPG.views.CrashDialog;
-import de.pjog.prinzJuliano.TerminalRPG.views.Dialog;
-import de.pjog.prinzJuliano.TerminalRPG.views.EndCardView;
-import de.pjog.prinzJuliano.TerminalRPG.views.HomeView;
-import de.pjog.prinzJuliano.TerminalRPG.views.LoadGameView;
-import de.pjog.prinzJuliano.TerminalRPG.views.LoadingDialog;
-import de.pjog.prinzJuliano.TerminalRPG.views.MainMenuView;
-import de.pjog.prinzJuliano.TerminalRPG.views.NewGameView;
-import de.pjog.prinzJuliano.TerminalRPG.views.SettingsView;
-import de.pjog.prinzJuliano.TerminalRPG.views.View;
-
 /**
  * Managing Class for Views, Scene switching, etc.
- * 
- * @author PrinzJuliano
  *
+ * @author PrinzJuliano
  */
 public class Storyboard {
 
-	// CONSTANTS
-	/**
-	 * Links to {@link MainMenuView}.
-	 */
-	public static final int MAINMENU = 0;
+    // CONSTANTS
+    /**
+     * Links to {@link MainMenuView}.
+     */
+    public static final int MAINMENU = 0;
 
-	/**
-	 * Links to {@link EndCardView}.
-	 */
-	public static final int ENDCARD = 1;
+    /**
+     * Links to {@link EndCardView}.
+     */
+    public static final int ENDCARD = 1;
 
-	/**
-	 * Links to {@link NewGameView}.
-	 */
-	public static final int NEWGAME = 2;
+    /**
+     * Links to {@link NewGameView}.
+     */
+    public static final int NEWGAME = 2;
 
-	/**
-	 * Links to {@link LoadGameView}.
-	 */
-	public static final int LOADGAME = 3;
+    /**
+     * Links to {@link LoadGameView}.
+     */
+    public static final int LOADGAME = 3;
 
-	/**
-	 * Links to {@link SettingsView}.
-	 */
-	public static final int SETTINGS = 4;
+    /**
+     * Links to {@link SettingsView}.
+     */
+    public static final int SETTINGS = 4;
 
-	/**
-	 * Links to {@link CrashDialog}.
-	 */
-	public static final int CRASHDIALOG = 5;
+    /**
+     * Links to {@link CrashDialog}.
+     */
+    public static final int CRASHDIALOG = 5;
 
-	/**
-	 * Links to {@link Dialog}.
-	 */
-	public static final int DIALOG = 6;
-	
-	/**
-	 * Links to {@link LoadingDialog}.
-	 */
-	public static final int LOADINGDIALOG = 7;
-	
-	/**
-	 * Links to {@link HomeView}
-	 */
-	public static final int HOME = 8;
+    /**
+     * Links to {@link Dialog}.
+     */
+    public static final int DIALOG = 6;
 
-	public static CommonSprites Commons;
+    /**
+     * Links to {@link LoadingDialog}.
+     */
+    public static final int LOADINGDIALOG = 7;
 
-	Screen screen; // The screen from Main
-	MultiWindowTextGUI textGUI; // Manager for all Windows
-	AsynchronousTextGUIThread guiThread; // Keeps the GUI running
+    /**
+     * Links to {@link HomeView}
+     */
+    public static final int HOME = 8;
 
-	HashMap<Integer, View> views; // All the Views
+    public static CommonSprites Commons;
 
-	private int currentViewID = -1; // What view are we in?
+    Screen screen; // The screen from Main
+    MultiWindowTextGUI textGUI; // Manager for all Windows
+    AsynchronousTextGUIThread guiThread; // Keeps the GUI running
 
-	private boolean running = true; // Are we running (needed for closing the
-									// game)
+    HashMap<Integer, View> views; // All the Views
 
-	private static TextGUI.Listener listener; // The only Listener for the
-												// entire game (gets switched by
-												// view)
+    private int currentViewID = -1; // What view are we in?
 
-	private static RPGCharacter loadedCharacter; // The Main Character sheet
-	
+    private boolean running = true; // Are we running (needed for closing the
+    // game)
 
-	/**
-	 * Initialize the screen, text based GUI and Views
-	 * 
-	 * @param screen
-	 *            the screen from {@link Main}'s {@link Main#screen}.
-	 */
-	public Storyboard(Screen screen) {
-		// Enable rendering, setup GUI
-		this.screen = screen;
+    private static TextGUI.Listener listener; // The only Listener for the
+    // entire game (gets switched by
+    // view)
 
-		Commons = new CommonSprites();
+    private static RPGCharacter loadedCharacter; // The Main Character sheet
 
-		textGUI = new MultiWindowTextGUI(new SeparateTextGUIThread.Factory(), screen); // Initialize
-																						// textGUI
-																						// with
-																						// asynchronous
-																						// thread
-		textGUI.setBlockingIO(false); // Enable Input through the Keyboard
-		textGUI.setEOFWhenNoWindows(false); // Keep screen alive if no windows
-											// are present (essential for view
-											// switching)
-		textGUI.setTheme(LanternaThemes.getRegisteredTheme("default")); // Default
-																		// Theme
-																		// to be
-																		// applied
 
-		// Initialize View Map
-		views = new HashMap<>();
-		// add views
-		views.put(CRASHDIALOG, new CrashDialog());
-		views.put(MAINMENU, new MainMenuView());
-		views.put(ENDCARD, new EndCardView());
-		views.put(NEWGAME, new NewGameView());
-		views.put(DIALOG, new Dialog());
-		views.put(LOADINGDIALOG, new LoadingDialog());
-		views.put(HOME, new HomeView());
-		views.put(LOADGAME, new LoadGameView());
-	}
+    /**
+     * Initialize the screen, text based GUI and Views
+     *
+     * @param screen the screen from {@link Main}'s {@link Main#screen}.
+     */
+    public Storyboard(Screen screen) {
+        // Enable rendering, setup GUI
+        this.screen = screen;
 
-	/**
-	 * Let the Story begin. (Switch to MAINMENU + main Game Loop)
-	 */
-	public void start() {
-		switchToView(MAINMENU);
+        Commons = new CommonSprites();
 
-		// Start thread
-		guiThread = (AsynchronousTextGUIThread) textGUI.getGUIThread();
-		guiThread.start();
+        textGUI = new MultiWindowTextGUI(new SeparateTextGUIThread.Factory(), screen); // Initialize
+        // textGUI
+        // with
+        // asynchronous
+        // thread
+        textGUI.setBlockingIO(false); // Enable Input through the Keyboard
+        textGUI.setEOFWhenNoWindows(false); // Keep screen alive if no windows
+        // are present (essential for view
+        // switching)
+        textGUI.setTheme(LanternaThemes.getRegisteredTheme("default")); // Default
+        // Theme
+        // to be
+        // applied
 
-		// Main Game Loop
-		while (running) {
-			try {
-				if (screen.doResizeIfNecessary() != null) {
-					views.get(currentViewID).onResize(screen.getTerminalSize());
-				} else {
-					textGUI.processInput();
-				}
-				if (textGUI.isPendingUpdate()){
-					update();
-				}
+        // Initialize View Map
+        views = new HashMap<>();
+        // add views
+        views.put(CRASHDIALOG, new CrashDialog());
+        views.put(MAINMENU, new MainMenuView());
+        views.put(ENDCARD, new EndCardView());
+        views.put(NEWGAME, new NewGameView());
+        views.put(DIALOG, new Dialog());
+        views.put(LOADINGDIALOG, new LoadingDialog());
+        views.put(HOME, new HomeView());
+        views.put(LOADGAME, new LoadGameView());
+    }
 
-			} catch (EOFException e) {
-				System.out.println("Storyboard: Closing though outer EOF!");
-				requestClose();
+    /**
+     * Let the Story begin. (Switch to MAINMENU + main Game Loop)
+     */
+    public void start() {
+        switchToView(MAINMENU);
 
-			} catch (Exception e) {
-				// ignore the exception
-			}
-		}
-	}
+        // Start thread
+        guiThread = (AsynchronousTextGUIThread) textGUI.getGUIThread();
+        guiThread.start();
 
-	/**
-	 * <p>
-	 * Switch to a specified view. View must be in {@link Storyboard#views} See
-	 * {@link Storyboard#switchToView(int, String)}
-	 * </p>
-	 * 
-	 * @param id
-	 *            switch to that view
-	 */
-	public void switchToView(int id) {
-		switchToView(id, null);
-	}
+        // Main Game Loop
+        while (running) {
+            try {
+                if (screen.doResizeIfNecessary() != null) {
+                    views.get(currentViewID).onResize(screen.getTerminalSize());
+                } else {
+                    textGUI.processInput();
+                }
+                if (textGUI.isPendingUpdate()) {
+                    update();
+                }
 
-	/**
-	 * <p>
-	 * Switch to a specified view. View must be in {@link Storyboard#views}.
-	 * Uses an extra String for communication across Views. See
-	 * {@link Storyboard#switchToView(int)}
-	 * </p>
-	 * 
-	 * @param id
-	 *            switch to that view
-	 * @param com
-	 *            give the view this information. Usually of type
-	 *            {@link JSONObject}.
-	 */
-	public void switchToView(int id, String com) {
-		// Debug message
-		if (Main.DEBUG) {
-			System.out.println("Storyboard: Try to load view " + id + " with Data: " + com);
-		}
+            } catch (EOFException e) {
+                System.out.println("Storyboard: Closing though outer EOF!");
+                requestClose();
 
-		// Do not switch if id is the current
-		if (currentViewID == id) {
-			return;
-		}
+            } catch (Exception e) {
+                // ignore the exception
+            }
+        }
+    }
 
-		// Display error if switching to a non defined view occurs.
-		if (!views.containsKey(id)) {
-			((CrashDialog) views.get(CRASHDIALOG)).setMessage("View [" + id + "] could not be loaded");
+    /**
+     * <p>
+     * Switch to a specified view. View must be in {@link Storyboard#views} See
+     * {@link Storyboard#switchToView(int, String)}
+     * </p>
+     *
+     * @param id switch to that view
+     */
+    public void switchToView(int id) {
+        switchToView(id, null);
+    }
 
-			switchToView(CRASHDIALOG);
+    /**
+     * <p>
+     * Switch to a specified view. View must be in {@link Storyboard#views}.
+     * Uses an extra String for communication across Views. See
+     * {@link Storyboard#switchToView(int)}
+     * </p>
+     *
+     * @param id  switch to that view
+     * @param com give the view this information. Usually of type
+     *            {@link JSONObject}.
+     */
+    public void switchToView(int id, String com) {
+        // Debug message
+        if (Main.DEBUG) {
+            System.out.println("Storyboard: Try to load view " + id + " with Data: " + com);
+        }
 
-			return;
-		}
+        // Do not switch if id is the current
+        if (currentViewID == id) {
+            return;
+        }
 
-		// Delete all present windows
-		if (!textGUI.getWindows().isEmpty())
-			for (Window b : textGUI.getWindows()) {
-				b.close();
-			}
+        // Display error if switching to a non defined view occurs.
+        if (!views.containsKey(id)) {
+            ((CrashDialog) views.get(CRASHDIALOG)).setMessage("View [" + id + "] could not be loaded");
 
-		// Obligatory view-id handling
-		currentViewID = id;
+            switchToView(CRASHDIALOG);
 
-		// Remove the Listener so no interference or malbehavior can occur.
-		textGUI.removeListener(listener);
+            return;
+        }
 
-		// If there is no message do not initialize with message
-		if (com == null || com.isEmpty()) {
-			views.get(id).init(this, textGUI);
-		} else { // Initialize the new view with parameters.
-			views.get(id).init(this, textGUI, com);
-		}
+        // Delete all present windows
+        if (!textGUI.getWindows().isEmpty())
+            for (Window b : textGUI.getWindows()) {
+                b.close();
+            }
 
-		// Get the new listener
-		listener = views.get(id).getListener(this);
+        // Obligatory view-id handling
+        currentViewID = id;
 
-		// Only set the listener if it is required.
-		if (views.get(id).overridesListener())
-			textGUI.addListener(listener);
+        // Remove the Listener so no interference or malbehavior can occur.
+        textGUI.removeListener(listener);
 
-		try {
-			// Update the screen so no weird flickering or ghost windows appear.
-			textGUI.updateScreen();
-		} catch (Exception e) {
-		    e.printStackTrace();
-		}
-	}
+        // If there is no message do not initialize with message
+        if (com == null || com.isEmpty()) {
+            views.get(id).init(this, textGUI);
+        } else { // Initialize the new view with parameters.
+            views.get(id).init(this, textGUI, com);
+        }
 
-	/**
-	 * Close the Game.
-	 */
-	public void requestClose() {
-		running = false;
-		guiThread.stop();
-	}
+        // Get the new listener
+        listener = views.get(id).getListener(this);
 
-	/**
-	 * Getter for {@link Storyboard#running}
-	 * 
-	 * @return if the game is still running
-	 */
-	public boolean isRunning() {
-		return running;
-	}
+        // Only set the listener if it is required.
+        if (views.get(id).overridesListener())
+            textGUI.addListener(listener);
 
-	/**
-	 * Get a specified view. Used for pre-initialization data setup.
-	 * 
-	 * @param id
-	 *            the view to search for
-	 * @return {@code null} if the view is not found or the view it self
-	 */
-	public View getViewByID(int id) {
-		if (views.containsKey(id))
-			return views.get(id);
-		else
-			return null;
-	}
+        try {
+            // Update the screen so no weird flickering or ghost windows appear.
+            textGUI.updateScreen();
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+    }
 
-	/**
-	 * Getter for {@link Storyboard#loadedCharacter}. Basically the main
-	 * Character Sheet.
-	 * 
-	 * @return The Main Character Sheet
-	 */
-	public RPGCharacter getCharacter() {
-		return loadedCharacter;
-	}
+    /**
+     * Close the Game.
+     */
+    public void requestClose() {
+        running = false;
+        guiThread.stop();
+    }
 
-	/**
-	 * Setter for {@link Storyboard#loadedCharacter}. Basically the main
-	 * Character Sheet.
-	 * 
-	 * @param c
-	 *            the new Character
-	 */
-	public void setCharacter(RPGCharacter c) {
-		loadedCharacter = c.clone();
-	}
-	
-	/**
-	 * Update the screen
-	 */
-	public void update()
-	{
-		try {
-			textGUI.updateScreen();
-		} catch (IOException e) {
-		    e.printStackTrace();
-		}
-	}
+    /**
+     * Getter for {@link Storyboard#running}
+     *
+     * @return if the game is still running
+     */
+    public boolean isRunning() {
+        return running;
+    }
+
+    /**
+     * Get a specified view. Used for pre-initialization data setup.
+     *
+     * @param id the view to search for
+     * @return {@code null} if the view is not found or the view it self
+     */
+    public View getViewByID(int id) {
+        if (views.containsKey(id))
+            return views.get(id);
+        else
+            return null;
+    }
+
+    /**
+     * Getter for {@link Storyboard#loadedCharacter}. Basically the main
+     * Character Sheet.
+     *
+     * @return The Main Character Sheet
+     */
+    public RPGCharacter getCharacter() {
+        return loadedCharacter;
+    }
+
+    /**
+     * Setter for {@link Storyboard#loadedCharacter}. Basically the main
+     * Character Sheet.
+     *
+     * @param c the new Character
+     */
+    public void setCharacter(RPGCharacter c) {
+        loadedCharacter = c.clone();
+    }
+
+    /**
+     * Update the screen
+     */
+    public void update() {
+        try {
+            textGUI.updateScreen();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
 
 }

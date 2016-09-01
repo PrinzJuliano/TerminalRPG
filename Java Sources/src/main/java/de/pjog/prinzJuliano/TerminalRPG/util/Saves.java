@@ -2,13 +2,12 @@ package de.pjog.prinzJuliano.TerminalRPG.util;
 
 import de.pjog.prinzJuliano.TerminalRPG.Main;
 import de.pjog.prinzJuliano.TerminalRPG.models.RPGCharacter;
-import de.pjog.prinzJuliano.TerminalRPG.security.GenSig;
-import de.pjog.prinzJuliano.TerminalRPG.security.RSAEncrypt;
-import de.pjog.prinzJuliano.TerminalRPG.security.VerifySig;
 import org.json.JSONObject;
 
 import java.io.File;
+import java.io.FileInputStream;
 import java.io.FileNotFoundException;
+import java.io.FileOutputStream;
 import java.nio.file.FileAlreadyExistsException;
 
 /**
@@ -17,37 +16,29 @@ import java.nio.file.FileAlreadyExistsException;
 public class Saves {
 
     @SuppressWarnings("ResultOfMethodCallIgnored")
-    public static void SaveCharacter(RPGCharacter character)
-    {
+    public static void SaveCharacter(RPGCharacter character) {
         String toWrite = character.toJSONObject().toString();
 
-        RSAEncrypt enc = new RSAEncrypt(toWrite);
-
-        try{
+        try {
             String path = "Saves/" + character.getName();
 
-            if(Main.DEBUG)
-            {
-                System.out.println("Saving \""+toWrite+"\" to '"+path+"'");
+            if (Main.DEBUG) {
+                System.out.println("Saving \"" + toWrite + "\" to '" + path + "'");
             }
 
             File folder = new File(path);
-            if(!folder.exists())
-            {
-                while(!folder.exists())
+            if (!folder.exists()) {
+                while (!folder.exists())
                     folder.mkdirs();
 
-            }else if(!folder.isDirectory())
-            {
+            } else if (!folder.isDirectory()) {
                 throw new FileAlreadyExistsException("The path " + folder.getAbsolutePath() + " is a file!");
             }
 
-            enc.writeMessageAndKeyToFile(character.getName(), path + "/key.pkcs8", path + "/character.dat");
-
-            GenSig.execute(new String[]{"-in", path + "/key.pkcs8"});
-            GenSig.execute(new String[]{"-in", path + "/character.dat"});
-        }catch(Exception e)
-        {
+            FileOutputStream characterfos = new FileOutputStream(path + "/character.json");
+            characterfos.write(toWrite.getBytes("UTF-8"));
+            characterfos.close();
+        } catch (Exception e) {
             System.err.println("Could not save the files!");
             e.printStackTrace();
             return;
@@ -56,31 +47,23 @@ public class Saves {
         System.out.println("Saved character [" + character.getName() + "]!");
     }
 
-    public static RPGCharacter loadCharacter(String characterName){
-        RSAEncrypt dec = new RSAEncrypt();
-
-        try{
+    public static RPGCharacter loadCharacter(String characterName) {
+        try {
 
             String path = "Saves/" + characterName;
             File folder = new File(path);
 
-            if(!folder.exists() || !folder.isDirectory())
+            if (!folder.exists() || !folder.isDirectory())
                 throw new FileNotFoundException("The character is not in the saves folder");
 
-            // Verify
-            boolean key = VerifySig.verify(path + "/key.pkcs8", path + "/key.pkcs8.key", path + "/key.pkcs8.cert");
-            boolean dat = VerifySig.verify(path + "/character.dat", path + "/character.dat.key", path + "/character.dat.cert");
+            FileInputStream characterfis = new FileInputStream(path + "/character.json");
+            byte[] input = new byte[characterfis.available()];
+            characterfis.read(input);
+            characterfis.close();
 
-            if(!key || !dat)
-                throw new Exception("Integrity damaged. Files corrupted!");
-
-            dec.readPrivateKeyFromFile(characterName, path + "/key.pkcs8");
-            String characterJSON = dec.readMessageFromFile(path + "/character.dat");
-
-            JSONObject o = new JSONObject(characterJSON);
+            JSONObject o = new JSONObject(new String(input, "UTF-8"));
             return RPGCharacter.createNewFromJSONObject(o);
-        } catch(Exception e)
-        {
+        } catch (Exception e) {
             System.err.println("Could not load the files!");
             e.printStackTrace();
             return null;

@@ -1,76 +1,70 @@
 package de.pjog.prinzJuliano.TerminalRPG.views;
 
-import com.googlecode.lanterna.gui2.Button;
-import com.googlecode.lanterna.gui2.Direction;
-import com.googlecode.lanterna.gui2.Label;
-import com.googlecode.lanterna.gui2.LinearLayout;
-import com.googlecode.lanterna.gui2.Panel;
-import com.googlecode.lanterna.gui2.WindowBasedTextGUI;
-
+import com.googlecode.lanterna.gui2.*;
 import de.pjog.prinzJuliano.TerminalRPG.Storyboard;
 
 /**
  * The Main Menu. Let's you select between new game, load game, settings and close.
- * @author PrinzJuliano
  *
+ * @author PrinzJuliano
  */
-public class MainMenuView extends AbstractView{
-	
-	@Override
-	public void init(final Storyboard story, WindowBasedTextGUI textGUI) {
-		textGUI.getBackgroundPane().setComponent(new Background());
+public class MainMenuView extends AbstractView {
 
-		rootWindow.setTitle("MainMenu.exe");
+    @Override
+    public void init(final Storyboard story, WindowBasedTextGUI textGUI) {
+        textGUI.getBackgroundPane().setComponent(new Background());
 
-		Panel mainPanel = new Panel();
-		mainPanel.setLayoutManager(new LinearLayout(Direction.VERTICAL).setSpacing(1));
+        rootWindow.setTitle("MainMenu.exe");
 
-		mainPanel.addComponent(new Label("Welcome to my Game!"));
+        Panel mainPanel = new Panel();
+        mainPanel.setLayoutManager(new LinearLayout(Direction.VERTICAL).setSpacing(1));
 
-		Button bNewGame, loadGame, settings, exit;
+        mainPanel.addComponent(new Label("Welcome to my Game!"));
 
-		bNewGame = new Button("New Game", new Runnable() {
+        Button bNewGame, loadGame, settings, exit;
 
-			public void run() {
-				story.switchToView(Storyboard.NEWGAME);
-			}
+        bNewGame = new Button("New Game", new Runnable() {
 
-		});
+            public void run() {
+                story.switchToView(Storyboard.NEWGAME);
+            }
 
-		loadGame = new Button("Load a Save", new Runnable() {
+        });
 
-			public void run() {
-				story.switchToView(Storyboard.LOADGAME);
-			}
+        loadGame = new Button("Load a Save", new Runnable() {
 
-		});
+            public void run() {
+                story.switchToView(Storyboard.LOADGAME);
+            }
 
-		settings = new Button("Settings", new Runnable() {
+        });
 
-			public void run() {
-				story.switchToView(Storyboard.SETTINGS);
-			}
+        settings = new Button("Settings", new Runnable() {
 
-		});
+            public void run() {
+                story.switchToView(Storyboard.SETTINGS);
+            }
 
-		exit = new Button("Exit Game", new Runnable() {
+        });
 
-			public void run() {
-				story.switchToView(Storyboard.ENDCARD);
-			}
+        exit = new Button("Exit Game", new Runnable() {
 
-		});
-		
-		mainPanel.addComponent(bNewGame);
-		mainPanel.addComponent(loadGame);
-		mainPanel.addComponent(settings);
-		mainPanel.addComponent(exit);
-		
-		rootWindow.setComponent(mainPanel);
+            public void run() {
+                story.switchToView(Storyboard.ENDCARD);
+            }
 
-		textGUI.addWindow(rootWindow);
+        });
 
-		onResize(textGUI.getScreen().getTerminalSize());
+        mainPanel.addComponent(bNewGame);
+        mainPanel.addComponent(loadGame);
+        mainPanel.addComponent(settings);
+        mainPanel.addComponent(exit);
 
-	}
+        rootWindow.setComponent(mainPanel);
+
+        textGUI.addWindow(rootWindow);
+
+        onResize(textGUI.getScreen().getTerminalSize());
+
+    }
 }

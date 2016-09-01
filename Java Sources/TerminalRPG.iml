@@ -16,7 +16,6 @@
     <orderEntry type="library" name="bcpkix-jdk15on-154" level="project" />
     <orderEntry type="library" name="bcprov-ext-jdk15on-154" level="project" />
     <orderEntry type="library" name="not-yet-commons-ssl-0.3.17" level="project" />
-    <orderEntry type="library" name="Sign-api" level="project" />
     <orderEntry type="module-library">
       <library name="Maven: bcpg:org.bouncycastle:1.0">
         <CLASSES>
