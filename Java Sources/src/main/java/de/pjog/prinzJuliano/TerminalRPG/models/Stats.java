@@ -44,7 +44,7 @@ public class Stats implements Cloneable {
         this.stealth = stealth;
         this.defense = defense;
 
-        this.hp = getMaxHp();
+        setHp(getMaxHp());
     }
 
     /**
@@ -68,7 +68,7 @@ public class Stats implements Cloneable {
         this.stealth = stealth;
         this.defense = defense;
 
-        this.hp = Math.min(hp, getMaxHp());
+        setHp(hp);
     }
 
     /**

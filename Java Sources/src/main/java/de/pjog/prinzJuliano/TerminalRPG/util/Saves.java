@@ -64,7 +64,10 @@ public class Saves {
             characterfis.read(input);
             characterfis.close();
 
-            return new JSONDeserializer<RPGCharacter>().deserialize(new String(input, "UTF-8"));
+            RPGCharacter r = new JSONDeserializer<RPGCharacter>().deserialize(new String(input, "UTF-8"));
+            JSONObject cha = new JSONObject(new String(input, "UTF-8"));
+            r.getStats().setHp(cha.getJSONObject("stats").getInt("hp"));
+            return r;
         } catch (Exception e) {
             System.err.println("Could not load the files!");
             e.printStackTrace();
