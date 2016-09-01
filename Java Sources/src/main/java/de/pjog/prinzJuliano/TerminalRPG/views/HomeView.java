@@ -1,8 +1,6 @@
 package de.pjog.prinzJuliano.TerminalRPG.views;
 
-import com.googlecode.lanterna.TerminalSize;
 import com.googlecode.lanterna.gui2.*;
-
 import de.pjog.prinzJuliano.TerminalRPG.Storyboard;
 import de.pjog.prinzJuliano.TerminalRPG.gfx.BasicImageRenderer;
 import de.pjog.prinzJuliano.TerminalRPG.models.RPGCharacter;
@@ -10,118 +8,119 @@ import de.pjog.prinzJuliano.TerminalRPG.util.Saves;
 
 /**
  * Main Game view. All the interaction starts here!
+ *
  * @author PrinzJuliano
  */
 public class HomeView extends AbstractView {
 
-	private String communication;
-	
-	@Override
-	public void init(final Storyboard story, WindowBasedTextGUI textGUI) {
-		rootWindow.setTitle("-[Hub]-");
+    private String communication;
 
-		// Main panel
-		Panel root = new Panel();
-		root.setLayoutManager(new LinearLayout(Direction.HORIZONTAL));
+    @Override
+    public void init(final Storyboard story, WindowBasedTextGUI textGUI) {
+        rootWindow.setTitle("-[Hub]-");
 
-		// Add character Preview
-		Panel showCase = new Panel();
-		showCase.setLayoutManager(new GridLayout(2));
+        // Main panel
+        Panel root = new Panel();
+        root.setLayoutManager(new LinearLayout(Direction.HORIZONTAL));
 
-		RPGCharacter character = story.getCharacter();
+        // Add character Preview
+        Panel showCase = new Panel();
+        showCase.setLayoutManager(new GridLayout(2));
 
-		// Name
-		Label nameLabel = new Label("Name: ");
-		Label name = new Label(character.getName());
+        RPGCharacter character = story.getCharacter();
 
-		// Preview
-		Label previewLabel = new Label("Looks: ");
-		BasicImageRenderer previewImg = Storyboard.Commons.getImage(character.getFightingClass().name(), 8, 8);
+        // Name
+        Label nameLabel = new Label("Name: ");
+        Label name = new Label(character.getName());
 
-		// Stats
-		Label statsLabel = new Label("Stats:");
+        // Preview
+        Label previewLabel = new Label("Looks: ");
+        BasicImageRenderer previewImg = Storyboard.Commons.getImage(character.getFightingClass().name(), 8, 8);
 
-		Label hpLabel = new Label("Health:");
-		Label hpValue = new Label("" + character.getStats().getHp() + " / " + character.getStats().getMaxHp());
+        // Stats
+        Label statsLabel = new Label("Stats:");
 
-		Label vitLabel = new Label("Vitality:");
-		Label vitPoints = new Label("" + character.getStats().getVitality());
+        Label hpLabel = new Label("Health:");
+        Label hpValue = new Label("" + character.getStats().getHp() + " / " + character.getStats().getMaxHp());
 
-		Label strLabel = new Label("Strength:");
-		Label strPoints = new Label("" + character.getStats().getStrength());
+        Label vitLabel = new Label("Vitality:");
+        Label vitPoints = new Label("" + character.getStats().getVitality());
 
-		Label dexLabel = new Label("Dexterity:");
-		Label dexPoints = new Label("" + character.getStats().getDexterity());
+        Label strLabel = new Label("Strength:");
+        Label strPoints = new Label("" + character.getStats().getStrength());
 
-		Label intLabel = new Label("Intelligence:");
-		Label intPoints = new Label("" + character.getStats().getIntelligence());
+        Label dexLabel = new Label("Dexterity:");
+        Label dexPoints = new Label("" + character.getStats().getDexterity());
 
-		Label lckLabel = new Label("Luck:");
-		Label lckPoints = new Label("" + character.getStats().getLuck());
+        Label intLabel = new Label("Intelligence:");
+        Label intPoints = new Label("" + character.getStats().getIntelligence());
 
-		Label stealthLabel = new Label("Stealth:");
-		Label stealthPoints = new Label("" + character.getStats().getStealth());
+        Label lckLabel = new Label("Luck:");
+        Label lckPoints = new Label("" + character.getStats().getLuck());
 
-		Label defenceLabel = new Label("Defence:");
-		Label defencePoints = new Label("" + character.getStats().getDefense());
+        Label stealthLabel = new Label("Stealth:");
+        Label stealthPoints = new Label("" + character.getStats().getStealth());
 
-		// Add everything to showCase Panel
-		showCase.addComponent(nameLabel);
-		showCase.addComponent(name);
+        Label defenceLabel = new Label("Defence:");
+        Label defencePoints = new Label("" + character.getStats().getDefense());
 
-		showCase.addComponent(new EmptySpace());
-		showCase.addComponent(new EmptySpace());
+        // Add everything to showCase Panel
+        showCase.addComponent(nameLabel);
+        showCase.addComponent(name);
 
-		showCase.addComponent(previewLabel);
-		showCase.addComponent(new EmptySpace());
-		showCase.addComponent(previewImg);
+        showCase.addComponent(new EmptySpace());
+        showCase.addComponent(new EmptySpace());
 
-		showCase.addComponent(new EmptySpace());
-		showCase.addComponent(new EmptySpace());
-		showCase.addComponent(new EmptySpace());
+        showCase.addComponent(previewLabel);
+        showCase.addComponent(new EmptySpace());
+        showCase.addComponent(previewImg);
 
-		showCase.addComponent(statsLabel);
-		showCase.addComponent(new EmptySpace());
-		showCase.addComponent(hpLabel);
-		showCase.addComponent(hpValue);
-		showCase.addComponent(vitLabel);
-		showCase.addComponent(vitPoints);
-		showCase.addComponent(strLabel);
-		showCase.addComponent(strPoints);
-		showCase.addComponent(dexLabel);
-		showCase.addComponent(dexPoints);
-		showCase.addComponent(intLabel);
-		showCase.addComponent(intPoints);
-		showCase.addComponent(lckLabel);
-		showCase.addComponent(lckPoints);
-		showCase.addComponent(stealthLabel);
-		showCase.addComponent(stealthPoints);
-		showCase.addComponent(defenceLabel);
-		showCase.addComponent(defencePoints);
+        showCase.addComponent(new EmptySpace());
+        showCase.addComponent(new EmptySpace());
+        showCase.addComponent(new EmptySpace());
 
-		// Menu
-		Panel menu = new Panel();
+        showCase.addComponent(statsLabel);
+        showCase.addComponent(new EmptySpace());
+        showCase.addComponent(hpLabel);
+        showCase.addComponent(hpValue);
+        showCase.addComponent(vitLabel);
+        showCase.addComponent(vitPoints);
+        showCase.addComponent(strLabel);
+        showCase.addComponent(strPoints);
+        showCase.addComponent(dexLabel);
+        showCase.addComponent(dexPoints);
+        showCase.addComponent(intLabel);
+        showCase.addComponent(intPoints);
+        showCase.addComponent(lckLabel);
+        showCase.addComponent(lckPoints);
+        showCase.addComponent(stealthLabel);
+        showCase.addComponent(stealthPoints);
+        showCase.addComponent(defenceLabel);
+        showCase.addComponent(defencePoints);
 
-		menu.addComponent(new Button("Save and back to main menu", new Runnable() {
-			@Override
-			public void run() {
-				Saves.SaveCharacter(story.getCharacter());
-				story.switchToView(Storyboard.MAINMENU);
-			}
-		}));
+        // Menu
+        Panel menu = new Panel();
 
-		root.addComponent(showCase.withBorder(Borders.doubleLine("Character")));
-		root.addComponent(menu);
+        menu.addComponent(new Button("Save and back to main menu", new Runnable() {
+            @Override
+            public void run() {
+                Saves.SaveCharacter(story.getCharacter());
+                story.switchToView(Storyboard.MAINMENU);
+            }
+        }));
 
-		rootWindow.setComponent(root);
-		
-		textGUI.addWindow(rootWindow);
-	}
-	
-	@Override
-	public void init(Storyboard story, WindowBasedTextGUI textGUI, String communication) {
-		this.communication = communication;
-		init(story, textGUI);
-	}
+        root.addComponent(showCase.withBorder(Borders.doubleLine("Character")));
+        root.addComponent(menu);
+
+        rootWindow.setComponent(root);
+
+        textGUI.addWindow(rootWindow);
+    }
+
+    @Override
+    public void init(Storyboard story, WindowBasedTextGUI textGUI, String communication) {
+        this.communication = communication;
+        init(story, textGUI);
+    }
 
 }

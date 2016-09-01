@@ -4,217 +4,232 @@ import org.json.JSONObject;
 
 /**
  * All the Stats any entity could have.
- * @author PrinzJuliano
  *
+ * @author PrinzJuliano
  */
-public class Stats implements Cloneable{
-	private int vitality;     //How much life points we got
-	private int hp;
-	private int strength;     //How hard we hit
-	private int dexterity;    //How agile we are
-	private int intelligence; //How smart we are
-	private int luck;         //Superstition based stuff
-	private int stealth;      //Determine if we start a fight or not
-	private int defense;      //How much damage will be subtracted
-	
-	/**
-	 * Convenience Constructor for creation from Files
-	 */
-	public Stats(){
-		//Convenience
-	}
-	
-	/**
-	 * Simple Constructor
-	 * @param vitality How much life points we got
-	 * @param strength How hard we hit
-	 * @param dexterity How agile we are
-	 * @param intelligence How smart we are
-	 * @param luck Superstition based stuff
-	 * @param stealth Determine if we start a fight or not
-	 * @param defense How much damage will be subtracted
-	 */
-	public Stats(int vitality, int strength, int dexterity, int intelligence, int luck, int stealth, int defense)
-	{
-		this.vitality = vitality;
-		this.strength = strength;
-		this.dexterity = dexterity;
-		this.intelligence = intelligence;
-		this.luck = luck;
-		this.stealth = stealth;
-		this.defense = defense;
+public class Stats implements Cloneable {
+    private int vitality;     //How much life points we got
+    private int hp;
+    private int strength;     //How hard we hit
+    private int dexterity;    //How agile we are
+    private int intelligence; //How smart we are
+    private int luck;         //Superstition based stuff
+    private int stealth;      //Determine if we start a fight or not
+    private int defense;      //How much damage will be subtracted
 
-		this.hp = getMaxHp();
-	}
+    /**
+     * Convenience Constructor for creation from Files
+     */
+    public Stats() {
+        //Convenience
+    }
 
-	/**
-	 Simple Constructor
-	 * @param hp How much actual life points some one has
-	 * @param vitality How much life points we got
-	 * @param strength How hard we hit
-	 * @param dexterity How agile we are
-	 * @param intelligence How smart we are
-	 * @param luck Superstition based stuff
-	 * @param stealth Determine if we start a fight or not
-	 * @param defense How much damage will be subtracted
-	 */
-	public Stats(int hp, int vitality, int strength, int dexterity, int intelligence, int luck, int stealth, int defense)
-	{
-		this.vitality = vitality;
-		this.strength = strength;
-		this.dexterity = dexterity;
-		this.intelligence = intelligence;
-		this.luck = luck;
-		this.stealth = stealth;
-		this.defense = defense;
+    /**
+     * Simple Constructor
+     *
+     * @param vitality     How much life points we got
+     * @param strength     How hard we hit
+     * @param dexterity    How agile we are
+     * @param intelligence How smart we are
+     * @param luck         Superstition based stuff
+     * @param stealth      Determine if we start a fight or not
+     * @param defense      How much damage will be subtracted
+     */
+    public Stats(int vitality, int strength, int dexterity, int intelligence, int luck, int stealth, int defense) {
+        this.vitality = vitality;
+        this.strength = strength;
+        this.dexterity = dexterity;
+        this.intelligence = intelligence;
+        this.luck = luck;
+        this.stealth = stealth;
+        this.defense = defense;
 
-		this.hp = Math.min(hp, getMaxHp());
-	}
+        this.hp = getMaxHp();
+    }
 
-	/**
-	 * Generic Getter
-	 * @return its value
-	 */
-	public int getHp() {
-		return hp;
-	}
+    /**
+     * Simple Constructor
+     *
+     * @param hp           How much actual life points some one has
+     * @param vitality     How much life points we got
+     * @param strength     How hard we hit
+     * @param dexterity    How agile we are
+     * @param intelligence How smart we are
+     * @param luck         Superstition based stuff
+     * @param stealth      Determine if we start a fight or not
+     * @param defense      How much damage will be subtracted
+     */
+    public Stats(int hp, int vitality, int strength, int dexterity, int intelligence, int luck, int stealth, int defense) {
+        this.vitality = vitality;
+        this.strength = strength;
+        this.dexterity = dexterity;
+        this.intelligence = intelligence;
+        this.luck = luck;
+        this.stealth = stealth;
+        this.defense = defense;
 
-	/**
-	 * Generic Setter
-	 * @param hp the actual life some one has
-	 */
-	public void setHp(int hp) {
-		this.hp = Math.min(hp, getMaxHp());
-	}
+        this.hp = Math.min(hp, getMaxHp());
+    }
 
-	/**
-	 * Get the Max HP based on vitality
-	 * @return Calculated Max HP
-	 */
-	public int getMaxHp() {
-		return 100 + 10 * this.vitality;
-	}
+    /**
+     * Generic Getter
+     *
+     * @return its value
+     */
+    public int getHp() {
+        return hp;
+    }
 
-	/**
-	 * Generic Getter.
-	 * @return its value
-	 */
-	public int getVitality() {
-		return vitality;
-	}
+    /**
+     * Generic Setter
+     *
+     * @param hp the actual life some one has
+     */
+    public void setHp(int hp) {
+        this.hp = Math.min(hp, getMaxHp());
+    }
 
-	public void setVitality(int vitality) {
-		this.vitality = vitality;
-	}
+    /**
+     * Get the Max HP based on vitality
+     *
+     * @return Calculated Max HP
+     */
+    public int getMaxHp() {
+        return 100 + 10 * this.vitality;
+    }
 
-	/**
-	 * Generic Getter.
-	 * @return its value
-	 */
-	public int getStrength() {
-		return strength;
-	}
+    /**
+     * Generic Getter.
+     *
+     * @return its value
+     */
+    public int getVitality() {
+        return vitality;
+    }
 
-	public void setStrength(int strength) {
-		this.strength = strength;
-	}
+    public void setVitality(int vitality) {
+        this.vitality = vitality;
+    }
 
-	/**
-	 * Generic Getter.
-	 * @return its value
-	 */
-	public int getDexterity() {
-		return dexterity;
-	}
+    /**
+     * Generic Getter.
+     *
+     * @return its value
+     */
+    public int getStrength() {
+        return strength;
+    }
 
-	/**
-	 * Generic Setter.
-	 * @param dexterity value
-	 */
-	public void setDexterity(int dexterity) {
-		this.dexterity = dexterity;
-	}
+    public void setStrength(int strength) {
+        this.strength = strength;
+    }
 
-	/**
-	 * Generic Getter.
-	 * @return its value
-	 */
-	public int getIntelligence() {
-		return intelligence;
-	}
+    /**
+     * Generic Getter.
+     *
+     * @return its value
+     */
+    public int getDexterity() {
+        return dexterity;
+    }
 
-	/**
-	 * Generic Setter.
-	 * @param intelligence the value
-	 */
-	public void setIntelligence(int intelligence) {
-		this.intelligence = intelligence;
-	}
+    /**
+     * Generic Setter.
+     *
+     * @param dexterity value
+     */
+    public void setDexterity(int dexterity) {
+        this.dexterity = dexterity;
+    }
 
-	/**
-	 * Generic Getter.
-	 * @return its value
-	 */
-	public int getLuck() {
-		return luck;
-	}
+    /**
+     * Generic Getter.
+     *
+     * @return its value
+     */
+    public int getIntelligence() {
+        return intelligence;
+    }
 
-	/**
-	 * Generic Setter.
-	 * @param luck the value
-	 */
-	public void setLuck(int luck) {
-		this.luck = luck;
-	}
+    /**
+     * Generic Setter.
+     *
+     * @param intelligence the value
+     */
+    public void setIntelligence(int intelligence) {
+        this.intelligence = intelligence;
+    }
 
-	/**
-	 * Generic Getter.
-	 * @return its value
-	 */
-	public int getStealth() {
-		return stealth;
-	}
+    /**
+     * Generic Getter.
+     *
+     * @return its value
+     */
+    public int getLuck() {
+        return luck;
+    }
 
-	/**
-	 * Generic Setter.
-	 * @param stealth the value
-	 */
-	public void setStealth(int stealth) {
-		this.stealth = stealth;
-	}
+    /**
+     * Generic Setter.
+     *
+     * @param luck the value
+     */
+    public void setLuck(int luck) {
+        this.luck = luck;
+    }
 
-	/**
-	 * Generic Getter.
-	 * @return its value
-	 */
-	public int getDefense() {
-		return defense;
-	}
+    /**
+     * Generic Getter.
+     *
+     * @return its value
+     */
+    public int getStealth() {
+        return stealth;
+    }
 
-	/**
-	 * Generic Setter.
-	 * @param defense the value
-	 */
-	public void setDefense(int defense) {
-		this.defense = defense;
-	}
-	
-	@Override
-	public String toString(){
-		String head = "%-12s%-12s%-12s%-12s%-12s%-12s%s";
-		String body = "%-12d%-12d%-12d%-12d%-12d%-12d%d";
-		
-		return String.format(head+"\n"+body, "HP", "Max HP", "VIT", "STR", "DEX", "INT", "LCK", hp, getMaxHp(), vitality, strength, dexterity, intelligence, luck);
-	}
-	
-	/**
-	 * Creates a new independent object with the same values as the called one.
-	 */
-	public Stats clone(){
-		return new Stats(hp, vitality, strength, dexterity, intelligence, luck, stealth, defense);
-	}
+    /**
+     * Generic Setter.
+     *
+     * @param stealth the value
+     */
+    public void setStealth(int stealth) {
+        this.stealth = stealth;
+    }
 
-	public JSONObject toJSONObject(){
+    /**
+     * Generic Getter.
+     *
+     * @return its value
+     */
+    public int getDefense() {
+        return defense;
+    }
+
+    /**
+     * Generic Setter.
+     *
+     * @param defense the value
+     */
+    public void setDefense(int defense) {
+        this.defense = defense;
+    }
+
+    @Override
+    public String toString() {
+        String head = "%-12s%-12s%-12s%-12s%-12s%-12s%s";
+        String body = "%-12d%-12d%-12d%-12d%-12d%-12d%d";
+
+        return String.format(head + "\n" + body, "HP", "Max HP", "VIT", "STR", "DEX", "INT", "LCK", hp, getMaxHp(), vitality, strength, dexterity, intelligence, luck);
+    }
+
+    /**
+     * Creates a new independent object with the same values as the called one.
+     */
+    public Stats clone() {
+        return new Stats(hp, vitality, strength, dexterity, intelligence, luck, stealth, defense);
+    }
+
+    public JSONObject toJSONObject() {
         JSONObject root = new JSONObject();
         root.put("vit", vitality);
         root.put("hp", hp);
@@ -238,44 +253,43 @@ public class Stats implements Cloneable{
             return null;
     }
 
-    public boolean fromJSONObject(JSONObject o)
-    {
-        if(o.has("vit"))
+    public boolean fromJSONObject(JSONObject o) {
+        if (o.has("vit"))
             setVitality(o.getInt("vit"));
         else
             return false;
 
-        if(o.has("hp"))
+        if (o.has("hp"))
             setHp(o.getInt("hp"));
         else
             return false;
 
-        if(o.has("str"))
+        if (o.has("str"))
             setStrength(o.getInt("str"));
         else
             return false;
 
-        if(o.has("dex"))
+        if (o.has("dex"))
             setDexterity(o.getInt("dex"));
         else
             return false;
 
-        if(o.has("int"))
+        if (o.has("int"))
             setIntelligence(o.getInt("int"));
         else
             return false;
 
-        if(o.has("lck"))
+        if (o.has("lck"))
             setLuck(o.getInt("lck"));
         else
             return false;
 
-        if(o.has("stealth"))
+        if (o.has("stealth"))
             setStealth(o.getInt("stealth"));
         else
             return false;
 
-        if(o.has("defense"))
+        if (o.has("defense"))
             setDefense(o.getInt("defense"));
         else
             return false;

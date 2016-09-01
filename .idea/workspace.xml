@@ -1,16 +1,128 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="e71901bb-dde6-4078-913e-632ecffa372f" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Java Sources/src/main/java/de/pjog/prinzJuliano/TerminalRPG/security/GenSig.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Java Sources/src/main/java/de/pjog/prinzJuliano/TerminalRPG/security/RSAEncrypt.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Java Sources/src/main/java/de/pjog/prinzJuliano/TerminalRPG/security/VerifySig.java" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Java Sources/lib/Sign-api.jar" afterPath="" />
+    <list default="true" id="e71901bb-dde6-4078-913e-632ecffa372f" name="Default" comment="Removed Documentation + Removed RSA Encryption&#10;&#10;The Files are now plain!">
+      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/libraries/Sign_api.xml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Java Sources/doc/allclasses-frame.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Java Sources/doc/allclasses-noframe.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Java Sources/doc/constant-values.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Java Sources/doc/de/pjog/prinzJuliano/TerminalRPG/Main.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Java Sources/doc/de/pjog/prinzJuliano/TerminalRPG/Storyboard.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Java Sources/doc/de/pjog/prinzJuliano/TerminalRPG/class-use/Main.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Java Sources/doc/de/pjog/prinzJuliano/TerminalRPG/class-use/Storyboard.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Java Sources/doc/de/pjog/prinzJuliano/TerminalRPG/models/FightingClasses.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Java Sources/doc/de/pjog/prinzJuliano/TerminalRPG/models/RPGCharacter.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Java Sources/doc/de/pjog/prinzJuliano/TerminalRPG/models/Stats.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Java Sources/doc/de/pjog/prinzJuliano/TerminalRPG/models/StatsTest.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Java Sources/doc/de/pjog/prinzJuliano/TerminalRPG/models/class-use/FightingClasses.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Java Sources/doc/de/pjog/prinzJuliano/TerminalRPG/models/class-use/RPGCharacter.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Java Sources/doc/de/pjog/prinzJuliano/TerminalRPG/models/class-use/Stats.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Java Sources/doc/de/pjog/prinzJuliano/TerminalRPG/models/class-use/StatsTest.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Java Sources/doc/de/pjog/prinzJuliano/TerminalRPG/models/package-frame.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Java Sources/doc/de/pjog/prinzJuliano/TerminalRPG/models/package-summary.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Java Sources/doc/de/pjog/prinzJuliano/TerminalRPG/models/package-tree.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Java Sources/doc/de/pjog/prinzJuliano/TerminalRPG/models/package-use.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Java Sources/doc/de/pjog/prinzJuliano/TerminalRPG/package-frame.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Java Sources/doc/de/pjog/prinzJuliano/TerminalRPG/package-summary.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Java Sources/doc/de/pjog/prinzJuliano/TerminalRPG/package-tree.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Java Sources/doc/de/pjog/prinzJuliano/TerminalRPG/package-use.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Java Sources/doc/de/pjog/prinzJuliano/TerminalRPG/util/ExtractTest.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Java Sources/doc/de/pjog/prinzJuliano/TerminalRPG/util/Resources.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Java Sources/doc/de/pjog/prinzJuliano/TerminalRPG/util/class-use/ExtractTest.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Java Sources/doc/de/pjog/prinzJuliano/TerminalRPG/util/class-use/Resources.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Java Sources/doc/de/pjog/prinzJuliano/TerminalRPG/util/package-frame.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Java Sources/doc/de/pjog/prinzJuliano/TerminalRPG/util/package-summary.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Java Sources/doc/de/pjog/prinzJuliano/TerminalRPG/util/package-tree.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Java Sources/doc/de/pjog/prinzJuliano/TerminalRPG/util/package-use.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Java Sources/doc/de/pjog/prinzJuliano/TerminalRPG/views/AbstractView.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Java Sources/doc/de/pjog/prinzJuliano/TerminalRPG/views/Background.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Java Sources/doc/de/pjog/prinzJuliano/TerminalRPG/views/CrashDialog.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Java Sources/doc/de/pjog/prinzJuliano/TerminalRPG/views/Dialog.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Java Sources/doc/de/pjog/prinzJuliano/TerminalRPG/views/EndCardView.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Java Sources/doc/de/pjog/prinzJuliano/TerminalRPG/views/LoadGameView.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Java Sources/doc/de/pjog/prinzJuliano/TerminalRPG/views/MainMenuView.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Java Sources/doc/de/pjog/prinzJuliano/TerminalRPG/views/NewGameView.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Java Sources/doc/de/pjog/prinzJuliano/TerminalRPG/views/SettingsView.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Java Sources/doc/de/pjog/prinzJuliano/TerminalRPG/views/View.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Java Sources/doc/de/pjog/prinzJuliano/TerminalRPG/views/class-use/AbstractView.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Java Sources/doc/de/pjog/prinzJuliano/TerminalRPG/views/class-use/Background.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Java Sources/doc/de/pjog/prinzJuliano/TerminalRPG/views/class-use/CrashDialog.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Java Sources/doc/de/pjog/prinzJuliano/TerminalRPG/views/class-use/Dialog.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Java Sources/doc/de/pjog/prinzJuliano/TerminalRPG/views/class-use/EndCardView.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Java Sources/doc/de/pjog/prinzJuliano/TerminalRPG/views/class-use/LoadGameView.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Java Sources/doc/de/pjog/prinzJuliano/TerminalRPG/views/class-use/MainMenuView.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Java Sources/doc/de/pjog/prinzJuliano/TerminalRPG/views/class-use/NewGameView.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Java Sources/doc/de/pjog/prinzJuliano/TerminalRPG/views/class-use/SettingsView.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Java Sources/doc/de/pjog/prinzJuliano/TerminalRPG/views/class-use/View.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Java Sources/doc/de/pjog/prinzJuliano/TerminalRPG/views/package-frame.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Java Sources/doc/de/pjog/prinzJuliano/TerminalRPG/views/package-summary.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Java Sources/doc/de/pjog/prinzJuliano/TerminalRPG/views/package-tree.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Java Sources/doc/de/pjog/prinzJuliano/TerminalRPG/views/package-use.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Java Sources/doc/deprecated-list.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Java Sources/doc/help-doc.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Java Sources/doc/index-files/index-1.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Java Sources/doc/index-files/index-10.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Java Sources/doc/index-files/index-11.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Java Sources/doc/index-files/index-12.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Java Sources/doc/index-files/index-13.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Java Sources/doc/index-files/index-14.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Java Sources/doc/index-files/index-15.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Java Sources/doc/index-files/index-16.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Java Sources/doc/index-files/index-17.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Java Sources/doc/index-files/index-2.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Java Sources/doc/index-files/index-3.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Java Sources/doc/index-files/index-4.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Java Sources/doc/index-files/index-5.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Java Sources/doc/index-files/index-6.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Java Sources/doc/index-files/index-7.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Java Sources/doc/index-files/index-8.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Java Sources/doc/index-files/index-9.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Java Sources/doc/index.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Java Sources/doc/overview-frame.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Java Sources/doc/overview-summary.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Java Sources/doc/overview-tree.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Java Sources/doc/package-list" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Java Sources/doc/script.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Java Sources/doc/stylesheet.css" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Java Sources/src/main/java/de/pjog/prinzJuliano/TerminalRPG/security/GenSig.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Java Sources/src/main/java/de/pjog/prinzJuliano/TerminalRPG/security/RSAEncrypt.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Java Sources/src/main/java/de/pjog/prinzJuliano/TerminalRPG/security/VerifySig.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Java Sources/src/test/java/EncryptionAndIntegrity.java" afterPath="" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Java Sources/src/main/resources/Archer.png" afterPath="$PROJECT_DIR$/Java Sources/src/main/resources/Archer.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Java Sources/src/main/resources/Mage.png" afterPath="$PROJECT_DIR$/Java Sources/src/main/resources/Mage.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Java Sources/src/main/resources/Rogue.png" afterPath="$PROJECT_DIR$/Java Sources/src/main/resources/Rogue.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Java Sources/src/main/resources/Warrior.png" afterPath="$PROJECT_DIR$/Java Sources/src/main/resources/Warrior.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/misc.xml" afterPath="$PROJECT_DIR$/.idea/misc.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Java Sources/TerminalRPG.iml" afterPath="$PROJECT_DIR$/Java Sources/TerminalRPG.iml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Java Sources/pom.xml" afterPath="$PROJECT_DIR$/Java Sources/pom.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Java Sources/src/main/java/de/pjog/prinzJuliano/TerminalRPG/Main.java" afterPath="$PROJECT_DIR$/Java Sources/src/main/java/de/pjog/prinzJuliano/TerminalRPG/Main.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Java Sources/src/main/java/de/pjog/prinzJuliano/TerminalRPG/Storyboard.java" afterPath="$PROJECT_DIR$/Java Sources/src/main/java/de/pjog/prinzJuliano/TerminalRPG/Storyboard.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Java Sources/src/main/java/de/pjog/prinzJuliano/TerminalRPG/gfx/BasicImageRenderer.java" afterPath="$PROJECT_DIR$/Java Sources/src/main/java/de/pjog/prinzJuliano/TerminalRPG/gfx/BasicImageRenderer.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Java Sources/src/main/java/de/pjog/prinzJuliano/TerminalRPG/gfx/CommonSprites.java" afterPath="$PROJECT_DIR$/Java Sources/src/main/java/de/pjog/prinzJuliano/TerminalRPG/gfx/CommonSprites.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Java Sources/src/main/java/de/pjog/prinzJuliano/TerminalRPG/gfx/MissingNO.java" afterPath="$PROJECT_DIR$/Java Sources/src/main/java/de/pjog/prinzJuliano/TerminalRPG/gfx/MissingNO.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Java Sources/src/main/java/de/pjog/prinzJuliano/TerminalRPG/gfx/SpriteLoader.java" afterPath="$PROJECT_DIR$/Java Sources/src/main/java/de/pjog/prinzJuliano/TerminalRPG/gfx/SpriteLoader.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Java Sources/src/main/java/de/pjog/prinzJuliano/TerminalRPG/models/FightingClasses.java" afterPath="$PROJECT_DIR$/Java Sources/src/main/java/de/pjog/prinzJuliano/TerminalRPG/models/FightingClasses.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Java Sources/src/main/java/de/pjog/prinzJuliano/TerminalRPG/models/RPGCharacter.java" afterPath="$PROJECT_DIR$/Java Sources/src/main/java/de/pjog/prinzJuliano/TerminalRPG/models/RPGCharacter.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Java Sources/src/main/java/de/pjog/prinzJuliano/TerminalRPG/models/Stats.java" afterPath="$PROJECT_DIR$/Java Sources/src/main/java/de/pjog/prinzJuliano/TerminalRPG/models/Stats.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Java Sources/src/main/java/de/pjog/prinzJuliano/TerminalRPG/util/Resources.java" afterPath="$PROJECT_DIR$/Java Sources/src/main/java/de/pjog/prinzJuliano/TerminalRPG/util/Resources.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Java Sources/src/main/java/de/pjog/prinzJuliano/TerminalRPG/util/Saves.java" afterPath="$PROJECT_DIR$/Java Sources/src/main/java/de/pjog/prinzJuliano/TerminalRPG/util/Saves.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Java Sources/src/test/java/EncryptionAndIntegrity.java" afterPath="$PROJECT_DIR$/Java Sources/src/test/java/EncryptionAndIntegrity.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Java Sources/src/main/java/de/pjog/prinzJuliano/TerminalRPG/views/AbstractView.java" afterPath="$PROJECT_DIR$/Java Sources/src/main/java/de/pjog/prinzJuliano/TerminalRPG/views/AbstractView.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Java Sources/src/main/java/de/pjog/prinzJuliano/TerminalRPG/views/Background.java" afterPath="$PROJECT_DIR$/Java Sources/src/main/java/de/pjog/prinzJuliano/TerminalRPG/views/Background.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Java Sources/src/main/java/de/pjog/prinzJuliano/TerminalRPG/views/CrashDialog.java" afterPath="$PROJECT_DIR$/Java Sources/src/main/java/de/pjog/prinzJuliano/TerminalRPG/views/CrashDialog.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Java Sources/src/main/java/de/pjog/prinzJuliano/TerminalRPG/views/Dialog.java" afterPath="$PROJECT_DIR$/Java Sources/src/main/java/de/pjog/prinzJuliano/TerminalRPG/views/Dialog.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Java Sources/src/main/java/de/pjog/prinzJuliano/TerminalRPG/views/EndCardView.java" afterPath="$PROJECT_DIR$/Java Sources/src/main/java/de/pjog/prinzJuliano/TerminalRPG/views/EndCardView.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Java Sources/src/main/java/de/pjog/prinzJuliano/TerminalRPG/views/HomeView.java" afterPath="$PROJECT_DIR$/Java Sources/src/main/java/de/pjog/prinzJuliano/TerminalRPG/views/HomeView.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Java Sources/src/main/java/de/pjog/prinzJuliano/TerminalRPG/views/LoadGameView.java" afterPath="$PROJECT_DIR$/Java Sources/src/main/java/de/pjog/prinzJuliano/TerminalRPG/views/LoadGameView.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Java Sources/src/main/java/de/pjog/prinzJuliano/TerminalRPG/views/LoadingDialog.java" afterPath="$PROJECT_DIR$/Java Sources/src/main/java/de/pjog/prinzJuliano/TerminalRPG/views/LoadingDialog.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Java Sources/src/main/java/de/pjog/prinzJuliano/TerminalRPG/views/MainMenuView.java" afterPath="$PROJECT_DIR$/Java Sources/src/main/java/de/pjog/prinzJuliano/TerminalRPG/views/MainMenuView.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Java Sources/src/main/java/de/pjog/prinzJuliano/TerminalRPG/views/NewGameView.java" afterPath="$PROJECT_DIR$/Java Sources/src/main/java/de/pjog/prinzJuliano/TerminalRPG/views/NewGameView.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Java Sources/src/main/java/de/pjog/prinzJuliano/TerminalRPG/views/SettingsView.java" afterPath="$PROJECT_DIR$/Java Sources/src/main/java/de/pjog/prinzJuliano/TerminalRPG/views/SettingsView.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Java Sources/src/main/java/de/pjog/prinzJuliano/TerminalRPG/views/View.java" afterPath="$PROJECT_DIR$/Java Sources/src/main/java/de/pjog/prinzJuliano/TerminalRPG/views/View.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Java Sources/src/main/resources/default-theme.properties" afterPath="$PROJECT_DIR$/Java Sources/src/main/resources/default-theme.properties" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Java Sources/src/test/java/de/pjog/prinzJuliano/TerminalRPG/models/RPGTests.java" afterPath="$PROJECT_DIR$/Java Sources/src/test/java/de/pjog/prinzJuliano/TerminalRPG/models/RPGTests.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Java Sources/src/test/java/de/pjog/prinzJuliano/TerminalRPG/models/StatsTest.java" afterPath="$PROJECT_DIR$/Java Sources/src/test/java/de/pjog/prinzJuliano/TerminalRPG/models/StatsTest.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Java Sources/src/test/java/de/pjog/prinzJuliano/TerminalRPG/util/ExtractTest.java" afterPath="$PROJECT_DIR$/Java Sources/src/test/java/de/pjog/prinzJuliano/TerminalRPG/util/ExtractTest.java" />
     </list>
     <ignored path="TerminalRPG.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -31,99 +143,101 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="StatsTest.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Java Sources/src/test/java/de/pjog/prinzJuliano/TerminalRPG/models/StatsTest.java">
+      <file leaf-file-name="LoadingDialog.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Java Sources/src/main/java/de/pjog/prinzJuliano/TerminalRPG/views/LoadingDialog.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="136">
-              <caret line="8" column="2" selection-start-line="8" selection-start-column="2" selection-end-line="8" selection-end-column="2" />
+            <state relative-caret-position="238">
+              <caret line="20" column="18" selection-start-line="20" selection-start-column="18" selection-end-line="20" selection-end-column="18" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="pom.xml" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Java Sources/pom.xml">
+      <file leaf-file-name="default-theme.properties" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Java Sources/src/main/resources/default-theme.properties">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="156">
-              <caret line="49" column="41" selection-start-line="49" selection-start-column="41" selection-end-line="49" selection-end-column="41" />
+            <state relative-caret-position="-323">
+              <caret line="6" column="0" selection-start-line="6" selection-start-column="0" selection-end-line="6" selection-end-column="0" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="GenSig.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Java Sources/src/main/java/de/pjog/prinzJuliano/TerminalRPG/security/GenSig.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="221">
-              <caret line="16" column="54" selection-start-line="16" selection-start-column="54" selection-end-line="16" selection-end-column="54" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="RSAEncrypt.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Java Sources/src/main/java/de/pjog/prinzJuliano/TerminalRPG/security/RSAEncrypt.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="261">
-              <caret line="140" column="22" selection-start-line="140" selection-start-column="22" selection-end-line="140" selection-end-column="22" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="VerifySig.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Java Sources/src/main/java/de/pjog/prinzJuliano/TerminalRPG/security/VerifySig.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="214">
-              <caret line="99" column="48" selection-start-line="99" selection-start-column="48" selection-end-line="99" selection-end-column="48" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="RPGTests.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Java Sources/src/test/java/de/pjog/prinzJuliano/TerminalRPG/models/RPGTests.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="272">
-              <caret line="23" column="40" selection-start-line="23" selection-start-column="40" selection-end-line="23" selection-end-column="40" />
-              <folding>
-                <element signature="imports" expanded="false" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Saves.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Java Sources/src/main/java/de/pjog/prinzJuliano/TerminalRPG/util/Saves.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="419">
-              <caret line="37" column="36" selection-start-line="37" selection-start-column="36" selection-end-line="37" selection-end-column="36" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="EncryptionAndIntegrity.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Java Sources/src/test/java/EncryptionAndIntegrity.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="170">
-              <caret line="10" column="59" selection-start-line="10" selection-start-column="59" selection-end-line="10" selection-end-column="59" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Main.java" pinned="false" current-in-tab="true">
+      <file leaf-file-name="Main.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Java Sources/src/main/java/de/pjog/prinzJuliano/TerminalRPG/Main.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="51">
-              <caret line="33" column="30" selection-start-line="33" selection-start-column="30" selection-end-line="33" selection-end-column="30" />
+            <state relative-caret-position="219">
+              <caret line="51" column="36" selection-start-line="51" selection-start-column="36" selection-end-line="51" selection-end-column="36" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="AbstractView.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Java Sources/src/main/java/de/pjog/prinzJuliano/TerminalRPG/views/AbstractView.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="202">
+              <caret line="25" column="35" selection-start-line="25" selection-start-column="35" selection-end-line="25" selection-end-column="35" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="SpriteLoader.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Java Sources/src/main/java/de/pjog/prinzJuliano/TerminalRPG/gfx/SpriteLoader.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="185">
+              <caret line="30" column="39" selection-start-line="30" selection-start-column="39" selection-end-line="30" selection-end-column="39" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="View.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Java Sources/src/main/java/de/pjog/prinzJuliano/TerminalRPG/views/View.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="413">
+              <caret line="52" column="4" selection-start-line="52" selection-start-column="4" selection-end-line="52" selection-end-column="4" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="FightingClasses.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Java Sources/src/main/java/de/pjog/prinzJuliano/TerminalRPG/models/FightingClasses.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="136">
+              <caret line="8" column="32" selection-start-line="8" selection-start-column="32" selection-end-line="8" selection-end-column="32" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="ExtractTest.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Java Sources/src/test/java/de/pjog/prinzJuliano/TerminalRPG/util/ExtractTest.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="119">
+              <caret line="12" column="50" selection-start-line="12" selection-start-column="50" selection-end-line="12" selection-end-column="50" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Resources.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Java Sources/src/main/java/de/pjog/prinzJuliano/TerminalRPG/util/Resources.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="193">
+              <caret line="76" column="17" selection-start-line="76" selection-start-column="17" selection-end-line="76" selection-end-column="17" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="EndCardView.java" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/Java Sources/src/main/java/de/pjog/prinzJuliano/TerminalRPG/views/EndCardView.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="193">
+              <caret line="49" column="17" selection-start-line="49" selection-start-column="17" selection-end-line="49" selection-end-column="17" />
               <folding />
             </state>
           </provider>
@@ -156,7 +270,6 @@
     <option name="CHANGED_PATHS">
       <list>
         <option value="$PROJECT_DIR$/Java Sources/src/main/java/de/pjog/prinzJuliano/TerminalRPG/gfx/CommonSprites.java" />
-        <option value="$PROJECT_DIR$/Java Sources/src/main/java/de/pjog/prinzJuliano/TerminalRPG/Main.java" />
         <option value="$PROJECT_DIR$/Java Sources/src/main/java/de/pjog/prinzJuliano/TerminalRPG/util/Save.java" />
         <option value="$PROJECT_DIR$/Java Sources/src/main/java/de/pjog/prinzJuliano/TerminalRPG/views/LoadSaveView.java" />
         <option value="$PROJECT_DIR$/Java Sources/src/main/java/de/pjog/prinzJuliano/TerminalRPG/models/Stats.java" />
@@ -164,7 +277,6 @@
         <option value="$PROJECT_DIR$/Java Sources/src/main/java/de/pjog/prinzJuliano/TerminalRPG/models/RPGCharacter.java" />
         <option value="$PROJECT_DIR$/Java Sources/src/main/java/de/pjog/prinzJuliano/TerminalRPG/views/HomeView.java" />
         <option value="$PROJECT_DIR$/Java Sources/src/main/java/de/pjog/prinzJuliano/TerminalRPG/Storyboard.java" />
-        <option value="$PROJECT_DIR$/Java Sources/src/main/java/de/pjog/prinzJuliano/TerminalRPG/views/LoadGameView.java" />
         <option value="$PROJECT_DIR$/Java Sources/src/test/java/de/pjog/prinzJuliano/TerminalRPG/models/RPGTests.java" />
         <option value="$PROJECT_DIR$/Java Sources/src/test/java/de/pjog/prinzJuliano/TerminalRPG/models/StatsTest.java" />
         <option value="$PROJECT_DIR$/Java Sources/src/main/java/security/Test.java" />
@@ -173,8 +285,16 @@
         <option value="$PROJECT_DIR$/Java Sources/src/main/java/de/pjog/prinzJuliano/TerminalRPG/security/GenSig.java" />
         <option value="$PROJECT_DIR$/Java Sources/src/test/java/EncryptionAndIntegrity.java" />
         <option value="$PROJECT_DIR$/Java Sources/src/main/java/de/pjog/prinzJuliano/TerminalRPG/security/RSAEncrypt.java" />
-        <option value="$PROJECT_DIR$/Java Sources/src/main/java/de/pjog/prinzJuliano/TerminalRPG/util/Saves.java" />
         <option value="$PROJECT_DIR$/Java Sources/pom.xml" />
+        <option value="$PROJECT_DIR$/Java Sources/src/main/java/de/pjog/prinzJuliano/TerminalRPG/util/Saves.java" />
+        <option value="$PROJECT_DIR$/Java Sources/src/main/java/de/pjog/prinzJuliano/TerminalRPG/views/LoadGameView.java" />
+        <option value="$PROJECT_DIR$/Java Sources/src/main/java/de/pjog/prinzJuliano/TerminalRPG/views/LoadingDialog.java" />
+        <option value="$PROJECT_DIR$/Java Sources/src/main/java/de/pjog/prinzJuliano/TerminalRPG/models/FightingClasses.java" />
+        <option value="$PROJECT_DIR$/Java Sources/src/test/java/de/pjog/prinzJuliano/TerminalRPG/util/ExtractTest.java" />
+        <option value="$PROJECT_DIR$/Java Sources/src/main/java/de/pjog/prinzJuliano/TerminalRPG/Main.java" />
+        <option value="$PROJECT_DIR$/Java Sources/src/main/java/de/pjog/prinzJuliano/TerminalRPG/gfx/SpriteLoader.java" />
+        <option value="$PROJECT_DIR$/Java Sources/src/main/java/de/pjog/prinzJuliano/TerminalRPG/views/View.java" />
+        <option value="$PROJECT_DIR$/Java Sources/src/main/java/de/pjog/prinzJuliano/TerminalRPG/views/EndCardView.java" />
       </list>
     </option>
   </component>
@@ -263,8 +383,8 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scratches" />
       <pane id="Scope" />
+      <pane id="Scratches" />
       <pane id="PackagesPane" />
       <pane id="ProjectPane">
         <subPane>
@@ -311,6 +431,36 @@
               <option name="myItemId" value="src" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="test" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="TerminalRPG" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Java Sources" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="test" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="java" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="TerminalRPG" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
           </PATH>
           <PATH>
             <PATH_ELEMENT>
@@ -327,6 +477,10 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="main" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="resources" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -356,6 +510,66 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="TerminalRPG" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Java Sources" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="main" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="java" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="TerminalRPG" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="views" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="TerminalRPG" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Java Sources" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="main" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="java" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="TerminalRPG" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="util" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
         </subPane>
       </pane>
     </panes>
@@ -364,8 +578,14 @@
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="settings.editor.selected.configurable" value="fileTemplates" />
     <property name="settings.editor.splitter.proportion" value="0.2" />
+    <property name="project.structure.last.edited" value="Libraries" />
+    <property name="project.structure.proportion" value="0.0" />
+    <property name="project.structure.side.proportion" value="0.0" />
   </component>
   <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="A:\Users\Julian\Documents\GitHub\TerminalRPG\Java Sources\src\main\resources" />
+    </key>
     <key name="MoveClassesOrPackagesDialog.RECENTS_KEY">
       <recent name="de.pjog.prinzJuliano.TerminalRPG" />
     </key>
@@ -718,7 +938,14 @@
       <option name="project" value="LOCAL" />
       <updated>1472582881149</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="Moved Signition API&#10;&#10;API works in IntelliJ but not as standalone!">
+      <created>1472591084906</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1472591084906</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="ToolWindowManager">
@@ -727,28 +954,28 @@
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32980973" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.32980973" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Palette&#9;" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32980973" sideWeight="0.5" order="1" side_tool="true" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.3296875" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.32875264" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32875264" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.25" sideWeight="0.6125984" order="4" side_tool="false" content_ui="combo" />
-      <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.25" sideWeight="0.38740158" order="5" side_tool="true" content_ui="tabs" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.25" sideWeight="0.60094637" order="4" side_tool="false" content_ui="combo" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32980973" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.25" sideWeight="0.39905363" order="5" side_tool="true" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="true" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.39957717" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="true" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32980973" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
     </layout>
   </component>
   <component name="Vcs.Log.UiProperties">
@@ -768,7 +995,9 @@
     <MESSAGE value="Added the capability of running this in the terminal&#10;&#10;You need to add the java parameter ``` -nogui ``` to the cmd." />
     <MESSAGE value="Added Saving Capabilities&#10;&#10;## RPGCharacter&#10;- Added xp and a basic algorithm to calculate level ups from xp&#10;- Aded conversion from and to JSONObjects&#10;&#10;## Stats&#10;- Added conversion from and to JSONObjects&#10;&#10;## Saves&#10;- read and write digitally encrypted and signed data&#10;&#10;## HomeView&#10;- Added a Save and back to menu button&#10;&#10;## LoadGameView&#10;- Displays Save Data ready to be loaded&#10;&#10;## NewGameView&#10;- Fixed bug that Data would not be deleted if view was left (i.e. go back to main menu)&#10;&#10;## RPGTests&#10;- Added a Test for JSON conversion&#10;&#10;## StatsTests&#10;- Added a Test for JSON conversion&#10;&#10;## pom&#10;- Added my libraries to the dependancy list" />
     <MESSAGE value="Added Saving Capabilities&#10;&#10;## RPGCharacter&#10;- Added xp and a basic algorithm to calculate level ups from xp&#10;- Aded conversion from and to JSONObjects&#10;&#10;## Stats&#10;- Added conversion from and to JSONObjects&#10;&#10;## Saves&#10;- read and write digitally encrypted and signed data&#10;&#10;## HomeView&#10;- Added a Save and back to menu button&#10;&#10;## LoadGameView&#10;- Displays Save Data ready to be loaded&#10;&#10;## NewGameView&#10;- Fixed bug that Data would not be deleted if view was left (i.e. go back to main menu)&#10;&#10;## RPGTests&#10;- Added a Test for JSON conversion&#10;&#10;## StatsTests&#10;- Added a Test for JSON conversion&#10;&#10;## pom&#10;- Added my libraries to the dependancy list&#10;&#10;&gt; Left warnings are produced by IntelliJ and mean nothing!&#10;&gt; - PrinzJuliano" />
-    <option name="LAST_COMMIT_MESSAGE" value="Added Saving Capabilities&#10;&#10;## RPGCharacter&#10;- Added xp and a basic algorithm to calculate level ups from xp&#10;- Aded conversion from and to JSONObjects&#10;&#10;## Stats&#10;- Added conversion from and to JSONObjects&#10;&#10;## Saves&#10;- read and write digitally encrypted and signed data&#10;&#10;## HomeView&#10;- Added a Save and back to menu button&#10;&#10;## LoadGameView&#10;- Displays Save Data ready to be loaded&#10;&#10;## NewGameView&#10;- Fixed bug that Data would not be deleted if view was left (i.e. go back to main menu)&#10;&#10;## RPGTests&#10;- Added a Test for JSON conversion&#10;&#10;## StatsTests&#10;- Added a Test for JSON conversion&#10;&#10;## pom&#10;- Added my libraries to the dependancy list&#10;&#10;&gt; Left warnings are produced by IntelliJ and mean nothing!&#10;&gt; - PrinzJuliano" />
+    <MESSAGE value="Moved Signition API&#10;&#10;API works in IntelliJ but not as standalone!" />
+    <MESSAGE value="Removed Documentation + Removed RSA Encryption&#10;&#10;The Files are now plain!" />
+    <option name="LAST_COMMIT_MESSAGE" value="Removed Documentation + Removed RSA Encryption&#10;&#10;The Files are now plain!" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager />
@@ -779,81 +1008,11 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/Java Sources/src/main/java/de/pjog/prinzJuliano/TerminalRPG/views/HomeView.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1887">
-          <caret line="117" column="38" selection-start-line="117" selection-start-column="38" selection-end-line="117" selection-end-column="38" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Java Sources/src/test/java/de/pjog/prinzJuliano/TerminalRPG/models/StatsTest.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Java Sources/pom.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="799">
-          <caret line="47" column="59" selection-start-line="47" selection-start-column="59" selection-end-line="47" selection-end-column="59" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Java Sources/src/test/java/de/pjog/prinzJuliano/TerminalRPG/models/RPGTests.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="272">
-          <caret line="23" column="40" selection-start-line="23" selection-start-column="40" selection-end-line="23" selection-end-column="40" />
-          <folding>
-            <element signature="imports" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Java Sources/src/main/java/de/pjog/prinzJuliano/TerminalRPG/util/Saves.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="357">
-          <caret line="29" column="23" selection-start-line="29" selection-start-column="23" selection-end-line="29" selection-end-column="23" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Java Sources/src/main/java/de/pjog/prinzJuliano/TerminalRPG/Storyboard.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="4777">
-          <caret line="314" column="32" selection-start-line="314" selection-start-column="32" selection-end-line="314" selection-end-column="32" />
-          <folding>
-            <element signature="imports" expanded="false" />
-            <element signature="e#4934#4935#0" expanded="false" />
-            <element signature="e#4963#4964#0" expanded="false" />
-            <element signature="e#6962#6963#0" expanded="false" />
-            <element signature="e#6983#6984#0" expanded="false" />
-            <element signature="e#7484#7485#0" expanded="false" />
-            <element signature="e#7513#7514#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/Java Sources/src/main/java/de/pjog/prinzJuliano/TerminalRPG/views/LoadGameView.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="884">
           <caret line="68" column="21" selection-start-line="68" selection-start-column="21" selection-end-line="68" selection-end-column="21" />
-          <folding>
-            <element signature="imports" expanded="false" />
-            <element signature="e#960#1173#0" expanded="false" />
-            <element signature="e#1172#1173#0" expanded="false" />
-            <element signature="e#1830#2044#0" expanded="false" />
-            <element signature="e#2043#2044#0" expanded="false" />
-            <element signature="e#2110#2323#0" expanded="false" />
-            <element signature="e#2322#2323#0" expanded="false" />
-            <element signature="e#2726#2877#0" expanded="false" />
-            <element signature="e#2876#2877#0" expanded="false" />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>
@@ -861,35 +1020,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="6341">
           <caret line="427" column="9" selection-start-line="427" selection-start-column="9" selection-end-line="427" selection-end-column="9" />
-          <folding>
-            <element signature="imports" expanded="false" />
-            <element signature="e#2795#3365#0" expanded="false" />
-            <element signature="e#3364#3365#0" expanded="false" />
-            <element signature="e#3889#4207#0" expanded="false" />
-            <element signature="e#4206#4207#0" expanded="false" />
-            <element signature="e#4246#4565#0" expanded="false" />
-            <element signature="e#4564#4565#0" expanded="false" />
-            <element signature="e#4771#5089#0" expanded="false" />
-            <element signature="e#5088#5089#0" expanded="false" />
-            <element signature="e#5128#5447#0" expanded="false" />
-            <element signature="e#5446#5447#0" expanded="false" />
-            <element signature="e#5654#5972#0" expanded="false" />
-            <element signature="e#5971#5972#0" expanded="false" />
-            <element signature="e#6011#6330#0" expanded="false" />
-            <element signature="e#6329#6330#0" expanded="false" />
-            <element signature="e#6540#6858#0" expanded="false" />
-            <element signature="e#6857#6858#0" expanded="false" />
-            <element signature="e#6897#7216#0" expanded="false" />
-            <element signature="e#7215#7216#0" expanded="false" />
-            <element signature="e#7423#7747#0" expanded="false" />
-            <element signature="e#7746#7747#0" expanded="false" />
-            <element signature="e#7787#8111#0" expanded="false" />
-            <element signature="e#8110#8111#0" expanded="false" />
-            <element signature="e#8365#8460#0" expanded="false" />
-            <element signature="e#8459#8460#0" expanded="false" />
-            <element signature="e#8567#10979#0" expanded="false" />
-            <element signature="e#10978#10979#0" expanded="false" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -900,12 +1030,12 @@
           <folding>
             <element signature="docComment;class#RPGCharacter#0" expanded="false" />
             <element signature="docComment;method#RPGCharacter#0;class#RPGCharacter#0" expanded="false" />
-            <element signature="e#1915#1916#0" expanded="false" />
-            <element signature="e#1956#1957#0" expanded="false" />
-            <element signature="e#2144#2145#0" expanded="false" />
-            <element signature="e#2169#2170#0" expanded="false" />
-            <element signature="e#2258#2259#0" expanded="false" />
-            <element signature="e#2283#2284#0" expanded="false" />
+            <element signature="e#2188#2189#0" expanded="false" />
+            <element signature="e#2238#2239#0" expanded="false" />
+            <element signature="e#2479#2480#0" expanded="false" />
+            <element signature="e#2513#2514#0" expanded="false" />
+            <element signature="e#2609#2610#0" expanded="false" />
+            <element signature="e#2634#2635#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -915,36 +1045,9 @@
         <state relative-caret-position="3757">
           <caret line="257" column="24" selection-start-line="257" selection-start-column="24" selection-end-line="257" selection-end-column="24" />
           <folding>
-            <element signature="e#2324#2325#0" expanded="false" />
-            <element signature="e#2365#2366#0" expanded="false" />
             <element signature="e#2468#2469#0" expanded="false" />
-            <element signature="e#2506#2507#0" expanded="false" />
-            <element signature="e#2587#2588#0" expanded="false" />
-            <element signature="e#2609#2610#0" expanded="false" />
-            <element signature="e#2763#2764#0" expanded="false" />
-            <element signature="e#2785#2786#0" expanded="false" />
-            <element signature="e#2827#2828#0" expanded="false" />
-            <element signature="e#2858#2859#0" expanded="false" />
-            <element signature="e#2940#2941#0" expanded="false" />
-            <element signature="e#2963#2964#0" expanded="false" />
-            <element signature="e#3064#3065#0" expanded="false" />
-            <element signature="e#3097#3098#0" expanded="false" />
-            <element signature="e#3182#3183#0" expanded="false" />
-            <element signature="e#3208#3209#0" expanded="false" />
-            <element signature="e#3322#3323#0" expanded="false" />
-            <element signature="e#3361#3362#0" expanded="false" />
             <element signature="e#3438#3439#0" expanded="false" />
-            <element signature="e#3456#3457#0" expanded="false" />
-            <element signature="e#3546#3547#0" expanded="false" />
-            <element signature="e#3569#3570#0" expanded="false" />
-            <element signature="e#3649#3650#0" expanded="false" />
-            <element signature="e#3670#3671#0" expanded="false" />
-            <element signature="e#3769#3770#0" expanded="false" />
-            <element signature="e#3798#3799#0" expanded="false" />
-            <element signature="e#3878#3879#0" expanded="false" />
             <element signature="e#3899#3900#0" expanded="false" />
-            <element signature="e#3998#3999#0" expanded="false" />
-            <element signature="e#4027#4028#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -961,7 +1064,10 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
+          <folding>
+            <marker date="1472728461994" expanded="true" signature="271:465" ph="{...}" />
+            <marker date="1472728461994" expanded="true" signature="514:766" ph="{...}" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -997,15 +1103,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="4777">
           <caret line="314" column="32" selection-start-line="314" selection-start-column="32" selection-end-line="314" selection-end-column="32" />
-          <folding>
-            <element signature="imports" expanded="false" />
-            <element signature="e#4934#4935#0" expanded="false" />
-            <element signature="e#4963#4964#0" expanded="false" />
-            <element signature="e#6962#6963#0" expanded="false" />
-            <element signature="e#6983#6984#0" expanded="false" />
-            <element signature="e#7484#7485#0" expanded="false" />
-            <element signature="e#7513#7514#0" expanded="false" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1013,17 +1110,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1003">
           <caret line="68" column="21" selection-start-line="68" selection-start-column="21" selection-end-line="68" selection-end-column="21" />
-          <folding>
-            <element signature="imports" expanded="false" />
-            <element signature="e#960#1173#0" expanded="false" />
-            <element signature="e#1172#1173#0" expanded="false" />
-            <element signature="e#1830#2044#0" expanded="false" />
-            <element signature="e#2043#2044#0" expanded="false" />
-            <element signature="e#2110#2323#0" expanded="false" />
-            <element signature="e#2322#2323#0" expanded="false" />
-            <element signature="e#2726#2877#0" expanded="false" />
-            <element signature="e#2876#2877#0" expanded="false" />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>
@@ -1031,35 +1118,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="6868">
           <caret line="427" column="9" selection-start-line="427" selection-start-column="9" selection-end-line="427" selection-end-column="9" />
-          <folding>
-            <element signature="imports" expanded="false" />
-            <element signature="e#2795#3365#0" expanded="false" />
-            <element signature="e#3364#3365#0" expanded="false" />
-            <element signature="e#3889#4207#0" expanded="false" />
-            <element signature="e#4206#4207#0" expanded="false" />
-            <element signature="e#4246#4565#0" expanded="false" />
-            <element signature="e#4564#4565#0" expanded="false" />
-            <element signature="e#4771#5089#0" expanded="false" />
-            <element signature="e#5088#5089#0" expanded="false" />
-            <element signature="e#5128#5447#0" expanded="false" />
-            <element signature="e#5446#5447#0" expanded="false" />
-            <element signature="e#5654#5972#0" expanded="false" />
-            <element signature="e#5971#5972#0" expanded="false" />
-            <element signature="e#6011#6330#0" expanded="false" />
-            <element signature="e#6329#6330#0" expanded="false" />
-            <element signature="e#6540#6858#0" expanded="false" />
-            <element signature="e#6857#6858#0" expanded="false" />
-            <element signature="e#6897#7216#0" expanded="false" />
-            <element signature="e#7215#7216#0" expanded="false" />
-            <element signature="e#7423#7747#0" expanded="false" />
-            <element signature="e#7746#7747#0" expanded="false" />
-            <element signature="e#7787#8111#0" expanded="false" />
-            <element signature="e#8110#8111#0" expanded="false" />
-            <element signature="e#8365#8460#0" expanded="false" />
-            <element signature="e#8459#8460#0" expanded="false" />
-            <element signature="e#8567#10979#0" expanded="false" />
-            <element signature="e#10978#10979#0" expanded="false" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1070,12 +1128,12 @@
           <folding>
             <element signature="docComment;class#RPGCharacter#0" expanded="false" />
             <element signature="docComment;method#RPGCharacter#0;class#RPGCharacter#0" expanded="false" />
-            <element signature="e#1915#1916#0" expanded="false" />
-            <element signature="e#1956#1957#0" expanded="false" />
-            <element signature="e#2144#2145#0" expanded="false" />
-            <element signature="e#2169#2170#0" expanded="false" />
-            <element signature="e#2258#2259#0" expanded="false" />
-            <element signature="e#2283#2284#0" expanded="false" />
+            <element signature="e#2188#2189#0" expanded="false" />
+            <element signature="e#2238#2239#0" expanded="false" />
+            <element signature="e#2479#2480#0" expanded="false" />
+            <element signature="e#2513#2514#0" expanded="false" />
+            <element signature="e#2609#2610#0" expanded="false" />
+            <element signature="e#2634#2635#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -1085,36 +1143,9 @@
         <state relative-caret-position="3757">
           <caret line="257" column="24" selection-start-line="257" selection-start-column="24" selection-end-line="257" selection-end-column="24" />
           <folding>
-            <element signature="e#2324#2325#0" expanded="false" />
-            <element signature="e#2365#2366#0" expanded="false" />
             <element signature="e#2468#2469#0" expanded="false" />
-            <element signature="e#2506#2507#0" expanded="false" />
-            <element signature="e#2587#2588#0" expanded="false" />
-            <element signature="e#2609#2610#0" expanded="false" />
-            <element signature="e#2763#2764#0" expanded="false" />
-            <element signature="e#2785#2786#0" expanded="false" />
-            <element signature="e#2827#2828#0" expanded="false" />
-            <element signature="e#2858#2859#0" expanded="false" />
-            <element signature="e#2940#2941#0" expanded="false" />
-            <element signature="e#2963#2964#0" expanded="false" />
-            <element signature="e#3064#3065#0" expanded="false" />
-            <element signature="e#3097#3098#0" expanded="false" />
-            <element signature="e#3182#3183#0" expanded="false" />
-            <element signature="e#3208#3209#0" expanded="false" />
-            <element signature="e#3322#3323#0" expanded="false" />
-            <element signature="e#3361#3362#0" expanded="false" />
             <element signature="e#3438#3439#0" expanded="false" />
-            <element signature="e#3456#3457#0" expanded="false" />
-            <element signature="e#3546#3547#0" expanded="false" />
-            <element signature="e#3569#3570#0" expanded="false" />
-            <element signature="e#3649#3650#0" expanded="false" />
-            <element signature="e#3670#3671#0" expanded="false" />
-            <element signature="e#3769#3770#0" expanded="false" />
-            <element signature="e#3798#3799#0" expanded="false" />
-            <element signature="e#3878#3879#0" expanded="false" />
             <element signature="e#3899#3900#0" expanded="false" />
-            <element signature="e#3998#3999#0" expanded="false" />
-            <element signature="e#4027#4028#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -1133,13 +1164,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Java Sources/src/main/java/de/pjog/prinzJuliano/TerminalRPG/views/AbstractView.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="102">
-          <caret line="15" column="14" selection-start-line="15" selection-start-column="14" selection-end-line="15" selection-end-column="14" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/Java Sources/src/main/java/de/pjog/prinzJuliano/TerminalRPG/gfx/BasicImageRenderer.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-185">
@@ -1151,13 +1175,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="68">
           <caret line="5" column="13" selection-start-line="5" selection-start-column="13" selection-end-line="5" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Java Sources/src/main/java/de/pjog/prinzJuliano/TerminalRPG/gfx/SpriteLoader.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-338">
-          <caret line="21" column="13" selection-start-line="21" selection-start-column="13" selection-end-line="21" selection-end-column="13" />
         </state>
       </provider>
     </entry>
@@ -1176,77 +1193,14 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/Java Sources/src/main/java/de/pjog/prinzJuliano/TerminalRPG/views/LoadSaveView.java" />
-    <entry file="file://$PROJECT_DIR$/Java Sources/src/main/java/de/pjog/prinzJuliano/TerminalRPG/views/NewGameView.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="6341">
-          <caret line="427" column="9" selection-start-line="427" selection-start-column="9" selection-end-line="427" selection-end-column="9" />
-          <folding>
-            <element signature="imports" expanded="false" />
-            <element signature="e#2795#3365#0" expanded="false" />
-            <element signature="e#3364#3365#0" expanded="false" />
-            <element signature="e#3889#4207#0" expanded="false" />
-            <element signature="e#4206#4207#0" expanded="false" />
-            <element signature="e#4246#4565#0" expanded="false" />
-            <element signature="e#4564#4565#0" expanded="false" />
-            <element signature="e#4771#5089#0" expanded="false" />
-            <element signature="e#5088#5089#0" expanded="false" />
-            <element signature="e#5128#5447#0" expanded="false" />
-            <element signature="e#5446#5447#0" expanded="false" />
-            <element signature="e#5654#5972#0" expanded="false" />
-            <element signature="e#5971#5972#0" expanded="false" />
-            <element signature="e#6011#6330#0" expanded="false" />
-            <element signature="e#6329#6330#0" expanded="false" />
-            <element signature="e#6540#6858#0" expanded="false" />
-            <element signature="e#6857#6858#0" expanded="false" />
-            <element signature="e#6897#7216#0" expanded="false" />
-            <element signature="e#7215#7216#0" expanded="false" />
-            <element signature="e#7423#7747#0" expanded="false" />
-            <element signature="e#7746#7747#0" expanded="false" />
-            <element signature="e#7787#8111#0" expanded="false" />
-            <element signature="e#8110#8111#0" expanded="false" />
-            <element signature="e#8365#8460#0" expanded="false" />
-            <element signature="e#8459#8460#0" expanded="false" />
-            <element signature="e#8567#10979#0" expanded="false" />
-            <element signature="e#10978#10979#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/Java Sources/src/main/java/de/pjog/prinzJuliano/TerminalRPG/models/Stats.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="3757">
           <caret line="257" column="24" selection-start-line="257" selection-start-column="24" selection-end-line="257" selection-end-column="24" />
           <folding>
-            <element signature="e#2324#2325#0" expanded="false" />
-            <element signature="e#2365#2366#0" expanded="false" />
             <element signature="e#2468#2469#0" expanded="false" />
-            <element signature="e#2506#2507#0" expanded="false" />
-            <element signature="e#2587#2588#0" expanded="false" />
-            <element signature="e#2609#2610#0" expanded="false" />
-            <element signature="e#2763#2764#0" expanded="false" />
-            <element signature="e#2785#2786#0" expanded="false" />
-            <element signature="e#2827#2828#0" expanded="false" />
-            <element signature="e#2858#2859#0" expanded="false" />
-            <element signature="e#2940#2941#0" expanded="false" />
-            <element signature="e#2963#2964#0" expanded="false" />
-            <element signature="e#3064#3065#0" expanded="false" />
-            <element signature="e#3097#3098#0" expanded="false" />
-            <element signature="e#3182#3183#0" expanded="false" />
-            <element signature="e#3208#3209#0" expanded="false" />
-            <element signature="e#3322#3323#0" expanded="false" />
-            <element signature="e#3361#3362#0" expanded="false" />
             <element signature="e#3438#3439#0" expanded="false" />
-            <element signature="e#3456#3457#0" expanded="false" />
-            <element signature="e#3546#3547#0" expanded="false" />
-            <element signature="e#3569#3570#0" expanded="false" />
-            <element signature="e#3649#3650#0" expanded="false" />
-            <element signature="e#3670#3671#0" expanded="false" />
-            <element signature="e#3769#3770#0" expanded="false" />
-            <element signature="e#3798#3799#0" expanded="false" />
-            <element signature="e#3878#3879#0" expanded="false" />
             <element signature="e#3899#3900#0" expanded="false" />
-            <element signature="e#3998#3999#0" expanded="false" />
-            <element signature="e#4027#4028#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -1258,12 +1212,12 @@
           <folding>
             <element signature="docComment;class#RPGCharacter#0" expanded="false" />
             <element signature="docComment;method#RPGCharacter#0;class#RPGCharacter#0" expanded="false" />
-            <element signature="e#1915#1916#0" expanded="false" />
-            <element signature="e#1956#1957#0" expanded="false" />
-            <element signature="e#2144#2145#0" expanded="false" />
-            <element signature="e#2169#2170#0" expanded="false" />
-            <element signature="e#2258#2259#0" expanded="false" />
-            <element signature="e#2283#2284#0" expanded="false" />
+            <element signature="e#2188#2189#0" expanded="false" />
+            <element signature="e#2238#2239#0" expanded="false" />
+            <element signature="e#2479#2480#0" expanded="false" />
+            <element signature="e#2513#2514#0" expanded="false" />
+            <element signature="e#2609#2610#0" expanded="false" />
+            <element signature="e#2634#2635#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -1276,136 +1230,270 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Java Sources/src/main/java/de/pjog/prinzJuliano/TerminalRPG/Storyboard.java">
+    <entry file="file://$PROJECT_DIR$/Java Sources/src/test/java/de/pjog/prinzJuliano/TerminalRPG/models/StatsTest.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="4777">
-          <caret line="314" column="32" selection-start-line="314" selection-start-column="32" selection-end-line="314" selection-end-column="32" />
+        <state relative-caret-position="102">
+          <caret line="6" column="46" selection-start-line="6" selection-start-column="46" selection-end-line="6" selection-end-column="46" />
           <folding>
-            <element signature="imports" expanded="false" />
-            <element signature="e#4934#4935#0" expanded="false" />
-            <element signature="e#4963#4964#0" expanded="false" />
-            <element signature="e#6962#6963#0" expanded="false" />
-            <element signature="e#6983#6984#0" expanded="false" />
-            <element signature="e#7484#7485#0" expanded="false" />
-            <element signature="e#7513#7514#0" expanded="false" />
+            <marker date="1472728461994" expanded="true" signature="271:465" ph="{...}" />
+            <marker date="1472728461994" expanded="true" signature="514:766" ph="{...}" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Java Sources/src/main/java/de/pjog/prinzJuliano/TerminalRPG/views/LoadGameView.java">
+    <entry file="file://$PROJECT_DIR$/Java Sources/src/main/java/security/AllinOne.java" />
+    <entry file="file://$PROJECT_DIR$/Java Sources/src/main/java/security/Test.java" />
+    <entry file="file://$PROJECT_DIR$/Java Sources/src/main/java/de/pjog/prinzJuliano/TerminalRPG/security/VerifySig.java" />
+    <entry file="file://$PROJECT_DIR$/Java Sources/src/main/java/de/pjog/prinzJuliano/TerminalRPG/security/GenSig.java" />
+    <entry file="file://$PROJECT_DIR$/Java Sources/src/main/java/de/pjog/prinzJuliano/TerminalRPG/security/RSAEncrypt.java" />
+    <entry file="file://$PROJECT_DIR$/Java Sources/pom.xml">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="884">
-          <caret line="68" column="21" selection-start-line="68" selection-start-column="21" selection-end-line="68" selection-end-column="21" />
-          <folding>
-            <element signature="imports" expanded="false" />
-            <element signature="e#960#1173#0" expanded="false" />
-            <element signature="e#1172#1173#0" expanded="false" />
-            <element signature="e#1830#2044#0" expanded="false" />
-            <element signature="e#2043#2044#0" expanded="false" />
-            <element signature="e#2110#2323#0" expanded="false" />
-            <element signature="e#2322#2323#0" expanded="false" />
-            <element signature="e#2726#2877#0" expanded="false" />
-            <element signature="e#2876#2877#0" expanded="false" />
-          </folding>
+        <state relative-caret-position="833">
+          <caret line="49" column="41" selection-start-line="49" selection-start-column="41" selection-end-line="49" selection-end-column="41" />
+          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/Java Sources/src/test/java/de/pjog/prinzJuliano/TerminalRPG/models/RPGTests.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="272">
-          <caret line="23" column="40" selection-start-line="23" selection-start-column="40" selection-end-line="23" selection-end-column="40" />
+        <state relative-caret-position="170">
+          <caret line="12" column="38" selection-start-line="12" selection-start-column="38" selection-end-line="12" selection-end-column="38" />
           <folding>
             <element signature="imports" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Java Sources/src/test/java/de/pjog/prinzJuliano/TerminalRPG/models/StatsTest.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="136">
-          <caret line="8" column="2" selection-start-line="8" selection-start-column="2" selection-end-line="8" selection-end-column="2" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Java Sources/src/main/java/security/AllinOne.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Java Sources/src/main/java/security/Test.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Java Sources/src/main/java/de/pjog/prinzJuliano/TerminalRPG/security/VerifySig.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="214">
-          <caret line="99" column="48" selection-start-line="99" selection-start-column="48" selection-end-line="99" selection-end-column="48" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Java Sources/src/main/java/de/pjog/prinzJuliano/TerminalRPG/security/GenSig.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="221">
-          <caret line="16" column="54" selection-start-line="16" selection-start-column="54" selection-end-line="16" selection-end-column="54" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Java Sources/src/test/java/EncryptionAndIntegrity.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="170">
-          <caret line="10" column="59" selection-start-line="10" selection-start-column="59" selection-end-line="10" selection-end-column="59" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Java Sources/src/main/java/de/pjog/prinzJuliano/TerminalRPG/security/RSAEncrypt.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="261">
-          <caret line="140" column="22" selection-start-line="140" selection-start-column="22" selection-end-line="140" selection-end-column="22" />
-          <folding>
-            <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/Java Sources/src/main/java/de/pjog/prinzJuliano/TerminalRPG/util/Saves.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="419">
-          <caret line="37" column="36" selection-start-line="37" selection-start-column="36" selection-end-line="37" selection-end-column="36" />
+        <state relative-caret-position="538">
+          <caret line="60" column="37" selection-start-line="60" selection-start-column="37" selection-end-line="60" selection-end-column="37" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Java Sources/pom.xml">
+    <entry file="file://$PROJECT_DIR$/Java Sources/src/test/java/EncryptionAndIntegrity.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="156">
-          <caret line="49" column="41" selection-start-line="49" selection-start-column="41" selection-end-line="49" selection-end-column="41" />
+        <state relative-caret-position="34">
+          <caret line="8" column="48" selection-start-line="8" selection-start-column="48" selection-end-line="8" selection-end-column="48" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Java Sources/src/main/resources/Archer.png">
+      <provider selected="true" editor-type-id="images">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Java Sources/src/main/resources/Mage.png">
+      <provider selected="true" editor-type-id="images">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Java Sources/src/main/resources/Warrior.png">
+      <provider selected="true" editor-type-id="images">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Java Sources/src/main/resources/Rogue.png">
+      <provider selected="true" editor-type-id="images">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Java Sources/src/main/java/de/pjog/prinzJuliano/TerminalRPG/Storyboard.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="202">
+          <caret line="228" column="0" selection-start-line="228" selection-start-column="0" selection-end-line="228" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Java Sources/src/main/java/de/pjog/prinzJuliano/TerminalRPG/views/NewGameView.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="202">
+          <caret line="90" column="0" selection-start-line="90" selection-start-column="0" selection-end-line="90" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Java Sources/src/main/java/de/pjog/prinzJuliano/TerminalRPG/views/LoadGameView.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="425">
+          <caret line="72" column="75" selection-start-line="72" selection-start-column="75" selection-end-line="72" selection-end-column="75" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Java Sources/src/main/java/de/pjog/prinzJuliano/TerminalRPG/views/LoadingDialog.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="238">
+          <caret line="20" column="18" selection-start-line="20" selection-start-column="18" selection-end-line="20" selection-end-column="18" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Java Sources/src/main/resources/default-theme.properties">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-323">
+          <caret line="6" column="0" selection-start-line="6" selection-start-column="0" selection-end-line="6" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Java Sources/src/main/java/de/pjog/prinzJuliano/TerminalRPG/models/FightingClasses.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="136">
+          <caret line="8" column="32" selection-start-line="8" selection-start-column="32" selection-end-line="8" selection-end-column="32" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Java Sources/src/test/java/de/pjog/prinzJuliano/TerminalRPG/util/ExtractTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="119">
+          <caret line="12" column="50" selection-start-line="12" selection-start-column="50" selection-end-line="12" selection-end-column="50" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/Java Sources/src/main/java/de/pjog/prinzJuliano/TerminalRPG/Main.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="51">
-          <caret line="33" column="30" selection-start-line="33" selection-start-column="30" selection-end-line="33" selection-end-column="30" />
+        <state relative-caret-position="219">
+          <caret line="51" column="36" selection-start-line="51" selection-start-column="36" selection-end-line="51" selection-end-column="36" />
           <folding />
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/Java Sources/src/main/java/de/pjog/prinzJuliano/TerminalRPG/views/AbstractView.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="202">
+          <caret line="25" column="35" selection-start-line="25" selection-start-column="35" selection-end-line="25" selection-end-column="35" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Java Sources/src/main/java/de/pjog/prinzJuliano/TerminalRPG/gfx/SpriteLoader.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="185">
+          <caret line="30" column="39" selection-start-line="30" selection-start-column="39" selection-end-line="30" selection-end-column="39" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Java Sources/src/main/java/de/pjog/prinzJuliano/TerminalRPG/views/View.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="413">
+          <caret line="52" column="4" selection-start-line="52" selection-start-column="4" selection-end-line="52" selection-end-column="4" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Java Sources/src/main/java/de/pjog/prinzJuliano/TerminalRPG/util/Resources.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="193">
+          <caret line="76" column="17" selection-start-line="76" selection-start-column="17" selection-end-line="76" selection-end-column="17" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Java Sources/src/main/java/de/pjog/prinzJuliano/TerminalRPG/views/EndCardView.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="193">
+          <caret line="49" column="17" selection-start-line="49" selection-start-column="17" selection-end-line="49" selection-end-column="17" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+  </component>
+  <component name="masterDetails">
+    <states>
+      <state key="ArtifactsStructureConfigurable.UI">
+        <settings>
+          <artifact-editor />
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="FacetStructureConfigurable.UI">
+        <settings>
+          <last-edited>No facets are configured</last-edited>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="GlobalLibrariesConfigurable.UI">
+        <settings>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="JdkListConfigurable.UI">
+        <settings>
+          <last-edited>1.8</last-edited>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="ModuleStructureConfigurable.UI">
+        <settings>
+          <last-edited>TerminalRPG</last-edited>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+                <option value="0.6" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="ProjectJDKs.UI">
+        <settings>
+          <last-edited>1.8</last-edited>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="ProjectLibrariesConfigurable.UI">
+        <settings>
+          <last-edited>not-yet-commons-ssl-0.3.17</last-edited>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+    </states>
   </component>
   <component name="mavenExecuteGoalHistory">
     <option value="$PROJECT_DIR$/Java Sources" />
