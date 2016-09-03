@@ -9,10 +9,10 @@ public class CommonSprites {
     public CommonSprites() {
         images = new HashMap<>();
 
-        images.put("WARRIOR", SpriteLoader.loadSprite("Warrior.png", 8, 8));
-        images.put("ARCHER", SpriteLoader.loadSprite("Archer.png", 8, 8));
-        images.put("MAGE", SpriteLoader.loadSprite("Mage.png", 8, 8));
-        images.put("ROGUE", SpriteLoader.loadSprite("Rogue.png", 8, 8));
+        images.put("WARRIOR", SpriteLoader.loadSprite("gfx/Warrior.png", 8, 8));
+        images.put("ARCHER", SpriteLoader.loadSprite("gfx/Archer.png", 8, 8));
+        images.put("MAGE", SpriteLoader.loadSprite("gfx/Mage.png", 8, 8));
+        images.put("ROGUE", SpriteLoader.loadSprite("gfx/Rogue.png", 8, 8));
     }
 
     public BasicImageRenderer getImage(String s, int expC, int expR) {
