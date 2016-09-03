@@ -1,10 +1,8 @@
 package de.pjog.prinzJuliano.TerminalRPG.models;
 
-import org.json.JSONObject;
-import org.junit.Test;
-import org.skyscreamer.jsonassert.JSONAssert;
-
 import static org.junit.Assert.assertNotEquals;
+
+import org.junit.Test;
 
 public class StatsTest {
     @Test

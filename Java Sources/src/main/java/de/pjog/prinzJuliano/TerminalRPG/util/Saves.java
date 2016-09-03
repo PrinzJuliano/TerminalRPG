@@ -14,7 +14,6 @@ import java.nio.file.FileAlreadyExistsException;
  */
 public class Saves {
 
-    @SuppressWarnings("ResultOfMethodCallIgnored")
     public static void SaveCharacter(RPGCharacter character) {
 
         JSONSerializer ser = new JSONSerializer();

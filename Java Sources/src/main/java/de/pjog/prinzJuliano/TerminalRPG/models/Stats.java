@@ -1,7 +1,5 @@
 package de.pjog.prinzJuliano.TerminalRPG.models;
 
-import org.json.JSONObject;
-
 /**
  * All the Stats any entity could have.
  *

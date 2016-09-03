@@ -18,7 +18,8 @@ import java.io.IOException;
  */
 public class LoadGameView extends AbstractView {
 
-    @Override
+    @SuppressWarnings("null")
+	@Override
     public void init(final Storyboard story, WindowBasedTextGUI textGUI) {
         rootWindow.setTitle("Load a Save");
 

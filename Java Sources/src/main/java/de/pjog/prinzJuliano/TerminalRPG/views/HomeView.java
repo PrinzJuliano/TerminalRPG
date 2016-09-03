@@ -1,6 +1,16 @@
 package de.pjog.prinzJuliano.TerminalRPG.views;
 
-import com.googlecode.lanterna.gui2.*;
+import com.googlecode.lanterna.gui2.Borders;
+import com.googlecode.lanterna.gui2.Button;
+import com.googlecode.lanterna.gui2.Direction;
+import com.googlecode.lanterna.gui2.EmptySpace;
+import com.googlecode.lanterna.gui2.GridLayout;
+import com.googlecode.lanterna.gui2.Label;
+import com.googlecode.lanterna.gui2.LinearLayout;
+import com.googlecode.lanterna.gui2.Panel;
+import com.googlecode.lanterna.gui2.WindowBasedTextGUI;
+
+import de.pjog.prinzJuliano.TerminalRPG.Main;
 import de.pjog.prinzJuliano.TerminalRPG.Storyboard;
 import de.pjog.prinzJuliano.TerminalRPG.gfx.BasicImageRenderer;
 import de.pjog.prinzJuliano.TerminalRPG.models.RPGCharacter;
@@ -17,6 +27,10 @@ public class HomeView extends AbstractView {
 
     @Override
     public void init(final Storyboard story, WindowBasedTextGUI textGUI) {
+    	
+    	if(Main.DEBUG)
+    		System.out.println("HomeView: Got " + communication);
+    	
         rootWindow.setTitle("-[Hub]-");
 
         // Main panel

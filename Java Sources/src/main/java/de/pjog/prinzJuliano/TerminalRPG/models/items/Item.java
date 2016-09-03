@@ -1,7 +1,6 @@
 package de.pjog.prinzJuliano.TerminalRPG.models.items;
 
 import de.pjog.prinzJuliano.TerminalRPG.models.FightingClasses;
-import de.pjog.prinzJuliano.TerminalRPG.models.RPGCharacter;
 
 /**
  * Represents a simple item

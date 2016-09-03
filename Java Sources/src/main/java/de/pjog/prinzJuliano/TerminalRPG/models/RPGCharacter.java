@@ -1,7 +1,5 @@
 package de.pjog.prinzJuliano.TerminalRPG.models;
 
-import org.json.JSONObject;
-
 /**
  * The Character Sheet. All handling of typical RPG Elements will be done in here.
  *
