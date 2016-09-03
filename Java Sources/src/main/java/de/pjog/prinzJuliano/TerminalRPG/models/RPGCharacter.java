@@ -1,5 +1,7 @@
 package de.pjog.prinzJuliano.TerminalRPG.models;
 
+import de.pjog.prinzJuliano.TerminalRPG.models.items.Inventory;
+
 /**
  * The Character Sheet. All handling of typical RPG Elements will be done in here.
  *
@@ -13,6 +15,8 @@ public class RPGCharacter implements Cloneable {
 
     private int level; //Her / His Level
     private int xp;
+    
+    private Inventory inventory;
 
     /**
      * <p>
@@ -32,6 +36,7 @@ public class RPGCharacter implements Cloneable {
         level = 1;
         xp = 0;
         stats = new Stats(5, 5, 5, 5, 5, 0, 0);
+        inventory = new Inventory(64);
     }
 
     /**
