@@ -2,14 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="e71901bb-dde6-4078-913e-632ecffa372f" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Java Sources/src/main/java/de/pjog/prinzJuliano/TerminalRPG/models/items/AbstractItem.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Java Sources/src/main/java/de/pjog/prinzJuliano/TerminalRPG/models/items/EffectItem.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Java Sources/src/main/java/de/pjog/prinzJuliano/TerminalRPG/models/items/Equipable.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Java Sources/src/main/java/de/pjog/prinzJuliano/TerminalRPG/models/items/Inventory.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Java Sources/src/main/java/de/pjog/prinzJuliano/TerminalRPG/models/items/Item.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Java Sources/src/main/java/de/pjog/prinzJuliano/TerminalRPG/models/items/Rarity.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Java Sources/src/main/java/de/pjog/prinzJuliano/TerminalRPG/views/HomeView.java" afterPath="$PROJECT_DIR$/Java Sources/src/main/java/de/pjog/prinzJuliano/TerminalRPG/views/HomeView.java" />
     </list>
     <ignored path="TerminalRPG.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -971,12 +964,19 @@
       <option name="project" value="LOCAL" />
       <updated>1472756917634</updated>
     </task>
-    <option name="localTasksCounter" value="9" />
+    <task id="LOCAL-00009" summary="Items are coming!&#10;&#10;Added some Interfaces to describe Items.&#10;Added a button to HomeView&#10;Added a *very* simple Inventory implementation!&#10;">
+      <created>1472758664504</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1472758664504</updated>
+    </task>
+    <option name="localTasksCounter" value="10" />
     <servers />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
-    <editor active="true" />
+    <editor active="false" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
@@ -986,7 +986,7 @@
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32980973" sideWeight="0.5" order="1" side_tool="true" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.3296875" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.32875264" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32875264" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -1026,7 +1026,8 @@
     <MESSAGE value="Removed Documentation + Removed RSA Encryption&#10;&#10;The save files are now plain!&#10;Redundant warnings fixed!" />
     <MESSAGE value="Removed manual JSON creation&#10;&#10;Stats and RPGCharacter get automatically serialized!&#10;Tests were modified to suit this!" />
     <MESSAGE value="Fixed Load Game bug!&#10;&#10;- Fixed Issue #1&#10;- HP are now externally loaded (without deserialization process)" />
-    <option name="LAST_COMMIT_MESSAGE" value="Fixed Load Game bug!&#10;&#10;- Fixed Issue #1&#10;- HP are now externally loaded (without deserialization process)" />
+    <MESSAGE value="Items are coming!&#10;&#10;Added some Interfaces to describe Items.&#10;Added a button to HomeView&#10;Added a *very* simple Inventory implementation!&#10;" />
+    <option name="LAST_COMMIT_MESSAGE" value="Items are coming!&#10;&#10;Added some Interfaces to describe Items.&#10;Added a button to HomeView&#10;Added a *very* simple Inventory implementation!&#10;" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager />

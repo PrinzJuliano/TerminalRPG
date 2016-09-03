@@ -1,14 +1,15 @@
 package de.pjog.prinzJuliano.TerminalRPG.gfx;
 
-import com.googlecode.lanterna.TextCharacter;
-import com.googlecode.lanterna.TextColor;
-import de.pjog.prinzJuliano.TerminalRPG.Main;
-import de.pjog.prinzJuliano.TerminalRPG.util.Resources;
+import java.awt.Color;
+import java.awt.image.BufferedImage;
 
 import javax.imageio.ImageIO;
-import java.awt.*;
-import java.awt.image.BufferedImage;
-import java.io.FileNotFoundException;
+
+import com.googlecode.lanterna.TextCharacter;
+import com.googlecode.lanterna.TextColor;
+
+import de.pjog.prinzJuliano.TerminalRPG.Main;
+import de.pjog.prinzJuliano.TerminalRPG.util.Resources;
 
 /**
  * Class for loading images from the Resources folder utilizing the
