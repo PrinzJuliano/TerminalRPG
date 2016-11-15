@@ -1,16 +1,33 @@
 package de.pjog.prinzJuliano.TerminalRPG;
 
-import com.googlecode.lanterna.bundle.LanternaThemes;
-import com.googlecode.lanterna.gui2.*;
-import com.googlecode.lanterna.screen.Screen;
-import de.pjog.prinzJuliano.TerminalRPG.gfx.CommonSprites;
-import de.pjog.prinzJuliano.TerminalRPG.models.RPGCharacter;
-import de.pjog.prinzJuliano.TerminalRPG.views.*;
-import org.json.JSONObject;
-
 import java.io.EOFException;
 import java.io.IOException;
 import java.util.HashMap;
+
+import org.json.JSONObject;
+
+import com.googlecode.lanterna.bundle.LanternaThemes;
+import com.googlecode.lanterna.gui2.AsynchronousTextGUIThread;
+import com.googlecode.lanterna.gui2.MultiWindowTextGUI;
+import com.googlecode.lanterna.gui2.SeparateTextGUIThread;
+import com.googlecode.lanterna.gui2.TextGUI;
+import com.googlecode.lanterna.gui2.Window;
+import com.googlecode.lanterna.screen.Screen;
+
+import de.pjog.prinzJuliano.TerminalRPG.gfx.CommonSprites;
+import de.pjog.prinzJuliano.TerminalRPG.models.RPGCharacter;
+import de.pjog.prinzJuliano.TerminalRPG.views.CrashDialog;
+import de.pjog.prinzJuliano.TerminalRPG.views.DebugMenuView;
+import de.pjog.prinzJuliano.TerminalRPG.views.Dialog;
+import de.pjog.prinzJuliano.TerminalRPG.views.EndCardView;
+import de.pjog.prinzJuliano.TerminalRPG.views.HomeView;
+import de.pjog.prinzJuliano.TerminalRPG.views.LoadGameView;
+import de.pjog.prinzJuliano.TerminalRPG.views.LoadingDialog;
+import de.pjog.prinzJuliano.TerminalRPG.views.MainMenuView;
+import de.pjog.prinzJuliano.TerminalRPG.views.NewGameView;
+import de.pjog.prinzJuliano.TerminalRPG.views.PictureViewer;
+import de.pjog.prinzJuliano.TerminalRPG.views.SettingsView;
+import de.pjog.prinzJuliano.TerminalRPG.views.View;
 
 /**
  * Managing Class for Views, Scene switching, etc.
@@ -64,6 +81,12 @@ public class Storyboard {
      * Links to {@link HomeView}
      */
     public static final int HOME = 8;
+
+    /**
+     * 
+     */
+    public static final int DEBUGVIEW = 9;
+    public static final int PICTUREVIEWER = 10;
 
     public static CommonSprites Commons;
 
@@ -121,6 +144,12 @@ public class Storyboard {
         views.put(LOADINGDIALOG, new LoadingDialog());
         views.put(HOME, new HomeView());
         views.put(LOADGAME, new LoadGameView());
+        
+        if(Main.DEBUG){
+        	views.put(DEBUGVIEW, new DebugMenuView());
+        	views.put(PICTUREVIEWER, new PictureViewer());
+        	
+        }
     }
 
     /**
@@ -287,7 +316,7 @@ public class Storyboard {
      */
     public void update() {
         try {
-            textGUI.updateScreen();
+        	textGUI.updateScreen();
         } catch (IOException e) {
             e.printStackTrace();
         }

@@ -1,6 +1,8 @@
 package de.pjog.prinzJuliano.TerminalRPG.views;
 
 import com.googlecode.lanterna.gui2.*;
+
+import de.pjog.prinzJuliano.TerminalRPG.Main;
 import de.pjog.prinzJuliano.TerminalRPG.Storyboard;
 
 /**
@@ -57,6 +59,17 @@ public class MainMenuView extends AbstractView {
 
         mainPanel.addComponent(bNewGame);
         mainPanel.addComponent(loadGame);
+        
+        if(Main.DEBUG){
+        	Button debugButton = new Button("Debug Tools", new Runnable() {
+				
+				public void run() {
+					story.switchToView(Storyboard.DEBUGVIEW);
+				}
+			});
+        	mainPanel.addComponent(debugButton);
+        }
+        
         mainPanel.addComponent(settings);
         mainPanel.addComponent(exit);
 
